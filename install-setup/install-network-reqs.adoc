@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-network-reqs.html 
+keywords: shared storage cluster switch 
+summary: A partire da ONTAP 9.9.1, è possibile utilizzare gli switch Cisco Nexus 9364d-gx2a per combinare funzionalità di storage e cluster in uno scenario di switch condiviso. 
+---
+= Requisiti di rete per il tuo sistema di archiviazione AFX 1K
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Registra le informazioni richieste per ogni rete a cui ti colleghi al tuo sistema di archiviazione AFX 1K.
+
+
+
+== Raccogliere informazioni di rete
+
+Prima di iniziare l'installazione del sistema di archiviazione AFX 1K, raccogliere le informazioni di rete richieste
+
+* Nomi host e indirizzi IP per ciascuno dei controller del sistema di archiviazione e tutti gli switch applicabili.
++
+La maggior parte dei controller dei sistemi di storage vengono gestiti tramite l'interfaccia e0M, collegandosi alla porta di servizio Ethernet (icona a forma di chiave inglese).
+
++
+Fare riferimento al https://hwu.netapp.com["Hardware Universe"^] per le ultime informazioni.
+
+* Indirizzo IP di gestione del cluster
++
+L'indirizzo IP di gestione del cluster è un indirizzo IP univoco per l'interfaccia di gestione del cluster utilizzata dall'amministratore del cluster per accedere alla VM di archiviazione amministrativa e gestire il cluster.  Puoi ottenere questo indirizzo IP dall'amministratore responsabile dell'assegnazione degli indirizzi IP nella tua organizzazione.
+
+* Maschera di sottorete di rete
++
+Durante la configurazione del cluster, ONTAP consiglia un set di interfacce di rete appropriate per la configurazione.  Se necessario, è possibile modificare la raccomandazione.
+
+* Indirizzo IP del gateway di rete
+* Indirizzi IP di gestione dei nodi (uno per nodo)
+* nomi di dominio DNS
+* Indirizzi IP del server dei nomi DNS
+* Indirizzi IP del server NTP
+* Maschera di sottorete dei dati
+* Subnet IP per il traffico di rete di gestione.
+
+
+
+
+== Requisiti di rete per gli switch Cisco
+
+Per l'installazione e la manutenzione degli switch Cisco Nexus 9332D-GX2B e 9364D-GX2A, assicurarsi di esaminare i requisiti di cablaggio e di rete.
+
+
+
+=== Requisiti di rete
+
+Per tutte le configurazioni dello switch sono necessarie le seguenti informazioni di rete.
+
+* Subnet IP per il traffico di rete di gestione
+* Nomi host e indirizzi IP per ciascuno dei controller del sistema di archiviazione e tutti gli switch applicabili
+* Fare riferimento al https://hwu.netapp.com["Hardware Universe"^] per le ultime informazioni.
+
+
+
+
+=== Requisiti di cablaggio
+
+* Hai il numero e il tipo di cavi e connettori per i tuoi switch appropriati. Vedi il https://hwu.netapp.com["Hardware Universe"^] .
+* A seconda del tipo di switch che si sta configurando inizialmente, è necessario collegarsi alla porta della console dello switch tramite il cavo della console incluso.
+
+
+.Cosa succederà ora?
+Dopo aver esaminato i requisiti di rete,link:cable-hardware.html["collegare i controller e gli scaffali di archiviazione per il sistema di archiviazione AFX 1K"] .

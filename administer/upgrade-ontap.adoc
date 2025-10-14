@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: administer/upgrade-ontap.html 
+keywords: afx, afx system, upgrade, upgrade ontap 
+summary: 'Quando aggiorni il software ONTAP sul tuo sistema AFX, puoi sfruttare le nuove e migliorate funzionalità ONTAP che possono aiutarti a ridurre i costi, accelerare i carichi di lavoro critici, migliorare la sicurezza ed espandere l"ambito di protezione dei dati a disposizione della tua organizzazione.' 
+---
+= Aggiorna ONTAP su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Quando aggiorni il software ONTAP sul tuo sistema AFX, puoi sfruttare le nuove e migliorate funzionalità ONTAP che possono aiutarti a ridurre i costi, accelerare i carichi di lavoro critici, migliorare la sicurezza ed espandere l'ambito di protezione dei dati a disposizione della tua organizzazione.
+
+Gli aggiornamenti software ONTAP per i sistemi di archiviazione AFX seguono lo stesso processo degli aggiornamenti per gli altri sistemi ONTAP .  Se hai un contratto SupportEdge attivo per Active IQ Digital Advisor (noto anche come Digital Advisor), dovrestilink:https://docs.netapp.com/us-en/ontap/upgrade/create-upgrade-plan.html["preparati all'aggiornamento con Upgrade Advisor"^] .  Upgrade Advisor fornisce informazioni che ti aiutano a ridurre al minimo l'incertezza e il rischio valutando il tuo cluster e creando un piano di aggiornamento specifico per la tua configurazione.  Se non hai un contratto SupportEdge attivo per Active IQ Digital Advisor, dovrestilink:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["preparati all'aggiornamento senza Upgrade Advisor"^] .
+
+Dopo aver preparato l'aggiornamento, si consiglia di eseguire gli aggiornamenti utilizzandolink:https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["aggiornamento automatizzato non distruttivo (ANDU) da System Manager"] .  ANDU sfrutta la tecnologia di failover ad alta disponibilità (HA) di ONTAP per garantire che i cluster continuino a fornire dati senza interruzioni durante l'aggiornamento.
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/upgrade/index.html["Scopri di più sull'aggiornamento ONTAP"^] .
+

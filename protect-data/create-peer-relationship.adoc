@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-peer-relationship.html 
+keywords: afx, afx system, peering, peer relationship 
+summary: 'Una relazione peer definisce le connessioni di rete che consentono ai cluster e alle macchine virtuali (VM) di storage di scambiare dati in modo sicuro. È possibile creare una relazione peer tra VM di archiviazione su cluster diversi per abilitare la protezione dei dati e il ripristino di emergenza tramite SnapMirror.' 
+---
+= Creare una relazione peer SVM intercluster su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Una relazione peer definisce le connessioni di rete che consentono ai cluster e alle macchine virtuali (VM) di storage di scambiare dati in modo sicuro. È possibile creare una relazione peer tra VM di archiviazione su cluster diversi per abilitare la protezione dei dati e il ripristino di emergenza tramite SnapMirror.
+
+.Prima di iniziare
+Prima di poter creare una relazione peer della VM di archiviazione, è necessario aver stabilito una relazione peer tra i cluster locale e remoto. link:snapshot-replication.html#step-1-create-a-cluster-peer-relationship["Creare una relazione tra cluster"] se non l'hai già fatto.
+
+.Passi
+. In Gestione sistema, selezionare *Protezione > Panoramica*.
+. In *Peer VM di archiviazione* seleziona *Aggiungi un peer VM di archiviazione*.
+. Selezionare la VM di archiviazione sul cluster locale; quindi selezionare la VM di archiviazione sul cluster remoto.
+. Selezionare *Aggiungi un peer VM di archiviazione*.
+
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/peering/peering-basics-concept.html["Scopri di più sulle relazioni tra pari"^] .
+

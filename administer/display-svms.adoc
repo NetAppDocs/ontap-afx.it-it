@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: administer/display-svms.html 
+keywords: afx, afx system, svm, display svm 
+summary: 'È possibile visualizzare le VM di archiviazione dati definite nel cluster AFX.  Ogni SVM fornisce un ambiente isolato per organizzare i dati e fornire l"accesso ai client.' 
+---
+= Visualizza gli SVM del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile visualizzare le VM di archiviazione dati definite nel cluster AFX.  Ogni SVM fornisce un ambiente isolato per organizzare i dati e fornire l'accesso ai client.
+
+.Passi
+. In System Manager, seleziona *Cluster* e poi *VM di archiviazione*.
+. Passare il mouse sopra l'SVM desiderato e selezionareimage:icon_kabob.gif["tre punti blu verticali"] per visualizzare le principali opzioni amministrative, tra cui l'avvio e l'arresto dell'SVM.
+. Facoltativamente, seleziona una SVM specifica per visualizzare maggiori dettagli, tra cui panoramica, impostazioni, replica e file system.
+
+
+.Informazioni correlate
+* link:../administer/configure-svm.html["Configurare un sistema AFX SVM"]
+* link:../get-started/prepare-cluster-admin.html["Comprendere le macchine virtuali di archiviazione"]
+

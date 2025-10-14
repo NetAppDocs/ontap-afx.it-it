@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: protect-data/manage-snapshots.html 
+keywords: afx, afx system, snapshots, manage snapshots 
+summary: Puoi gestire gli snapshot sul tuo sistema AFX.  Per maggiori dettagli, fare riferimento alla documentazione Unified ONTAP . 
+---
+= Gestire gli snapshot su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Puoi gestire gli snapshot sul tuo sistema AFX.  Per maggiori dettagli, fare riferimento alla documentazione Unified ONTAP .
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare un criterio di snapshot ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/flexgroup/protect-snapshot-copies-task.html["Proteggere i volumi ONTAP FlexGroup utilizzando gli snapshot"^]
+

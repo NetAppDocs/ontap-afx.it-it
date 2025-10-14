@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-consistency-group.html 
+keywords: afx, afx system, consistency group, create consistency group 
+summary: 'È possibile creare gruppi di coerenza per semplificare la gestione dell"archiviazione e la protezione dei dati per i carichi di lavoro delle applicazioni.  Un gruppo di coerenza può essere basato su volumi esistenti o nuovi.' 
+---
+= Creare un gruppo di coerenza su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile creare gruppi di coerenza per semplificare la gestione dell'archiviazione e la protezione dei dati per i carichi di lavoro delle applicazioni.  Un gruppo di coerenza può essere basato su volumi esistenti o nuovi.
+
+.Prima di iniziare
+Se si prevede di creare uno o più nuovi volumi, è necessario modificare le opzioni di configurazione durante la creazione di un nuovo volume.
+
+.Passi
+. In Gestione sistema, seleziona *Protezione* e poi *Gruppi di coerenza*.
+. Selezionareimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] e scegli uno tra:
++
+** Utilizzo di volumi esistenti
+** Utilizzo di nuovi volumi NAS
+
+
+. Fornire i dettagli di configurazione, tra cui nome, volumi, tipo di applicazione e protezione.
+. Selezionare *Aggiungi*.
+
+
+.Informazioni correlate
+* link:../protect-data/manage-consistency-groups.html["Gestire gruppi di coerenza"]
+* link:../manage-data/create-configure-volume.html["Creare e configurare un volume AFX"]
+

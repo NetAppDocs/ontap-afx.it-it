@@ -1,0 +1,44 @@
+---
+section: svm-admin
+title: Gestisci le tue VM di archiviazione e i tuoi dati
+entries:
+- title: Gestire i dati
+  entries:
+  - title: Preparati a gestire i tuoi dati
+    url: "/manage-data/prepare-manage-data.html"
+  - title: Creare e configurare un volume
+    url: "/manage-data/create-configure-volume.html"
+  - title: Gestire i volumi
+    url: "/manage-data/manage-volumes.html"
+  - title: Crea e configura un bucket
+    url: "/manage-data/create-configure-bucket.html"
+  - title: Gestisci i bucket
+    url: "/manage-data/manage-buckets.html"
+  - title: Monitorare e risolvere i problemi di archiviazione
+    url: "/manage-data/monitor-debug-storage.html"
+- title: Proteggere i dati
+  entries:
+  - title: Preparati a proteggere i tuoi dati
+    url: "/protect-data/prepare-protect-data.html"
+  - title: Crea un gruppo di coerenza
+    url: "/protect-data/create-consistency-group.html"
+  - title: Gestire gruppi di coerenza
+    url: "/protect-data/manage-consistency-groups.html"
+  - title: Crea uno snapshot
+    url: "/protect-data/create-snapshot.html"
+  - title: Gestisci gli snapshot
+    url: "/protect-data/manage-snapshots.html"
+  - title: Creare una relazione peer SVM
+    url: "/protect-data/create-peer-relationship.html"
+  - title: Impostare e gestire la replica degli snapshot
+    url: "/protect-data/snapshot-replication.html"
+  - title: Gestire politiche e pianificazioni
+    url: "/protect-data/policies-schedules.html"
+- title: Dati sicuri
+  entries:
+  - title: Preparati a proteggere i tuoi dati
+    url: "/secure-data/prepare-secure-data.html"
+  - title: Crittografare i dati a riposo
+    url: "/secure-data/encrypt-data-at-rest.html"
+- title: Amministrazione aggiuntiva
+  url: "/administer/additional-ontap-svm.html"

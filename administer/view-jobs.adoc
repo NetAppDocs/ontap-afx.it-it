@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: administer/view-jobs.html 
+keywords: afx, afx system, view jobs 
+summary: AFX include una piattaforma interna per eseguire attività in background in base alla configurazione e alle azioni amministrative.  Questi lavori possono essere componenti AFX di lunga durata o processi di breve durata eseguiti in risposta a richieste di attività amministrative o API REST.  È possibile visualizzare e monitorare i lavori secondo necessità. 
+---
+= Visualizza le offerte di lavoro per il sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+AFX include una piattaforma interna per eseguire attività in background in base alla configurazione e alle azioni amministrative.  Questi lavori possono essere componenti AFX di lunga durata o processi di breve durata eseguiti in risposta ad attività amministrative o richieste API REST.  È possibile visualizzare e monitorare i lavori secondo necessità.
+
+.Passi
+. In Gestione sistema, seleziona *Eventi e processi* e poi *Processi*.
+. Personalizza la visualizzazione, nonché cerca e scarica le informazioni sul lavoro in base alle tue esigenze.
+

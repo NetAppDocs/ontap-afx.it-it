@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: protect-data/manage-consistency-groups.html 
+keywords: afx, afx system, consistency group, manage consistency group 
+summary: È possibile gestire i gruppi di coerenza su un sistema AFX.  Ciò può semplificare la gestione dello storage. 
+---
+= Gestire gruppi di coerenza su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile gestire i gruppi di coerenza su un sistema AFX.  Ciò può semplificare la gestione dello storage.
+
+
+
+== Aggiungere la protezione dei dati snapshot a un gruppo di coerenza
+
+Quando si aggiunge la protezione dei dati snapshot a un gruppo di coerenza, è possibile acquisire snapshot locali del gruppo di coerenza a intervalli regolari in base a una pianificazione predefinita.
+
+.Passi
+. In Gestione sistema, seleziona *Protezione* e poi *Gruppi di coerenza*.
+. Passa il mouse sul gruppo di coerenza che vuoi proteggere.
+. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Modifica*.
+. In *Protezione locale*, seleziona *Pianifica snapshot*.
+. Selezionare un criterio di snapshot.
++
+Accetta il criterio di snapshot predefinito, seleziona un criterio esistente o creane uno nuovo.
+
++
+[cols="2,6a"]
+|===
+| Opzione | Passi 
+
+
+| Seleziona un criterio di snapshot esistente  a| 
+Selezionareimage:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] accanto alla policy predefinita; quindi seleziona la policy esistente che desideri utilizzare.
+
+
+
+| Crea un nuovo criterio di snapshot  a| 
+.. Selezionareimage:icon_add.gif["segno più blu seguito dalla parola aggiungi"] ; quindi immettere il nome della nuova policy.
+.. Selezionare l'ambito della policy.
+.. In *Programmi* selezionaimage:icon_add.gif["segno più blu seguito dalla parola aggiungi"] .
+.. Selezionare il nome che appare sotto *Nome pianificazione*;
++
+quindi selezionaimage:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] .
+
+.. Selezionare la pianificazione della politica.
+.. In *Numero massimo di snapshot*, immettere il numero massimo di snapshot che si desidera conservare del gruppo di coerenza.
+.. Facoltativamente, in *Etichetta SnapMirror * inserisci un'etichetta SnapMirror .
+.. Seleziona *Salva*.
+
+
+|===
+. Selezionare *Modifica*.
+
+
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Scopri di più sui gruppi di coerenza ONTAP"^]
+

@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-ethernet-ports.html 
+keywords: afx, afx system, ethernet, ethernet ports 
+summary: 'Le porte utilizzate dal sistema AFX costituiscono la base per la connettività e la comunicazione di rete.  Sono disponibili diverse opzioni di configurazione per personalizzare l"aspetto di secondo livello della rete.' 
+---
+= Gestire le porte Ethernet del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le porte utilizzate dal sistema AFX costituiscono la base per la connettività e la comunicazione di rete.  Sono disponibili diverse opzioni per personalizzare la configurazione di livello due della rete.
+
+
+
+== Creare un VLAN
+
+Una VLAN è costituita da porte switch raggruppate in un dominio broadcast.  Le VLAN consentono di aumentare la sicurezza, isolare potenziali problemi e limitare i percorsi disponibili all'interno dell'infrastruttura di rete IP.
+
+.Prima di iniziare
+Gli switch distribuiti nella rete devono essere conformi agli standard IEEE 802.1Q oppure disporre di un'implementazione VLAN specifica del fornitore.
+
+.Informazioni su questo compito
+Notare quanto segue:
+
+* Non è possibile creare una VLAN su una porta di un gruppo di interfacce senza porte membro.
+* Quando si configura una VLAN su una porta per la prima volta, la porta potrebbe non funzionare, causando una disconnessione temporanea della rete.  Le successive aggiunte di VLAN alla stessa porta non influiscono sullo stato della porta.
+* Non dovresti creare una VLAN su un'interfaccia di rete con lo stesso identificativo della VLAN nativa dello switch.  Ad esempio, se l'interfaccia di rete e0b si trova sulla VLAN nativa 10, non è necessario creare una VLAN e0b-10 su tale interfaccia.
+
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Porte Ethernet*.
+. Selezionareimage:icon_vlan.png["un segno più blu seguito dalla parola vlan"] .
+. Fornire i dettagli di configurazione, tra cui ID, dominio di broadcast e porte sui nodi desiderati.
++
+La VLAN non può essere collegata a una porta che ospita un cluster LIF o a porte assegnate allo spazio IP del cluster.
+
+. Seleziona *Salva*.
+
+
+.Risultato
+Hai creato una VLAN per aumentare la sicurezza, isolare i problemi e limitare i percorsi disponibili all'interno della tua infrastruttura di rete IP.
+
+
+
+== Creare un LAG
+
+Un gruppo di aggregati di collegamenti (LAG) è una tecnica che combina più connessioni di rete fisiche in un'unica connessione logica.  È possibile utilizzarlo per aumentare la larghezza di banda e garantire ridondanza tra i nodi.
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Porte Ethernet*.
+. Seleziona *Collega gruppo aggregato*.
+. Fornire i dettagli di configurazione, tra cui nodo, dominio di broadcast, porte, modalità e distribuzione del carico.
+. Seleziona *Salva*.
+
+
+
+
+== Informazioni correlate
+
+* link:../administer/manage-cluster-networking.html["Gestire la rete del cluster AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_network_ports_cluster_administrators_only_overview.html["Scopri di più sulla configurazione delle porte di rete ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/combine_physical_ports_to_create_interface_groups.html["Combina le porte fisiche per creare gruppi di interfacce ONTAP"^]
+

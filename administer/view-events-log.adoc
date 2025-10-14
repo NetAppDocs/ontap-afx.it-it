@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: administer/view-events-log.html 
+keywords: afx, afx system, events, audit log 
+summary: 'È possibile esaminare gli eventi e i messaggi del registro di controllo generati da AFX per monitorare l"elaborazione interna e diagnosticare potenziali problemi.  Il sistema AFX può essere configurato per inoltrare queste informazioni, insieme ad altri dati correlati, per un"ulteriore elaborazione e archiviazione.' 
+---
+= Visualizza gli eventi del sistema di archiviazione AFX e il registro di controllo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile esaminare gli eventi e i messaggi del registro di controllo generati da AFX per monitorare l'elaborazione interna e diagnosticare potenziali problemi.  Il sistema AFX può essere configurato per inoltrare queste informazioni, insieme ad altri dati correlati, per un'ulteriore elaborazione e archiviazione.
+
+
+
+== Eventi
+
+I messaggi di evento forniscono una preziosa registrazione dell'attività del sistema.  Ogni evento include una descrizione e un identificatore univoco, insieme a un'azione consigliata.
+
+. In Gestione sistema, seleziona *Eventi e processi* e poi *Eventi*.
+. Rivedi e rispondi alle azioni consigliate nella parte superiore della pagina, ad esempio abilitando l'aggiornamento automatico.
+. Selezionare la scheda *Registro eventi* per visualizzare un elenco dei messaggi.
+. Selezionare un messaggio di evento per esaminarlo più in dettaglio, inclusi il numero di sequenza, la descrizione, l'evento e l'azione consigliata.
+. Facoltativamente, seleziona la scheda *Suggerimenti Active IQ * e registrati ad Active IQ per ottenere informazioni dettagliate sui rischi per il cluster.
+
+
+
+
+== Registro di controllo
+
+Il registro di controllo include una registrazione dell'attività del sistema basata sull'uso di protocolli di accesso come HTTP.
+
+. In Gestione sistema, seleziona *Eventi e processi* e poi *Registri di controllo*.
+. Selezionare *Impostazioni* per abilitare o disabilitare le operazioni monitorate.
+. Facoltativamente seleziona *Gestisci destinazioni di audit*; rivedi<<Gestisci le notifiche>> per maggiori informazioni.
+
+
+
+
+== Gestisci le notifiche
+
+AFX supporta diversi tipi di notifiche che puoi inoltrare.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. Vai a *Gestione notifiche* e selezionaimage:icon_kabob.gif["tre punti blu verticali"] .
+. Selezionare l'azione appropriata per visualizzare o configurare le destinazioni utilizzate da AFX.  Ad esempio, per configurare:
++
+.. _Destinazioni evento:_ seleziona *Visualizza destinazioni evento*
+.. _Destinazioni del registro di controllo:_ seleziona *Visualizza destinazioni di controllo*
+
+
+. Selezionareimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] come appropriato e fornire le informazioni sulla destinazione.
+. Seleziona *Salva*.
+
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoraggio di eventi, prestazioni e salute ONTAP"^]
+

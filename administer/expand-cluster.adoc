@@ -1,0 +1,148 @@
+---
+sidebar: sidebar 
+permalink: administer/expand-cluster.html 
+keywords: afx, afx system, expansion, cluster expansion, expand cluster, add nodes 
+summary: 'È possibile espandere la capacità di elaborazione di un cluster AFX indipendentemente dalla capacità di archiviazione.  L"espansione viene eseguita senza interruzioni e aumenta le prestazioni in modo lineare man mano che i volumi vengono ribilanciati tra i nodi.  Questa funzionalità rappresenta un vantaggio significativo per adattarsi alle esigenze costanti dei tuoi utenti AFX.' 
+---
+= Espandi un cluster di sistemi di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile espandere la capacità di elaborazione di un cluster AFX indipendentemente dalla capacità di archiviazione.  L'espansione viene eseguita senza interruzioni e aumenta le prestazioni in modo lineare man mano che i volumi vengono ribilanciati tra i nodi.  Questa funzionalità rappresenta un vantaggio significativo per adattarsi alle esigenze costanti degli utenti del sistema AFX.
+
+
+
+== Preparati ad espandere un cluster
+
+Prima di espandere un cluster AFX, è necessario acquisire familiarità con i requisiti di base e l'approccio generale alla risoluzione dei problemi.
+
+
+
+=== Requisiti
+
+Sono necessarie le credenziali di un account amministratore del cluster e la possibilità di connettersi alla CLI ONTAP tramite SSH.  Quando si espande un cluster, è necessario aggiungere un numero pari di nodi e rispettare i limiti di dimensione del sistema AFX in base alla versione.
+
+
+
+=== Risoluzione dei problemi
+
+Ci sono alcuni concetti e scenari di risoluzione dei problemi di cui dovresti essere a conoscenza quando esegui l'espansione del cluster.
+
+
+
+==== Ribilanciamento automatico del volume
+
+Automated Topology Management (ATM) è un componente interno del sistema AFX che rileva gli squilibri di allocazione e ribilancia i volumi tra i nodi del cluster.  Si basa sulla tecnologia Zero Copy Volume Move (ZCVM) per spostare i volumi utilizzando gli aggiornamenti dei metadati anziché copiare i dati.  ZCVM è la tecnologia predefinita per lo spostamento dei volumi disponibile con i sistemi di archiviazione AFX.
+
+
+
+==== Possibili scenari di risoluzione dei problemi
+
+Esistono diversi scenari che potresti dover esaminare durante le variazioni di volume associate all'espansione di un cluster AFX.
+
+I volumi non vengono spostati tramite ATM:: Ciò può verificarsi quando il cluster è già in equilibrio o quando non ci sono volumi idonei da spostare.
+Confusione su come o quando l'ATM dovrebbe essere attivo:: Potrebbe sembrare che i volumi non vengano distribuiti con la rapidità prevista.  L'ATM tenta di rilevare e rispondere agli eventi hardware ogni cinque minuti.  Nel caso peggiore, un'operazione di ribilanciamento viene avviata 40 minuti dopo il completamento dell'ultima.
+
+
+
+
+==== Comandi CLI
+
+Esistono diversi comandi che è possibile utilizzare per monitorare un'operazione di espansione del cluster.
+
+* `volume move show`
+* `volume move show -instance`
+
+
+Se necessario, contattare l'assistenza NetApp per ulteriore assistenza.
+
+
+
+== Aggiungi nodi per espandere un cluster
+
+Questa procedura descrive come aggiungere una coppia di nodi a un cluster esistente e può essere adattata ad altri ambienti di distribuzione.  Sarà necessario utilizzare sia l'interfaccia amministrativa ONTAP CLI sia quella System Manager.
+
+.Passi
+. Connettersi alla CLI ONTAP e impostare il livello di privilegio avanzato:
++
+`afx> set advanced`
+
+. Visualizza le posizioni dei volumi dei nodi correnti; nota il numero di volumi per nodo:
++
+`afx> vol show -fields node,size,constituent-count -is-constituent true -node *`
+
+. Visualizza gli indirizzi IP di interconnessione del cluster e salvali per utilizzarli nei passaggi successivi:
++
+`afx> net int show -role cluster`
+
+. Accedi al processore di servizio di ciascun nodo che desideri aggiungere al cluster.
+. Dal prompt, digitare *system console* per accedere alla console del nodo.
+. Avviare il nodo per visualizzare il prompt del menu di avvio:
++
+`LOADER> boot_ontap menu`
+
++
+Se il menu non si carica, utilizzare la tecnica *Ctrl+C* per accedere al menu di avvio.
+
+. Selezionare una delle opzioni di avvio dal menu, a seconda delle esigenze; se richiesto, digitare *sì* per continuare.
++
+Se da qui vieni reindirizzato a LOADER, digita *boot_ontap* al prompt LOADER.
+
+. Utilizzare la procedura guidata di configurazione del cluster per configurare un LIF, una subnet e un gateway di gestione dei nodi.
++
+Questa configurazione verrà utilizzata da System Manager per rilevare il nodo da aggiungere al cluster.  Immettere i valori richiesti, tra cui porta, indirizzo IP, netmask e gateway predefinito.
+
+. Premere *CTL+C* per accedere alla CLI.
+. Modificare gli indirizzi di interconnessione del cluster in modo che siano instradabili nella rete; utilizzare la configurazione appropriata per l'ambiente:
++
+`afx> net int show -role cluster`
+
++
+`afx> net int modify -vserver Cluster -lif clus1 -address 192.168.100.201`
+
++
+`afx> net int modify -vserver Cluster -lif clus2 -address 192.168.100.202`
+
++
+Questo passaggio è necessario solo se le altre interfacce non utilizzano gli indirizzi 169.254.xx creati automaticamente da ONTAP .
+
+. Ripetere i passaggi precedenti sull'altro controller del nodo AFX.
+. Accedere a System Manager utilizzando l'indirizzo IP di gestione del cluster.
+. In System Manager, seleziona *Cluster* e poi *Panoramica*; seleziona la scheda *Nodi*.
+. Individua la sezione *Non fa parte di questo cluster*; selezionaimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
++
+** Se i nodi sono stati rilevati prima che gli indirizzi IP di interconnessione del cluster venissero modificati, sarà necessario rilevarli nuovamente uscendo dalla finestra e tornando indietro.
+** Facoltativamente, è possibile utilizzare la CLI per aggiungere i nodi anziché System Manager; vedere il comando `cluster add-node` .
+
+
+. Fornire i dettagli di configurazione nel menu *Aggiungi nodi*; è possibile aggiungere manualmente gli indirizzi IP di gestione oppure utilizzando una subnet.
+. Connettersi alla CLI ONTAP per monitorare lo stato dell'operazione di aggiunta del nodo:
++
+`afx> add-node-status`
+
+. Una volta completate le operazioni, confermare il posizionamento del volume su tutti i nodi; emettere il comando una volta per ogni nodo utilizzando il nome del nodo appropriato:
++
+`afx> set advanced`
+
++
+`afx> vol show -fields node,size,constituent-count -is-constituent true -node NODE_NAME`
+
+
+
+.Risultato
+* L'aggiunta di nuovi nodi al cluster non comporta interruzioni.
+* I movimenti di volume dovrebbero avvenire automaticamente.
+* Le prestazioni saranno scalabili in modo lineare.
+
+
+
+
+== Informazioni correlate
+
+* link:../get-started/prepare-cluster-admin.html["Preparati a gestire il tuo sistema AFX"]
+* link:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione ONTAP AFX"]
+* https://mysupport.netapp.com/["Sito di supporto NetApp"^]
+

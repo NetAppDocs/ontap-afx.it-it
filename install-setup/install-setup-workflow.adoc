@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-workflow.html 
+keywords: afx, afx 1k, install, setup, workflow 
+summary: 'Inizia con l"installazione e la configurazione del sistema di archiviazione AFX 1K e distribuiscilo nel tuo ambiente ONTAP .' 
+---
+= Flusso di lavoro di installazione e configurazione per i sistemi di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per installare e configurare il sistema di archiviazione AFX 1K, è necessario esaminare i requisiti hardware, preparare il sito, installare gli switch, installare e cablare i componenti hardware, accendere il sistema e configurare il cluster ONTAP AFX.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]link:install-setup-requirements.html["Esaminare i requisiti di installazione hardware"]
+[role="quick-margin-para"]
+Esamina i requisiti hardware per installare il tuo sistema di archiviazione AFX 1K.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]link:prepare-hardware.html["Preparati a installare il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Preparatevi a installare il vostro sistema di archiviazione AFX 1K preparando il sito, verificando i requisiti ambientali ed elettrici, assicurandovi che ci sia spazio sufficiente sul rack, disimballando l'apparecchiatura, verificando il contenuto sulla bolla di accompagnamento e registrando l'hardware per l'assistenza.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]link:install-switches.html["Installa gli switch per il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Installare gli switch Cisco Nexus 9332D-GX2B o 9364D-GX2A nell'armadio o nel rack.  Se si utilizza lo switch Cisco Nexus 9364D-GX2A, installare un kit pannello passante.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]link:deploy-hardware.html["Installa l'hardware per il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Installa i kit di binari per il tuo sistema di stoccaggio e i tuoi scaffali.  Metti in sicurezza il tuo sistema di archiviazione nell'armadio o nel rack per telecomunicazioni.  Successivamente, far scorrere i ripiani sulle guide installate.  Infine, fissare i dispositivi di gestione dei cavi sul retro del sistema di archiviazione per organizzare il passaggio dei cavi.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"]link:cable-hardware.html["Cabla i controller e gli scaffali per il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Per cablare l'hardware, collegare prima i nodi del controller di storage alla rete, quindi collegare i nodi del controller e gli scaffali di storage agli switch del cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sei"]link:power-on-configure-switch.html["Accendi e configura gli switch per il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Collega l'hardware, quindi accendi e configura gli switch per il tuo sistema di archiviazione AFX 1K.  Consultare le istruzioni di configurazione per gli switch Cisco Nexus 9332D-GX2B e 9364D-GX2A.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sette"]link:power-on-hardware.html["Accendi il tuo sistema di archiviazione AFX 1K"]
+[role="quick-margin-para"]
+Accendere ogni ripiano di archiviazione e assegnare un ID ripiano univoco prima di accendere i nodi del controller per identificare chiaramente ogni ripiano nella configurazione.

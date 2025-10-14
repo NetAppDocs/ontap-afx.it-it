@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-certificates.html 
+keywords: afx, afx system, certificates, pki 
+summary: 'A seconda dell"ambiente, sarà necessario creare e gestire certificati digitali come parte dell"amministrazione di AFX.  Ci sono diverse attività correlate che puoi svolgere.' 
+---
+= Gestire i certificati su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+A seconda dell'ambiente, sarà necessario creare e gestire certificati digitali come parte dell'amministrazione di AFX.  Ci sono diverse attività correlate che puoi svolgere.
+
+
+
+== Genera una richiesta di firma del certificato
+
+Per iniziare a utilizzare un certificato digitale, è necessario generare una richiesta di firma del certificato (CSR).  Una CSR viene utilizzata per richiedere un certificato firmato da un'autorità di certificazione (CA). A tale scopo, ONTAP crea una coppia di chiavi pubblica/privata e include la chiave pubblica nella CSR.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. In *Sicurezza* e accanto a *Certificati*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"]
+. Selezionareimage:icon_generate_csr.png["rettangolo blu contenente un segno più seguito dalle parole genera csr"] .
+. Fornire il nome comune dell'oggetto e il paese; facoltativamente, fornire l'organizzazione e l'unità organizzativa.
+. Per modificare i valori predefiniti che definiranno il certificato, selezionareimage:icon_more_options.png["due frecce rivolte in direzioni diagonali opposte seguite dalle parole \"altre opzioni\""] e apportare gli aggiornamenti desiderati.
+. Seleziona *Genera*.
+
+
+.Risultato
+Hai generato una CSR che può essere utilizzata per richiedere un certificato a chiave pubblica.
+
+
+
+== Aggiungi un'autorità di certificazione attendibile
+
+ONTAP fornisce un set predefinito di certificati radice attendibili da utilizzare con Transport Layer Security (TLS) e altri protocolli.  È possibile aggiungere altre autorità di certificazione attendibili in base alle esigenze.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. In *Sicurezza* e accanto a *Certificati*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Selezionare la scheda *Autorità di certificazione attendibili* e quindi selezionareimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Fornire le informazioni di configurazione, tra cui nome, ambito, nome comune, tipo e dettagli del certificato; è possibile importare il certificato selezionando *Importa*.
+. Selezionare *Aggiungi*.
+
+
+.Risultato
+Hai aggiunto un'autorità di certificazione attendibile al tuo sistema AFX.
+
+
+
+== Rinnovare o eliminare un'autorità di certificazione attendibile
+
+Le autorità di certificazione attendibili devono essere rinnovate annualmente.  Se non si desidera rinnovare un certificato scaduto, è necessario eliminarlo.
+
+.Passi
+. Selezionare *Cluster* e poi *Impostazioni*.
+. In *Sicurezza* e accanto a *Certificati*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Selezionare la scheda *Autorità di certificazione attendibili*.
+. Selezionare l'autorità di certificazione attendibile che si desidera rinnovare o eliminare.
+. Rinnovare o eliminare l'autorità di certificazione.
++
+[cols="2"]
+|===
+| Per rinnovare l'autorità di certificazione, procedere come segue: | Per eliminare l'autorità di certificazione, procedere come segue: 
+
+
+ a| 
+.. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] e poi seleziona *Rinnova*.
+.. Inserisci o importa le informazioni del certificato e seleziona *Rinnova*.
+
+ a| 
+.. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Elimina*.
+.. Conferma che vuoi eliminare e seleziona *Elimina*.
+
+
+|===
+
+
+.Risultato
+Hai rinnovato o eliminato un'autorità di certificazione attendibile esistente sul tuo sistema AFX.
+
+
+
+== Aggiungere un certificato client/server o un'autorità di certificazione locale
+
+È possibile aggiungere un certificato client/server o un'autorità di certificazione locale per abilitare servizi Web sicuri.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. In *Sicurezza* e accanto a *Certificati*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Selezionare *Certificati client/server* o *Autorità di certificazione locali*, a seconda delle esigenze.
+. Aggiungi le informazioni del certificato e seleziona *Salva*.
+
+
+.Risultato
+Hai aggiunto un nuovo certificato client/server o autorità locali al tuo sistema AFX.
+
+
+
+== Rinnovare o eliminare un certificato client/server o autorità di certificazione locali
+
+I certificati client/server e le autorità di certificazione locali devono essere rinnovati annualmente.  Se non si desidera rinnovare un certificato scaduto o le autorità di certificazione locali, è necessario eliminarli.
+
+.Passi
+. Selezionare *Cluster* e poi *Impostazioni*.
+. In *Sicurezza* e accanto a Certificati, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Selezionare *Certificati client/server* o *Autorità di certificazione locali*, a seconda delle esigenze.
+. Seleziona il certificato che desideri rinnovare o eliminare.
+. Rinnovare o eliminare l'autorità di certificazione.
++
+[cols="2"]
+|===
+| Per rinnovare l'autorità di certificazione, procedere come segue: | Per eliminare l'autorità di certificazione, procedere come segue: 
+
+
+ a| 
+.. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] e poi seleziona *Rinnova*.
+.. Inserisci o importa le informazioni del certificato e seleziona *Rinnova*.
+
+ a| 
+Selezionareimage:icon_kabob.gif["tre punti blu verticali"] e quindi seleziona *Elimina*.
+
+|===
+
+
+.Risultato
+Hai rinnovato o eliminato un certificato client/server esistente o un'autorità di certificazione locale sul tuo sistema AFX.
+
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/authentication/manage-certificates-sm-task.html["Gestire i certificati ONTAP con System Manager"^]
+

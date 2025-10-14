@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: install-setup/deploy-hardware.html 
+keywords: afx, afx 1k, install, setup, hardware, deploy 
+summary: 'Scopri come installare i kit di guide per il sistema di archiviazione AFX 1K e i ripiani di archiviazione e come fissare l"hardware AFX nell"armadio o nel rack Telco.' 
+---
+= Installa il tuo sistema di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver installato gli switch, dovresti installare l'hardware per il tuo sistema di archiviazione AFX 1K.  Per prima cosa, installa i kit di binari.  Quindi installa e fissa il tuo sistema di archiviazione in un armadio o in un rack per telecomunicazioni.
+
+.Prima di iniziare
+* Assicuratevi di avere le istruzioni fornite insieme al kit ferroviario.
+* Comprendere le problematiche di sicurezza legate al peso del sistema di stoccaggio e dello scaffale di stoccaggio.
+* È importante sapere che il flusso d'aria attraverso il sistema di archiviazione entra dalla parte anteriore, dove sono installati la cornice o i cappucci terminali, e fuoriesce dalla parte posteriore, dove si trovano le porte.
+
+
+.Passi
+. Installare i kit di guide per il sistema di stoccaggio e i ripiani, secondo necessità, seguendo le istruzioni incluse nei kit.
+. Installa e fissa il tuo controller nell'armadio o nel rack Telco:
++
+.. Posizionare il sistema di archiviazione sulle guide al centro dell'armadio o del rack Telco, quindi sostenerlo dal basso e farlo scorrere in posizione.
+.. Fissare il sistema di archiviazione all'armadio o al rack Telco utilizzando le viti di montaggio incluse.
+
+
+. Fissare la cornice alla parte anteriore del controller.
+. Se il sistema di archiviazione AFX 1K è dotato di un dispositivo di gestione dei cavi, collegarlo alla parte posteriore del sistema di archiviazione.
++
+image::../media/drw_affa1k_install_cable_mgmt_ieops-1697.svg[Installare il dispositivo di gestione dei cavi]
+
+. Installare e fissare il ripiano portaoggetti:
++
+.. Posizionare la parte posteriore del ripiano portaoggetti sulle guide, quindi sostenere il ripiano dal basso e farlo scorrere nell'armadietto o nel rack Telco.
++
+In generale, gli scaffali di stoccaggio e i controller dovrebbero essere installati in prossimità degli interruttori.  Se si installano più ripiani di stoccaggio, posizionare il primo ripiano direttamente sopra i controller.  Posizionare il secondo ripiano portaoggetti direttamente sotto i controller.  Ripetere questo schema per eventuali ripiani aggiuntivi.
+
+.. Fissare il ripiano portaoggetti all'armadio o al rack Telco utilizzando le viti di montaggio incluse.
+
+
+
+
+.Cosa succederà ora?
+Dopo aver installato l'hardware per il sistema AFX, rivedere illink:afx-cable-overview.html["configurazioni di cablaggio supportate per il tuo sistema di archiviazione AFX 1K"] .

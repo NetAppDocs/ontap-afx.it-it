@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: administer/additional-ontap-cluster.html 
+keywords: afx, afx system, additional administration, advanced administration 
+summary: Oltre alla tipica amministrazione del cluster AFX, potrebbero esserci altre attività da svolgere in base al tuo ambiente.  La maggior parte delle attività aggiuntive può essere eseguita tramite System Manager, anche se in alcuni casi potrebbe essere necessario utilizzare la CLI. 
+---
+= Amministrazione aggiuntiva per un cluster di sistemi di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Oltre alla tipica amministrazione del cluster AFX, potrebbero esserci altre attività da svolgere in base al tuo ambiente.  La maggior parte delle attività aggiuntive può essere eseguita tramite System Manager, anche se in alcuni casi potrebbe essere necessario utilizzare la CLI.
+
+
+NOTE: Le funzionalità e l'amministrazione ONTAP descritte sono comuni ai sistemi di archiviazione AFX e ai sistemi AFF o FAS che eseguono Unified ONTAP.  Se necessario, sono inclusi i link alla documentazione Unified ONTAP pertinente.
+
+
+
+== Licenza
+
+I sistemi AFX sono concessi in licenza in modo simile ai sistemi Unified ONTAP AFF e FAS .  Un cluster AFX include di default la maggior parte delle funzionalità per i protocolli supportati.
+
+
+
+=== Gestione delle licenze ONTAP
+
+Una licenza ONTAP è un registro di uno o più diritti software.  Tutte le licenze sono definite e fornite tramite un file di licenza NetApp (NLF). Fare riferimento a https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["Panoramica delle licenze ONTAP"^] per maggiori informazioni.
+
+
+
+=== Installare una licenza su un sistema AFX
+
+È possibile installare i file di licenza per attivare funzionalità aggiuntive, se necessario, per il sistema di archiviazione AFX.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. Accanto a *Licenze*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Selezionare la scheda *Funzionalità* per visualizzare le funzionalità ONTAP disponibili.
+. Per installare facoltativamente una licenza, selezionare la scheda *Licenze installate*.
+. Selezionareimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Selezionare un file di licenza locale e selezionare *Aggiungi*.
+
+
+
+
+== Sicurezza
+
+Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configurare e utilizzare con la tua distribuzione AFX.
+
+
+
+=== Sicurezza ONTAP e crittografia dei dati
+
+È importante proteggere la sicurezza e la privacy del tuo sistema di archiviazione AFX. Fare riferimento a  https://docs.netapp.com/us-en/ontap/security-encryption/index.html["Sicurezza e crittografia dei dati"^]
+
+
+
+=== Autenticazione e controllo degli accessi ONTAP
+
+Il sistema di archiviazione AFX offre diverse opzioni per la configurazione dei servizi di autenticazione e controllo degli accessi. Fare riferimento a https://docs.netapp.com/us-en/ontap/authentication-access-control/index.html["Autenticazione e controllo degli accessi"^] per maggiori informazioni.
+
+
+
+=== Amministrare OAuth 2.0 su un sistema AFX
+
+OAuth 2.0 è il framework di autorizzazione standard del settore utilizzato per limitare e controllare l'accesso alle risorse protette mediante token di accesso firmati.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. Nella sezione *Sicurezza*, accanto ad *Autorizzazione OAuth 2.0*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] .
+. Abilita OAuth 2.0
+. Selezionare *Aggiungi configurazione* e fornire i dettagli della configurazione.
+. Seleziona *Salva*.
+
+
+
+
+== Informazioni correlate
+
+* link:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione AFX"]
+* https://docs.netapp.com/us-en/ontap/authentication/overview-oauth2.html["Panoramica dell'implementazione di ONTAP OAuth 2.0"^]
+* link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva per AFX SVM"]
+

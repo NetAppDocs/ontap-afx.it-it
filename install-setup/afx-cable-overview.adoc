@@ -1,0 +1,62 @@
+---
+permalink: install-setup/afx-cable-overview.html 
+sidebar: sidebar 
+keywords: afx, afx 1k, cable, overview, cisco 9332, cisco 9364, cabling, hardware, switches, storage shelves, disk shelves, controller nodes 
+summary: Scopri come cablare i nodi del controller alla rete, agli switch e agli scaffali di archiviazione. 
+---
+= Configurazioni supportate per il tuo sistema di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri i componenti hardware supportati e le opzioni di cablaggio per il sistema di archiviazione AFX 1K, inclusi gli scaffali per dischi di archiviazione compatibili, gli switch e i tipi di cavi necessari per una corretta configurazione del sistema.
+
+
+
+== Configurazione di cablaggio AFX 1K supportata
+
+La configurazione iniziale del sistema di archiviazione AFX 1K supporta un minimo di quattro nodi controller collegati tramite doppi switch agli scaffali dei dischi di archiviazione.
+
+Ulteriori nodi controller e ripiani per dischi ampliano la configurazione iniziale del sistema di storage AFX 1K.  Le configurazioni AFX 1K espanse seguono la stessa metodologia di cablaggio basata su switch dello schema illustrato di seguito.
+
+image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Esempio di cablaggio del sistema di archiviazione AFK 1K"]
+
+
+
+== Componenti hardware supportati
+
+Esaminare i ripiani per dischi di archiviazione, gli switch e i tipi di cavi compatibili con il sistema di archiviazione AFX 1K.
+
+[cols="2,2,3,6"]
+|===
+| *Scaffale del controller* | *Scaffale dei dischi* | *Switch supportati* | *Cavi supportati* 
+
+
+ a| 
+AFX 1K
+ a| 
+NX224
+ a| 
+* Cisco Nexus 9332D-GX2B (400GbE)
+* Cisco Nexus 9364D-GX2A (400 GbE)
+
+ a| 
+* Cavi di breakout QSFP-DD da 400GbE a 4x100GbE QSFP
++
+
+NOTE: I cavi breakout vengono utilizzati per le connessioni 100GbE tra switch, controller e ripiani dei dischi.
+
++
+** Cavi da 100 GbE al cluster del controller e alle porte HA
+** Cavi da 100 GbE agli scaffali dei dischi
+
+
+* 2 cavi 400GbE per connessioni ISL tra switch A e switch B
+* Cavi RJ-45 per connessioni di gestione
+
+
+|===
+.Cosa succederà ora?
+Dopo aver esaminato la configurazione del sistema supportato e i componenti hardware,link:install-network-reqs.html["rivedere i requisiti di rete per il sistema di archiviazione AFX 1K"] .

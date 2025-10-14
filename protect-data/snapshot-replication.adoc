@@ -1,0 +1,183 @@
+---
+sidebar: sidebar 
+permalink: protect-data/snapshot-replication.html 
+keywords: afx, afx system, manage replication, manage snapshot replication 
+summary: La replica snapshot è un processo in cui i gruppi di coerenza sul sistema AFX vengono copiati in una posizione geograficamente remota.  Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a una policy di replica.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o la migrazione dei dati. 
+---
+= Gestire la replica degli snapshot su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La replica snapshot è un processo in cui i gruppi di coerenza sul sistema AFX vengono copiati in una posizione geograficamente remota.  Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a una policy di replica.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o la migrazione dei dati.
+
+Per impostare la replica Snapshot, è necessario stabilire una relazione di replica tra il sistema di archiviazione AFX e la posizione remota.  La relazione di replicazione è regolata da una politica di replicazione.  Durante la configurazione del cluster viene creata una policy predefinita per replicare tutti gli snapshot.  È possibile utilizzare la policy predefinita oppure, facoltativamente, crearne una nuova.
+
+
+
+== Passaggio 1: creare una relazione peer del cluster
+
+Prima di poter proteggere i dati replicandoli su un cluster remoto, è necessario creare una relazione peer tra il cluster locale e quello remoto.
+
+.Prima di iniziare
+I prerequisiti per il cluster peering sono gli stessi per i sistemi AFX e per gli altri sistemi ONTAP . link:https://docs.netapp.com/us-en/ontap/peering/prerequisites-cluster-peering-reference.html["Esaminare i prerequisiti per il peering del cluster"^] .
+
+.Passi
+. Nel cluster locale, in System Manager, selezionare *Cluster > Impostazioni*.
+. In *Impostazioni intercluster* accanto a *Peer cluster* selezionaimage:icon_kabob.gif["tre punti blu verticali"] , quindi seleziona *Aggiungi un peer del cluster*.
+. Seleziona *Avvia cluster remoto*; verrà generata una passphrase che utilizzerai per autenticarti con il cluster remoto.
+. Dopo aver generato la passphrase per il cluster remoto, incollarla in *Passphrase* sul cluster locale.
+. Selezionareimage:icon_add.gif["segno più blu seguito dalla parola aggiungi in lettere blu"] ; quindi immettere l'indirizzo IP dell'interfaccia di rete intercluster.
+. Selezionare *Avvia peering cluster*.
+
+
+.Cosa succederà ora?
+Hai effettuato il peering per un cluster AFX locale con un cluster remoto.  Ora puoi creare una relazione di replica.
+
+
+
+== Passaggio 2: Facoltativamente, creare una policy di replicazione
+
+La policy di replica degli snapshot definisce quando gli aggiornamenti eseguiti sul cluster AFX vengono replicati sul sito remoto.
+
+.Passi
+. In System Manager, selezionare *Protezione > Criteri*; quindi selezionare *Criteri di replica*.
+. Selezionareimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Immettere un nome per la policy di replicazione oppure accettare il nome predefinito; quindi immettere una descrizione.
+. Selezionare l'*Ambito della policy*.
++
+Se si desidera applicare la policy di replica all'intero cluster, selezionare *Cluster*.  Se si desidera che il criterio di replica venga applicato solo al volume in una specifica VM di archiviazione, selezionare *VM di archiviazione*.
+
+. Selezionare il *Tipo di policy*.
++
+[cols="2,6a"]
+|===
+| Opzione | Passi 
+
+
+| Copiare i dati sul sito remoto dopo averli scritti sulla sorgente.  a| 
+.. Selezionare *Asincrono*.
+.. In *Trasferisci snapshot dall'origine*, accetta la pianificazione di trasferimento predefinita o selezionane una diversa.
+.. Selezionare per trasferire tutti gli snapshot o per creare regole per determinare quali snapshot trasferire.
+.. Facoltativamente, abilitare la compressione di rete.
+
+
+
+
+| Scrivere i dati contemporaneamente sul sito sorgente e su quello remoto.  a| 
+.. Selezionare *Sincrono*.
+
+
+|===
+. Seleziona *Salva*.
+
+
+.Cosa succederà ora?
+Hai creato una policy di replicazione e ora sei pronto a creare una relazione di replicazione tra il tuo sistema AFX e la tua posizione remota.
+
+
+
+== Passaggio 3: creare una relazione di replicazione
+
+Una relazione di replica snapshot stabilisce una connessione tra il sistema AFX e una posizione remota, in modo da poter replicare i gruppi di coerenza su un cluster remoto.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o per la migrazione dei dati.
+
+Per proteggersi dagli attacchi ransomware, quando si imposta la relazione di replica, è possibile scegliere di bloccare gli snapshot di destinazione.  Gli snapshot bloccati non possono essere eliminati accidentalmente o intenzionalmente.  È possibile utilizzare snapshot bloccati per recuperare i dati se un volume viene compromesso da un attacco ransomware.
+
+.Prima di iniziare
+Se vuoi bloccare gli snapshot di destinazione, devilink:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["inizializzare l'orologio di conformità Snapshot"] prima di creare la relazione di replicazione.
+
+Creare una relazione di replica con o senza snapshot di destinazione bloccati.
+
+[role="tabbed-block"]
+====
+.Con istantanee bloccate
+--
+.Passi
+. In Gestione sistema, seleziona *Protezione > Gruppi di coerenza*.
+. Seleziona un gruppo di coerenza.
+. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Proteggi*.
+. In *Protezione remota*, seleziona *Replica su un cluster remoto*.
+. Selezionare la *Criterio di replicazione*.
++
+È necessario selezionare un criterio di replica _vault_.
+
+. Selezionare *Impostazioni destinazione*.
+. Seleziona *Blocca gli snapshot di destinazione per impedirne l'eliminazione*
+. Inserire il periodo massimo e minimo di conservazione dei dati.
+. Per ritardare l'inizio del trasferimento dei dati, deselezionare *Avvia trasferimento immediatamente*.
++
+Per impostazione predefinita, il trasferimento iniziale dei dati inizia immediatamente.
+
+. Facoltativamente, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni di destinazione*, quindi selezionare *Ignora pianificazione di trasferimento*.
++
+Per essere supportato, il tuo programma di trasferimento deve durare almeno 30 minuti.
+
+. Seleziona *Salva*.
+
+
+--
+.Senza snapshot bloccati
+--
+.Passi
+. In Gestione sistema, selezionare *Protezione > Replica*.
+. Selezionare per creare la relazione di replica con la destinazione locale o con l'origine locale.
++
+[cols="2,2"]
+|===
+| Opzione | Passi 
+
+
+| Destinazioni locali  a| 
+.. Seleziona *Destinazioni locali*, quindi selezionaimage:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replica in lettere bianche"] .
+.. Cerca e seleziona il gruppo di coerenza di origine.
++
+Il gruppo di coerenza _source_ si riferisce al gruppo di coerenza sul cluster locale che si desidera replicare.
+
+
+
+
+
+| Fonti locali  a| 
+.. Seleziona *Fonti locali*, quindi selezionaimage:icon_replicate_blue_bg.png["rettangolo con sfondo blu e la parola replica in lettere bianche"] .
+.. Cerca e seleziona il gruppo di coerenza di origine.
++
+Il gruppo di coerenza _source_ si riferisce al gruppo di coerenza sul cluster locale che si desidera replicare.
+
+.. In *Destinazione replica*, seleziona il cluster su cui effettuare la replica, quindi seleziona la VM di archiviazione.
+
+
+|===
+. Selezionare una politica di replicazione.
+. Per ritardare l'inizio del trasferimento dei dati, selezionare *Impostazioni destinazione*; quindi deselezionare *Avvia trasferimento immediatamente*.
++
+Per impostazione predefinita, il trasferimento iniziale dei dati inizia immediatamente.
+
+. Facoltativamente, per ignorare la pianificazione di trasferimento predefinita, selezionare *Impostazioni di destinazione*, quindi selezionare *Ignora pianificazione di trasferimento*.
++
+Per essere supportato, il tuo programma di trasferimento deve durare almeno 30 minuti.
+
+. Seleziona *Salva*.
+
+
+--
+====
+.Cosa succederà ora?
+Ora che hai creato una politica e una relazione di replicazione, il trasferimento iniziale dei dati inizia come definito nella politica di replicazione.  Facoltativamente, è possibile testare il failover della replica per verificare che il failover possa avvenire correttamente anche se il sistema AFX va offline.
+
+
+
+== Passaggio 4: testare il failover della replica
+
+Facoltativamente, verifica di poter servire correttamente i dati dai volumi replicati su un cluster remoto se il cluster di origine è offline.
+
+.Passi
+. In Gestione sistema, selezionare *Protezione > Replica*.
+. Passa il mouse sulla relazione di replicazione che vuoi testare, quindi selezionaimage:icon_kabob.gif["tre punti blu verticali"] .
+. Selezionare *Test failover*.
+. Immettere le informazioni di failover, quindi selezionare *Test failover*.
+
+
+.Cosa succederà ora?
+Ora che i tuoi dati sono protetti con la replica snapshot per il ripristino di emergenza, dovrestilink:../secure-data/encrypt-data-at-rest.html["crittografa i tuoi dati a riposo"] in modo che non possa essere letto se un disco nel tuo sistema AFX viene riutilizzato, restituito, smarrito o rubato.

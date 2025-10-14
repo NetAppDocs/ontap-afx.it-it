@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: administer/manage-cluster-networking.html 
+keywords: afx, afx system, networking, cluster networking, broadcast domain, ipsace, subnet, network interface 
+summary: 'È necessario configurare la rete del sistema di archiviazione AFX.  L"ambiente di rete supporta diversi scenari di connessione, tra cui l"accesso dei client ai dati sulle SVM e la comunicazione tra cluster.' 
+---
+= Gestire la rete del cluster del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È necessario configurare la rete del sistema di archiviazione AFX.  L'ambiente di rete supporta diversi scenari, tra cui l'accesso dei client ai dati sulle SVM e la comunicazione tra cluster.
+
+
+NOTE: Creare una risorsa di rete è un primo passo importante.  È inoltre necessario eseguire ulteriori azioni amministrative, come la modifica o l'eliminazione delle definizioni di rete, a seconda delle necessità.
+
+
+
+== Crea un dominio di trasmissione
+
+Un dominio broadcast semplifica la gestione della rete cluster raggruppando le porte che fanno parte della stessa rete di livello due.  Alle macchine virtuali di archiviazione (SVM) possono quindi essere assegnate porte nel gruppo per il traffico dati o di gestione.
+
+Durante la configurazione del cluster vengono creati diversi domini di broadcast, tra cui:
+
+Predefinito:: Questo dominio di broadcast contiene porte nello spazio IP "Predefinito".  Queste porte vengono utilizzate principalmente per la trasmissione dei dati.  Sono incluse anche le porte di gestione dei cluster e dei nodi.
+Grappolo:: Questo dominio di broadcast contiene porte nello spazio IP "Cluster".  Queste porte vengono utilizzate per la comunicazione del cluster e includono tutte le porte del cluster da tutti i nodi nel cluster.
+
+
+Dopo aver inizializzato il cluster, è possibile creare domini di broadcast aggiuntivi.  Quando si crea un dominio broadcast, viene creato automaticamente un gruppo di failover contenente le stesse porte.
+
+.Informazioni su questo compito
+Il valore dell'unità di trasmissione massima (MTU) delle porte definite per un dominio di broadcast viene aggiornato al valore MTU impostato nel dominio di broadcast.
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Panoramica*.
+. In *Domini di trasmissione*, selezionaimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Fornire il nome del dominio di trasmissione o accettare quello predefinito.
++
+Tutti i nomi di dominio broadcast devono essere univoci all'interno di uno spazio IP.
+
+. Fornire l'unità di trasmissione massima (MTU).
++
+L'MTU è il pacchetto dati più grande che può essere accettato nel dominio broadcast.
+
+. Selezionare le porte desiderate e selezionare *Salva*.
+
+
+
+
+== Crea uno spazio IP
+
+Uno spazio IP è un dominio amministrativo per gli indirizzi IP e la relativa configurazione di rete.  Questi spazi possono essere utilizzati per supportare le SVM tramite amministrazione e routing isolati.  Ad esempio, sono utili quando i client hanno indirizzi IP sovrapposti provenienti dallo stesso intervallo di indirizzi IP e subnet.
+
+
+TIP: Per poter creare una subnet è necessario disporre di uno spazio IP.
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Panoramica*.
+. In *IPspaces*, selezionaimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Fornire il nome dello spazio IP o accettare quello predefinito.
++
+Tutti i nomi IPspace devono essere univoci all'interno di un cluster.
+
+. Seleziona *Salva*.
+
+
+.Cosa c'è dopo?
+È possibile utilizzare IPspace per creare una subnet.
+
+
+
+== Crea una sottorete
+
+Una sottorete o subnet impone una divisione logica dello spazio degli indirizzi IP nella rete.  Consente di allocare blocchi dedicati di indirizzi IP per la creazione di un'interfaccia di rete (LIF).  Le subnet semplificano la creazione di LIF consentendo di utilizzare il nome della subnet anziché una combinazione specifica di indirizzo IP e maschera di rete.
+
+.Prima di iniziare
+È necessario disporre di un dominio di broadcast e di uno spazio IP in cui verrà definita la subnet.  Da notare inoltre:
+
+* Tutti i nomi di subnet devono essere univoci all'interno di uno specifico spazio IP.
+* L'intervallo di indirizzi IP utilizzato per una subnet non può sovrapporsi agli indirizzi IP di altre subnet.
+
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Panoramica*.
+. Nella scheda *Sottoreti*, selezionaimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Fornire i dettagli di configurazione, tra cui il nome della subnet, i dettagli dell'indirizzo IP e il dominio di broadcast.
+. Seleziona *Salva*.
+
+
+.Cosa c'è dopo?
+La nuova subnet semplificherà la creazione delle interfacce di rete.
+
+
+
+== Creare un'interfaccia di rete
+
+Un'interfaccia di rete logica (LIF) è costituita da un indirizzo IP e dai relativi parametri di configurazione di rete.  Può essere associato a una porta fisica o logica e viene solitamente utilizzato dai client per accedere ai dati forniti da una SVM.  I LIF garantiscono resilienza in caso di guasto e possono migrare tra le porte del nodo in modo che la comunicazione non venga interrotta.
+
+.Passi
+. In Gestione sistema, seleziona *Rete* e poi *Panoramica*.
+. Nella scheda *Interfacce di rete*, selezionaimage:icon_add_blue_bg.png["rettangolo blu contenente un segno più seguito dalla parola aggiungi in lettere bianche"] .
+. Fornire i dettagli di configurazione, tra cui il nome dell'interfaccia, il tipo di interfaccia, i protocolli consentiti e i dettagli dell'indirizzo IP.
+. Seleziona *Salva*.
+
+
+
+
+== Informazioni correlate
+
+* link:../administer/manage-ethernet-ports.html["Gestisci le porte Ethernet AFX"]
+* https://docs.netapp.com/us-en/ontap/networking/configure_broadcast_domains_cluster_administrators_only_overview.html["Scopri di più sui domini di trasmissione ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_ipspaces_cluster_administrators_only_overview.html["Scopri di più sulla configurazione di ONTAP IPspace"^]
+* https://docs.netapp.com/us-en/ontap/networking/configure_subnets_cluster_administrators_only_overview.html["Scopri di più sulle subnet per la rete ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/concepts/network-connectivity-concept.html["Panoramica dell'architettura di rete"^]
+

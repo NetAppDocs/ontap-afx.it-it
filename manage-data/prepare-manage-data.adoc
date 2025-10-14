@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: manage-data/prepare-manage-data.html 
+keywords: afx, afx system, prepare, prepare manage, prepare manage data 
+summary: Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti e le funzionalità di base. 
+---
+= Preparati a gestire i dati del tuo sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti e le funzionalità di base.
+
+
+TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP .
+
+
+
+== Terminologia e opzioni
+
+Esistono diversi termini correlati all'archiviazione AFX che dovresti conoscere.
+
+FlexVolume:: FlexVol è un tipo di contenitore logico utilizzato nei sistemi di archiviazione AFX.  I volumi FlexVol possono essere espansi, contratti, spostati e copiati in modo efficiente.  Possono anche essere suddivisi in unità più gestibili utilizzando qtree e l'utilizzo delle risorse può essere limitato utilizzando quote.
+FlexGroup:: Un volume FlexGroup è un contenitore NAS scalabile che garantisce sia prestazioni elevate che distribuzione automatica del carico.  Ciascuno è costituito da più volumi che condividono il traffico in modo trasparente.  I volumi FlexGroup offrono numerosi vantaggi, tra cui una migliore scalabilità e prestazioni, nonché una gestione semplificata.
+FlexCache:: FlexCache è una tecnologia di caching ONTAP che crea repliche sparse e scrivibili di volumi sullo stesso cluster ONTAP o su cluster ONTAP diversi.  È progettato per migliorare le prestazioni di accesso ai dati avvicinandoli agli utenti, il che può tradursi in una maggiore velocità di elaborazione con un ingombro ridotto.  FlexCache è particolarmente utile per i flussi di lavoro ad alta intensità di lettura e aiuta a scaricare il traffico dai volumi a cui si accede più spesso.
+Secchio S3:: Un bucket S3 è un contenitore di archiviazione che contiene oggetti o dati nel cloud.  Con ONTAP, un bucket NAS S3 è una mappatura tra un nome di bucket S3 e un percorso NAS, consentendo l'accesso S3 a qualsiasi parte di uno spazio dei nomi SVM con volumi e struttura di directory esistenti.
+Contenitore dati:: Nel contesto di un sistema AFX, un contenitore di dati è un termine generico e può essere un volume o un bucket S3.
+Qtree:: Un qtree è una suddivisione logica all'interno di un volume che è possibile creare per gestire e organizzare i dati.  Consente di specificare le sue proprietà e lo stile di sicurezza (NTFS o UNIX) e può ereditare i criteri di esportazione dal volume padre o averne di propri.  Gli alberi Qtree possono contenere file e directory e vengono spesso utilizzati per gestire in modo più granulare autorizzazioni e quote all'interno di un volume.
+Quota:: Una quota in ONTAP è un limite impostato sulla quantità di spazio di archiviazione o sul numero di file che possono essere utilizzati da un utente, un gruppo o un qtree.  Le quote vengono utilizzate per gestire e controllare l'utilizzo delle risorse all'interno di un sistema di archiviazione, assicurando che nessun singolo utente o applicazione possa consumare una quantità eccessiva di risorse.
+
+
+
+
+== Opzioni di migrazione dei dati
+
+Esistono diverse opzioni per la migrazione dei dati.  L'attenzione è rivolta alla migrazione dei dati esterni in un cluster AFX.
+
+
+
+=== Migrazione dei dati da Unified ONTAP
+
+È disponibile un percorso di migrazione completamente integrato da Unified ONTAP ad AFX utilizzando le seguenti tecnologie:
+
+* SnapMirror
+* Migrazione SVM
+* SVM DR
+
+
+Inoltre, i volumi FlexCache possono essere collegati tra AFX e Unified ONTAP in entrambe le direzioni.
+
+
+
+=== Migrazione dei dati da una sorgente non ONTAP
+
+La migrazione dei dati da sistemi non ONTAP può essere eseguita utilizzando operazioni di copia a livello di file.  È possibile utilizzare sia utility di copia rapida come XCP o CloudSync, sia utility standard come RoboCopy (per SMB) e rsync (per NFS), sia strumenti di terze parti come DataDobi.
+
+
+
+=== Limitazioni alla migrazione
+
+I sistemi Unified ONTAP esistenti possono replicare su AFX se il volume di dati non contiene LUN o namespace NVMe.  Quando si esegue la replica su un sistema Unified ONTAP , la versione minima supportata per il sistema Unified ONTAP è 9.16.1.  Questa è la prima versione di Unified ONTAP che supporta Advanced Capacity Balancing.
+
+
+
+== Supporto AFX per il trunking NFS
+
+Il trunking NFS è una tecnologia che consente ai client NFS v4.1 di aprire più connessioni a diversi LIF sul server NFS.  Ciò aumenta la velocità di trasferimento dei dati e garantisce resilienza attraverso percorsi multipli.  Il trunking è utile per esportare volumi FlexVol verso client abilitati al trunking.
+
+Per abilitare il trunking, è necessario che un SVM sia configurato per NFS e che NFSv4.1 sia abilitato.  Richiede inoltre il rimontaggio di tutti i client NFSv4.x dopo una modifica alla configurazione, il che può risultare dirompente.
+
+
+
+== Analisi del file system
+
+File System Analytics (FSA) è una funzionalità di ONTAP che fornisce visibilità in tempo reale sull'utilizzo dei file e sulle tendenze della capacità di archiviazione nei volumi FlexGroup o FlexVol .
+
+FSA elimina la necessità di strumenti esterni offrendo informazioni sull'utilizzo dello storage e sulle opportunità di ottimizzazione.  FSA fornisce viste dettagliate a vari livelli della gerarchia del file system di un volume, inclusi i livelli SVM, volume, directory e file.
+
+
+
+== Visualizza una panoramica del tuo spazio di archiviazione
+
+Per iniziare a gestire i dati AFX, dovresti visualizzare una panoramica dello storage.
+
+.Informazioni su questo compito
+È possibile accedere a tutti i volumi e bucket definiti per il cluster AFX.  Ognuno di questi è considerato un contenitore di dati.
+
+.Passi
+. In Gestione sistema, seleziona *Archiviazione* e poi *Panoramica*
+. Accanto a *Volumi*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] per visualizzare un elenco di volumi.
+. Accanto a *Bucket*, selezionaimage:icon_arrow.gif["freccia blu che punta a destra"] per visualizzare un elenco di bucket.
+. Aggiorna o crea un contenitore dati in base alle tue esigenze.
+
+
+
+
+== Informazioni correlate
+
+* link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]
+* link:../get-started/prepare-cluster-admin.html["Preparati ad amministrare il tuo sistema AFX"]
+* link:../administer/migrate-svm.html["Migrare un sistema AFX SVM"]
+* https://mysupport.netapp.com/matrix/["Strumento matrice di interoperabilità NetApp"^]
+

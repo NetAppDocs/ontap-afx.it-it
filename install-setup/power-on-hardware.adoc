@@ -1,0 +1,162 @@
+---
+sidebar: sidebar 
+permalink: install-setup/power-on-hardware.html 
+keywords: afx, afx 1k, power on 
+summary: Accendere ogni ripiano per assegnare un ID ripiano univoco, accendere i nodi del controller AFX e fissare i cavi di alimentazione. 
+---
+= Accendi il tuo sistema di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver installato l'hardware del rack per il sistema di archiviazione AFX 1K e aver installato i cavi per i nodi del controller e gli scaffali di archiviazione, è necessario accendere gli scaffali di archiviazione e i nodi del controller.
+
+
+
+== Passaggio 1: accendere lo scaffale e assegnare l'ID dello scaffale
+
+Ogni ripiano ha un ID univoco, che ne garantisce la distinzione nella configurazione del sistema di archiviazione.
+
+.Informazioni su questo compito
+* Un ID scaffale valido è compreso tra 01 e 99.
+* È necessario spegnere e riaccendere uno scaffale (scollegare entrambi i cavi di alimentazione, attendere almeno 10 secondi e poi ricollegarli) affinché l'ID scaffale abbia effetto.
+
+
+.Passi
+. Per accendere lo scaffale, collegare prima i cavi di alimentazione allo scaffale, fissarli in posizione con l'apposito fermacavo e quindi collegare i cavi di alimentazione alle fonti di alimentazione su circuiti diversi.
++
+Lo scaffale si accende e si avvia automaticamente quando viene collegato.
+
+. Rimuovere il cappuccio terminale sinistro per accedere al pulsante ID dello scaffale dietro la mascherina.
++
+image::../media/drw_tp_change_shelf_id_ieops-2381.svg[Cambia ID scaffale NX224]
+
++
+[cols="20%,80%"]
+|===
+
+
+ a| 
+image::../media/icon_round_1.png[Numero di chiamata 1]
+ a| 
+Tappo terminale per scaffale
+
+
+
+ a| 
+image::../media/icon_round_2.png[[Numero di chiamata 2]
+ a| 
+Frontalino dello scaffale
+
+
+
+ a| 
+image::../media/icon_round_3.png[[Numero di chiamata 3]
+ a| 
+Numero ID scaffale
+
+
+
+ a| 
+image::../media/icon_round_4.png[[Numero di chiamata 4]
+ a| 
+Pulsante ID scaffale
+
+|===
+. Cambia il primo numero dell'ID dello scaffale:
++
+.. Inserire l'estremità raddrizzata di una graffetta o di una penna a sfera dalla punta stretta nel piccolo foro per premere delicatamente il pulsante ID dello scaffale.
+.. Premere delicatamente e tenere premuto il pulsante ID scaffale finché il primo numero sul display digitale non lampeggia, quindi rilasciare il pulsante.
++
+Il numero lampeggia entro 15 secondi, attivando la modalità di programmazione dell'ID scaffale.
+
++
+
+NOTE: Se l'ID impiega più di 15 secondi a lampeggiare, premere e tenere premuto nuovamente il pulsante ID dello scaffale, assicurandosi di premerlo fino in fondo.
+
+.. Premere e rilasciare il pulsante ID scaffale per avanzare di numero fino a raggiungere il numero desiderato da 0 a 9.
++
+Ogni pressione e rilascio può durare anche solo un secondo.
+
++
+Il primo numero continua a lampeggiare.
+
+
+
+. Cambia il secondo numero dell'ID dello scaffale:
++
+.. Tenere premuto il pulsante finché il secondo numero sul display digitale non lampeggia.
++
+Potrebbero volerci fino a tre secondi prima che il numero lampeggi.
+
++
+Il primo numero sul display digitale smette di lampeggiare.
+
+.. Premere e rilasciare il pulsante ID scaffale per avanzare di numero fino a raggiungere il numero desiderato da 0 a 9.
++
+Il secondo numero continua a lampeggiare.
+
+
+
+. Bloccare il numero desiderato e uscire dalla modalità di programmazione tenendo premuto il pulsante ID scaffale finché il secondo numero non smette di lampeggiare.
++
+Potrebbero volerci fino a tre secondi prima che il numero smetta di lampeggiare.
+
++
+Entrambi i numeri sul display digitale iniziano a lampeggiare e il LED ambra si illumina dopo circa cinque secondi, avvisandoti che l'ID scaffale in sospeso non è ancora entrato in vigore.
+
+. Per rendere effettivo l'ID dello scaffale, riavviare lo scaffale per almeno 10 secondi.
++
+.. Scollegare il cavo di alimentazione da entrambi gli alimentatori sullo scaffale.
+.. Attendi 10 secondi.
+.. Ricollegare i cavi di alimentazione agli alimentatori dello scaffale per completare il ciclo di accensione.
++
+L'alimentatore si accende non appena si collega il cavo di alimentazione.  Il suo LED bicolore dovrebbe illuminarsi di verde.
+
+
+
+. Riposizionare il tappo terminale sinistro.
+
+
+
+
+== Passaggio 2: accendere i nodi del controller
+
+Dopo aver acceso gli scaffali di archiviazione e assegnato loro ID univoci, accendere l'alimentazione ai nodi del controller di archiviazione.
+
+.Passi
+. Collegare il laptop alla porta seriale della console.  Ciò consente di monitorare la sequenza di avvio quando i controller sono accesi.
++
+.. Impostare la porta della console seriale sul laptop a 115.200 baud con N-8-1.
++
+Per istruzioni su come configurare la porta della console seriale, consultare la guida in linea del laptop.
+
+.. Collegare il cavo della console al laptop e collegare la porta seriale della console sul controller utilizzando il cavo della console fornito con il sistema di archiviazione.
+.. Collegare il laptop allo switch sulla subnet di gestione.
++
+image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Connessioni della console]
+
+
+
+
+
+. Assegnare un indirizzo TCP/IP al laptop, utilizzandone uno presente nella subnet di gestione.
+. Collegare i cavi di alimentazione agli alimentatori del controller, quindi collegarli alle fonti di alimentazione su circuiti diversi.
++
+image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Schema di collegamento dell'alimentazione del sistema di accumulo A1K e A70 o A90]
+
++
+** Il sistema inizia ad avviarsi.  L'avvio iniziale potrebbe richiedere fino a otto minuti.
+** I LED lampeggiano e le ventole si avviano, indicando che i controller si stanno accendendo.
+** All'avvio le ventole potrebbero essere rumorose, il che è normale.
+
+
+
+
+. Fissare i cavi di alimentazione utilizzando il dispositivo di fissaggio presente su ciascun alimentatore.
+
+
+.Cosa succederà ora?
+Dopo aver acceso il sistema di archiviazione AFX 1K,link:../install-setup/cluster-setup.html["impostare un cluster AFX"] .

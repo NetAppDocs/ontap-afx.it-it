@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: protect-data/create-snapshot.html 
+keywords: afx, afx system, snapshots, create snapshot 
+summary: Per eseguire il backup dei dati sul sistema AFX, è necessario creare uno snapshot.  È possibile creare manualmente uno snapshot oppure pianificarne la creazione automatica utilizzando un gruppo di coerenza. 
+---
+= Creare uno snapshot su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per eseguire il backup dei dati sul sistema AFX, è necessario creare uno snapshot.  È possibile creare manualmente uno snapshot oppure pianificarne la creazione automatica utilizzando un gruppo di coerenza.
+
+
+
+== Prima di iniziare
+
+Uno snapshot è una copia locale e di sola lettura dei dati che puoi utilizzare per ripristinare i volumi in punti specifici nel tempo.  Gli snapshot possono essere creati manualmente su richiesta o automaticamente a intervalli regolari in base a unlink:policies-schedules.html["politica e pianificazione degli snapshot"] .
+
+La politica e la pianificazione degli snapshot specificano i dettagli, tra cui quando creare gli snapshot, quante copie conservare, come denominarli e come etichettarli per la replica.  Ad esempio, un sistema potrebbe creare uno snapshot ogni giorno alle 00:10, conservare le due copie più recenti, denominarle "giornaliere" (aggiungendo un timestamp) ed etichettarle come "giornaliere" per la replica.
+
+.Tipi di istantanee
+È possibile creare uno snapshot on-demand di un singolo volume o di un gruppo di coerenza.  È anche possibile creare snapshot automatizzati di un gruppo di coerenza contenente più volumi.  Tuttavia non è possibile creare snapshot automatizzati di un singolo volume.
+
+* Snapshot su richiesta
++
+È possibile creare uno snapshot on-demand di un volume in qualsiasi momento.  Non è necessario che il volume sia membro di un gruppo di coerenza per essere protetto da uno snapshot on-demand.  Se si crea uno snapshot di un volume che è membro di un gruppo di coerenza, gli altri volumi nel gruppo di coerenza non vengono inclusi nello snapshot.  Quando si crea uno snapshot on-demand di un gruppo di coerenza, vengono inclusi tutti i volumi nel gruppo di coerenza.
+
+* Istantanee automatizzate
++
+Gli snapshot automatizzati vengono creati in base alle definizioni dei criteri degli snapshot.  Per applicare un criterio di snapshot a un volume per la creazione automatica di snapshot, i volumi devono essere membri dello stesso gruppo di coerenza.  Se si applica un criterio di snapshot a un gruppo di coerenza, tutti i volumi nel gruppo di coerenza vengono protetti.
+
+
+
+
+
+== Crea uno snapshot
+
+Crea uno snapshot di un volume o di un gruppo di coerenza.
+
+[role="tabbed-block"]
+====
+.Istantanea di un gruppo di coerenza
+--
+.Passi
+. In Gestione sistema, seleziona *Protezione* e poi *Gruppi di coerenza*.
+. Passa il mouse sul nome del gruppo di coerenza che vuoi proteggere.
+. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Proteggi*.
+. Se si desidera creare uno snapshot immediato su richiesta, in *Protezione locale*, selezionare *Aggiungi uno snapshot ora*.
++
+La protezione locale crea lo snapshot sullo stesso cluster che contiene il volume.
+
++
+.. Inserisci un nome per lo snapshot oppure accetta il nome predefinito; quindi, facoltativamente, inserisci un'etichetta SnapMirror .
++
+L'etichetta SnapMirror viene utilizzata dalla destinazione remota.
+
+
+
+. Se si desidera creare snapshot automatizzati utilizzando un criterio di snapshot, selezionare *Pianifica snapshot*.
++
+.. Selezionare un criterio di snapshot.
++
+Accetta il criterio di snapshot predefinito, seleziona un criterio esistente o creane uno nuovo.
+
++
+[cols="2,6a"]
+|===
+| Opzione | Passi 
+
+
+| Seleziona un criterio di snapshot esistente  a| 
+Selezionareimage:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] accanto alla policy predefinita; quindi seleziona la policy esistente che desideri utilizzare.
+
+
+
+| Crea un nuovo criterio di snapshot  a| 
+... Selezionareimage:icon_add.gif["segno più blu seguito dalla parola aggiungi"] ; quindi immettere i parametri della policy snapshot.
+... Seleziona *Aggiungi criterio*.
+
+
+|===
+
+
+. Se desideri replicare gli snapshot su un cluster remoto, in *Protezione remota* seleziona *Replica su un cluster remoto*.
++
+.. Selezionare il cluster di origine e la VM di archiviazione, quindi selezionare la policy di replica.
++
+Per impostazione predefinita, il trasferimento iniziale dei dati per la replicazione inizia immediatamente.
+
+
+
+. Seleziona *Salva*.
+
+
+--
+.Istantanea di un volume
+--
+.Passi
+. In Gestione sistema, seleziona *Archiviazione* e poi *Volumi*.
+. Passare il mouse sul nome del volume che si desidera proteggere.
+. Selezionareimage:icon_kabob.gif["tre punti blu verticali"] ; quindi seleziona *Proteggi*.  Se si desidera creare uno snapshot immediato su richiesta, in *Protezione locale*, selezionare *Aggiungi uno snapshot ora*.
++
+La protezione locale crea lo snapshot sullo stesso cluster che contiene il volume.
+
+. Inserisci un nome per lo snapshot oppure accetta il nome predefinito; quindi, facoltativamente, inserisci un'etichetta SnapMirror .
++
+L'etichetta SnapMirror viene utilizzata dalla destinazione remota.
+
+. Se si desidera creare snapshot automatizzati utilizzando un criterio di snapshot, selezionare *Pianifica snapshot*.
++
+.. Selezionare un criterio di snapshot.
++
+Accetta il criterio di snapshot predefinito, seleziona un criterio esistente o creane uno nuovo.
+
++
+[cols="2,6a"]
+|===
+| Opzione | Passi 
+
+
+| Seleziona un criterio di snapshot esistente  a| 
+Selezionareimage:icon_dropdown_arrow.gif["freccia blu rivolta verso il basso"] accanto alla policy predefinita; quindi seleziona la policy esistente che desideri utilizzare.
+
+
+
+| Crea un nuovo criterio di snapshot  a| 
+... Selezionareimage:icon_add.gif["segno più blu seguito dalla parola aggiungi"] ; quindi immettere i parametri della policy snapshot.
+... Seleziona *Aggiungi criterio*.
+
+
+|===
+
+
+. Se desideri replicare gli snapshot su un cluster remoto, in *Protezione remota* seleziona *Replica su un cluster remoto*.
++
+.. Selezionare il cluster di origine e la VM di archiviazione, quindi selezionare la policy di replica.
++
+Per impostazione predefinita, il trasferimento iniziale dei dati per la replicazione inizia immediatamente.
+
+
+
+. Seleziona *Salva*.
+
+
+--
+====
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare un criterio di snapshot ONTAP"^]
+

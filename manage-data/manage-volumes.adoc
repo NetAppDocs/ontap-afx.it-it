@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: manage-data/manage-volumes.html 
+keywords: afx, afx system, manage volumes 
+summary: 'Sono numerose le attività amministrative che è possibile svolgere nell"ambito dell"amministrazione dei volumi definiti nel cluster AFX.' 
+---
+= Gestire i volumi del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sono numerose le attività amministrative che è possibile svolgere nell'ambito dell'amministrazione dei volumi definiti nel cluster AFX.
+
+
+
+== Crea un qtree
+
+Un qtree è una suddivisione logica all'interno di un volume che è possibile creare per organizzare e amministrare i dati.
+
+.Passi
+. In Gestione sistema, seleziona *Archiviazione* e poi *Qtrees*.
+. Selezionareimage:icon_add_blue_bg.png["Aggiungi con sfondo blu"] e fornire la configurazione di base, inclusi nome, volume e stile di sicurezza; facoltativamente configurare una quota.
+. Selezionare *Salva* per aggiungere il qtree.
+
+
+
+
+== Crea una quota
+
+Una quota è un limite impostato sulla quantità di spazio di archiviazione o sul numero di file che possono essere utilizzati da un utente, un gruppo o un qtree.  Le quote vengono utilizzate per gestire e controllare l'utilizzo delle risorse all'interno di un sistema AFX.
+
+.Passi
+. In Gestione sistema, seleziona *Archiviazione* e poi *Quote*.
+. Selezionare la scheda *Utilizzo* per visualizzare un elenco delle quote attive su tutti i volumi.
+. Selezionare la scheda *Volumi* per visualizzare un elenco dei volumi definiti nel cluster AFX; selezionare un volume specifico per visualizzare informazioni aggiuntive.
+. Per definire una quota, selezionare la scheda *Regole*.
+. Fornire i dettagli di configurazione, tra cui l'obiettivo della quota, il tipo e i limiti.
+. Selezionare *Salva* per aggiungere la quota.
+

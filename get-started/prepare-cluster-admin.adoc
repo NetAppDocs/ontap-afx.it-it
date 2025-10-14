@@ -1,0 +1,194 @@
+---
+sidebar: sidebar 
+permalink: get-started/prepare-cluster-admin.html 
+keywords: afx, afx system, prepare, administration 
+summary: Prima di distribuire AFX in un ambiente di produzione, è essenziale comprendere la struttura amministrativa e le opzioni di configurazione.  Ciò garantisce una gestione sicura, efficiente ed efficace del tuo cluster AFX. 
+---
+= Preparati ad amministrare il tuo sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di distribuire AFX in un ambiente di produzione, è essenziale comprendere la struttura amministrativa e le opzioni di configurazione.  Ciò garantisce una gestione sicura, efficiente ed efficace del tuo cluster AFX.
+
+
+
+== Comprendere le macchine virtuali di archiviazione
+
+Una macchina virtuale di archiviazione (SVM) è un ambiente server o tenant isolato all'interno di un cluster ONTAP .  È possibile configurare una SVM per fornire dati ai client connessi.  Dovresti avere familiarità con le capacità e le caratteristiche degli AFX SVM.
+
+
+NOTE: Un SVM dati viene creato quando si configura e si distribuisce inizialmente un cluster AFX.  Se necessario, è possibile creare ulteriori SVM di dati.
+
+Controllo amministrativo:: Le SVM dei dati possono essere utilizzate per stabilire e imporre l'isolamento dei dati e delle applicazioni.  Ciò può essere utile quando ci sono molti gruppi diversi con un'organizzazione più grande.  Il controllo amministrativo può essere delegato alle SVM per stabilire policy relative all'accesso, alla sicurezza e alla protezione dei dati.
+Account e ruoli RBAC:: Con AFX esistono due livelli di autenticazione e autorizzazione: livello cluster e livello SVM.  Oltre agli account del cluster, ogni SVM ha il suo set distinto di utenti e ruoli.  Nella maggior parte delle situazioni, l'utilizzo degli account a livello di cluster è adeguato.  Tuttavia, a seconda dell'ambiente, potrebbe essere necessario configurare e utilizzare anche gli account e i ruoli SVM più restrittivi. Vedere link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"] per maggiori informazioni.
+Risorse con ambito SVM:: Le risorse AFX e le entità configurabili sono associate al cluster o a una SVM specifica.  Sono numerose le risorse con ambito SVM, tra cui volumi e bucket, nonché account utente SVM e ruoli RBAC.
+Interfacce di rete dedicate:: Ogni SVM ha il proprio set dedicato di interfacce di rete.  Ad esempio, LIF separati vengono assegnati a un SVM per la gestione e l'accesso ai dati del cliente.
+
+
+
+
+== Due livelli amministrativi AFX
+
+Le attività amministrative ONTAP che svolgi con AFX rientrano generalmente in due categorie diverse.  Alcune attività si applicano al cluster ONTAP nel suo complesso, mentre altre si applicano a una SVM specifica.  Ciò si traduce in un modello amministrativo a due livelli.
+
+È importante notare che questi livelli descrivono il modo in cui vengono organizzate e assegnate le attività amministrative e non necessariamente il modo in cui viene configurata la sicurezza associata.  Ad esempio, sebbene un account amministratore del cluster sia necessario per eseguire l'amministrazione a livello di cluster, può essere utilizzato anche per l'amministrazione SVM.
+
+Amministratore del cluster:: L'amministratore del cluster ha il controllo completo del cluster AFX, inclusi tutti gli SVM di dati.  Il livello amministrativo del cluster AFX include solo le attività che un amministratore del cluster può eseguire e non alcuna delle attività amministrative specifiche di SVM. Vedere link:../administer/view-dashboard.html["Amministra il tuo cluster"] per maggiori informazioni.
+Amministratore SVM:: Il ruolo di amministratore SVM ha il controllo di uno specifico SVM di dati ed è quindi più limitato rispetto all'amministratore del cluster.  L'amministrazione SVM implica l'esecuzione di attività con oggetti e risorse che hanno un ambito SVM, come la creazione di un volume. Vedere link:../manage-data/prepare-manage-data.html["Gestisci le tue VM di archiviazione e i tuoi dati"] per maggiori informazioni.
+
+
+
+
+== Tre interfacce amministrative
+
+Come i sistemi AFF e FAS , AFX ha tre interfacce amministrative.  Il LIF (o indirizzo IP) da utilizzare varia in base all'interfaccia amministrativa e all'ambiente.
+
+
+NOTE: Per la maggior parte delle attività amministrative è preferibile l'interfaccia utente System Manager.  Se non diversamente indicato, dovresti utilizzare un account amministratore.
+
+[cols="25,75"]
+|===
+| Interfaccia | Descrizione 
+
+
+| Gestore di sistema | Si tratta di un'interfaccia utente grafica disponibile tramite un browser web.  È facile da usare e fornisce accesso alla maggior parte delle funzionalità di cui i clienti hanno bisogno.  L'accesso ad AFX tramite System Manager offre l'esperienza più semplice per la maggior parte delle esigenze di amministrazione di cluster ONTAP e SVM. 
+
+
+| Interfaccia della riga di comando | L' ONTAP CLI è accessibile tramite SSH.  A seconda dell'account, è possibile accedere al LIF di gestione del cluster o al LIF di gestione SVM.  La CLI è più difficile da usare ma è più robusta.  È preferibile e talvolta necessario per attività amministrative avanzate. 
+
+
+| API REST | AFX include un'API REST che puoi utilizzare per automatizzare l'amministrazione del tuo cluster AFX.  L'API condivide molte delle chiamate disponibili con l'API REST della personalità Unified ONTAP , con modifiche per supportare le funzionalità AFX esclusive. 
+|===
+
+
+== Impara a cercare, filtrare e ordinare le informazioni in System Manager
+
+L'interfaccia utente di System Manager include un solido set di funzionalità che consentono di accedere e visualizzare le informazioni necessarie.  Imparare a utilizzare queste funzionalità ti aiuterà a gestire meglio il sistema di archiviazione AFX. Vedere https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Cerca, filtra, ordina le informazioni in System Manager"^] per maggiori informazioni.
+
+
+
+== Accedi alla CLI ONTAP
+
+Sebbene sia possibile utilizzare System Manager per la maggior parte delle attività di amministrazione di AFX, alcune attività possono essere eseguite solo tramite l'interfaccia della riga di comando ONTAP .
+
+.Informazioni su questo compito
+È possibile accedere alla CLI ONTAP tramite la shell sicura (SSH).  La CLI dispone di più livelli di privilegio che determinano i comandi e i parametri dei comandi disponibili.  IL `admin` Il livello è il meno privilegiato e quello predefinito quando accedi. Puoi elevare il privilegio della tua sessione a `advanced` se necessario utilizzando il `set` comando.
+
+.Prima di iniziare
+Ti serviranno i seguenti elementi:
+
+* Indirizzo IP o nome di dominio del cluster o LIF di gestione SVM
+* Credenziali dell'account
+* Client SSH sulla tua workstation locale
+
+
+.Passi
+. Utilizza SSH per connetterti al tuo cluster AFX, ad esempio:
++
+`ssh admin@10.69.117.24`
+
+. Fornire la password dell'account.
+. Visualizza le directory dei comandi in cima alla gerarchia:
++
+`?`
+
+. Aumenta il livello di privilegio della tua sessione da `admin` A `advanced` :
++
+`set -privilege advanced`
+
+
+
+
+
+== Lavorare con coppie ONTAP HA
+
+Come con Unified ONTAP, i nodi del cluster AFX sono configurati in coppie ad alta disponibilità (HA) per la tolleranza agli errori e le operazioni non disruptive.  L'associazione HA consente alle operazioni di archiviazione di rimanere online in caso di guasto di un nodo, ad esempio un failover dell'archiviazione.  Ogni nodo è associato a un altro nodo per formare una singola coppia.  In genere, ciò avviene tramite una connessione diretta tra i moduli NVRAM dei due nodi.
+
+Con AFX, una nuova VLAN HA viene aggiunta agli switch del cluster back-end per consentire ai moduli NVRAM di rimanere connessi tra i nodi partner HA.  Le coppie HA vengono ancora utilizzate con il sistema AFX, ma non è più necessario che i nodi partner siano collegati direttamente.
+
+
+
+== Limitazioni di distribuzione del sistema AFX
+
+Esistono diverse limitazioni, tra cui minimi e massimi, imposte da AFX durante la configurazione e l'utilizzo del cluster.  Questi limiti rientrano in diverse categorie, tra cui:
+
+Nodi controller per cluster:: Ogni cluster AFX deve avere almeno quattro nodi.  Il numero massimo di nodi varia in base alla versione ONTAP .
+Capacità di stoccaggio:: Questa è la capacità totale di tutti i dischi SSD nella Storage Availability Zone (SAZ) del cluster.  La capacità di archiviazione massima varia in base alla versione ONTAP .  Dovresti esaminare le informazioni disponibili nello strumento Interoperability Matrix Tool (IMT) per determinare le capacità del tuo cluster.
+
+
+
+
+== Confermare lo stato di salute del sistema AFX
+
+Prima di eseguire qualsiasi attività di amministrazione AFX, è necessario verificare lo stato del cluster.
+
+
+TIP: Puoi controllare lo stato di salute del tuo cluster AFX in qualsiasi momento, anche quando sospetti un problema operativo o di prestazioni.
+
+.Prima di iniziare
+Ti serviranno i seguenti elementi:
+
+* Indirizzo IP o FQDN di gestione del cluster
+* Account amministratore per il cluster (nome utente e password)
+
+
+.Passi
+. Connettersi a System Manager tramite un browser:
++
+`\https://$FQDN_IPADDR/`
+
++
+*Esempio*
+
++
+`\https://10.61.25.33/`
+
+. Fornisci il nome utente e la password dell'amministratore e seleziona * Sign in*.
+. Esaminare la dashboard del sistema e lo stato del cluster, incluso il cablaggio.  Notare anche il _riquadro di navigazione_ sulla sinistra.
++
+link:../administer/view-dashboard.html["Visualizza dashboard e stato del cluster"]
+
+. Visualizza gli eventi di sistema e i messaggi del registro di controllo.
++
+link:../administer/view-events-log.html["Visualizza gli eventi AFX e il registro di controllo"]
+
+. Visualizza e annota eventuali consigli di *Insight*.
++
+link:../administer/view-insights.html["Utilizza Insights per ottimizzare le prestazioni e la sicurezza del cluster AFX"]
+
+
+
+
+
+== Guida rapida per la creazione e l'utilizzo di una SVM di dati
+
+Dopo aver installato e configurato il cluster AFX, è possibile iniziare a svolgere le attività di amministrazione tipiche della maggior parte delle distribuzioni AFX.  Ecco i passaggi principali necessari per iniziare a condividere i dati con i clienti.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Visualizza i dati SVM disponibili
+[role="quick-margin-para"]
+link:../administer/display-svms.html["Display"]l'elenco delle SVM di dati e determinare se ce n'è una che puoi utilizzare.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Facoltativamente, creare un SVM dati
+[role="quick-margin-para"]
+link:../administer/create-svm.html["Creare"]una SVM per isolare e proteggere i carichi di lavoro e i dati delle applicazioni se non è disponibile una SVM esistente.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Configura il tuo SVM
+[role="quick-margin-para"]
+link:../administer/configure-svm.html["Configurare"]il tuo SVM e preparati per l'accesso del client.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Prepararsi a fornire spazio di archiviazione
+[role="quick-margin-para"]
+link:../manage-data/prepare-manage-data.html["Preparare"]per allocare e gestire i tuoi dati.
+
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["Interfacce utente ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/system-admin/set-privilege-level-task.html["Impostare il livello di privilegio nella CLI ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/system-admin/index.html["Scopri di più sull'amministrazione dei cluster con ONTAP CLI"^]
+* link:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione AFX"]
+

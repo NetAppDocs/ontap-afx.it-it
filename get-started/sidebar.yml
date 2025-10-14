@@ -1,0 +1,46 @@
+---
+section: get-started
+title: Iniziare
+entries:
+- title: Scopri di più sul tuo sistema AFX
+  entries:
+  - title: Scopri di più su NetApp AFX
+    url: "/get-started/ontap-afx-storage.html"
+  - title: Caratteristiche del sistema
+    url: "/get-started/system-design.html"
+  - title: Dettagli architettonici
+    url: "/get-started/software-architecture.html"
+  - title: Confronta AFX con AFF e FAS
+    url: "/get-started/compare-unified-ontap.html"
+- title: Avvio rapido
+  url: "/get-started/quick-start.html"
+- title: Installa il tuo sistema AFX
+  entries:
+  - title: Installa flusso di lavoro
+    url: "/install-setup/install-setup-workflow.html"
+  - title: Esaminare i requisiti hardware
+    url: "/install-setup/install-setup-requirements.html"
+  - title: Prepararsi all'installazione
+    url: "/install-setup/prepare-hardware.html"
+  - title: Installare l'hardware
+    entries:
+    - title: Installare gli interruttori
+      url: "/install-setup/install-switches.html"
+    - title: Installare un sistema di stoccaggio e scaffali
+      url: "/install-setup/deploy-hardware.html"
+  - title: Cablaggio
+    entries:
+    - title: Esaminare le configurazioni supportate
+      url: "/install-setup/afx-cable-overview.html"
+    - title: Raccogliere informazioni di rete
+      url: "/install-setup/install-network-reqs.html"
+    - title: Hardware per cavi
+      url: "/install-setup/cable-hardware.html"
+  - title: Accendere e configurare gli switch
+    url: "/install-setup/power-on-configure-switch.html"
+  - title: Accendere il sistema
+    url: "/install-setup/power-on-hardware.html"
+- title: Imposta il tuo sistema AFX
+  url: "/install-setup/cluster-setup.html"
+- title: Prepararsi a somministrare AFX
+  url: "/get-started/prepare-cluster-admin.html"

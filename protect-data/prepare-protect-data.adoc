@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: protect-data/prepare-protect-data.html 
+keywords: afx, afx system, prepare, prepare protect, prepare protect data 
+summary: Prima di proteggere i tuoi dati AFX, dovresti acquisire familiarità con alcuni concetti chiave e con lo stato attuale del tuo storage. 
+---
+= Preparati a proteggere i dati del tuo sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prima di proteggere i tuoi dati AFX, dovresti familiarizzare con alcuni concetti e funzionalità chiave.
+
+
+TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP .
+
+
+
+== Terminologia e opzioni
+
+Esistono diversi termini relativi alla protezione dei dati AFX che dovresti conoscere.
+
+Istantanea:: Uno snapshot è un'immagine di un volume, di sola lettura e memorizzata in un punto preciso nel tempo.  Si tratta di una tecnologia fondamentale per i servizi di replicazione e protezione dei dati di ONTAP.
+Gruppo di coerenza:: Un gruppo di coerenza è una raccolta di volumi gestiti come un'unica unità.  È possibile creare gruppi di coerenza per semplificare la gestione dell'archiviazione e la protezione dei dati per i carichi di lavoro delle applicazioni.  Ad esempio, è possibile creare snapshot di più volumi in un'unica operazione utilizzando il gruppo di coerenza anziché i singoli volumi.
+Gruppo di coerenza gerarchica:: I gruppi di coerenza gerarchica sono stati introdotti con ONTAP 9.16.1 e sono disponibili con AFX.  Con una struttura gerarchica, uno o più gruppi di coerenza possono essere configurati come figli di un genitore.  Questi gruppi gerarchici consentono di applicare policy di snapshot individuali ai gruppi di coerenza figlio e di replicare gli snapshot di tutti i figli su un cluster remoto come un'unica unità replicando il padre.
+SnapLock:: SnapLock è una funzionalità ONTAP che consente di proteggere i file spostandoli in uno stato WORM (Write Once Read Many).  Ciò impedisce la modifica o l'eliminazione per un periodo di conservazione specificato.  I volumi SnapLock creati non possono essere convertiti da volumi non SnapLock dopo la creazione in base alla conservazione.
+
+
+
+
+== Informazioni correlate
+
+* link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]
+* link:../get-started/prepare-cluster-admin.html["Preparati ad amministrare il tuo sistema AFX"]
+

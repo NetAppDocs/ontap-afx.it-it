@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: secure-data/encrypt-data-at-rest.html 
+keywords: afx, afx system, encryption, encrypt data 
+summary: È possibile crittografare i dati a livello hardware e software per una protezione a doppio livello.  Quando si crittografano i dati a riposo, questi non possono essere letti se il supporto di memorizzazione viene riutilizzato, restituito, smarrito o rubato. 
+---
+= Crittografare i dati a riposo su un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile crittografare i dati a livello hardware e software per una protezione a doppio livello.  Quando si crittografano i dati a riposo, questi non possono essere letti se il supporto di memorizzazione viene riutilizzato, restituito, smarrito o rubato.
+
+NetApp Storage Encryption (NSE) supporta la crittografia hardware tramite unità auto-crittografanti (SED).  Le SED crittografano i dati mentre vengono scritti.  Ogni SED contiene una chiave di crittografia univoca.  I dati crittografati memorizzati sul SED non possono essere letti senza la chiave di crittografia del SED.  I nodi che tentano di leggere da un SED devono essere autenticati per accedere alla chiave di crittografia del SED.  I nodi vengono autenticati ottenendo una chiave di autenticazione da un gestore delle chiavi e presentando poi la chiave di autenticazione al SED.  Se la chiave di autenticazione è valida, il SED fornirà al nodo la sua chiave di crittografia per accedere ai dati in esso contenuti.
+
+.Prima di iniziare
+Utilizza il gestore delle chiavi integrato AFX o un gestore delle chiavi esterno per fornire le chiavi di autenticazione ai tuoi nodi.  Oltre a NSE, puoi anche abilitare la crittografia software per aggiungere un ulteriore livello di sicurezza ai tuoi dati.
+
+.Passi
+. In Gestione sistema, seleziona *Cluster* e poi *Impostazioni*.
+. Nella sezione *Sicurezza*, in *Crittografia*, seleziona *Configura*.
+. Configurare il gestore delle chiavi.
++
+[cols="2"]
+|===
+| Opzione | Passi 
+
+
+| Configurare il gestore delle chiavi di bordo  a| 
+.. Selezionare *Onboard Key Manager* per aggiungere i server delle chiavi.
+.. Inserisci una passphrase.
+
+
+
+
+| Configurare un gestore di chiavi esterno  a| 
+.. Selezionare *Gestore chiavi esterno* per aggiungere i server delle chiavi.
+.. Selezionareimage:icon_add.gif["un segno più blu seguito dalla parola aggiungi"] per aggiungere i server chiave.
+.. Aggiungere i certificati CA del server KMIP.
+.. Aggiungere i certificati client KMIP.
+
+
+|===
+. Selezionare *Crittografia a doppio strato* per abilitare la crittografia software.
+. Seleziona *Salva*.
+

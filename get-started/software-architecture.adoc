@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: get-started/software-architecture.html 
+keywords: afx, afx system, cluster, architecture, components, physical, logical 
+summary: 'L"architettura AFX è composta da diversi componenti hardware e software.  Questi componenti del sistema sono organizzati in diverse categorie.' 
+---
+= Dettagli dell'architettura del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'architettura AFX è composta da diversi componenti hardware e software.  Questi componenti del sistema sono organizzati in diverse categorie.
+
+
+
+== Componenti fisici
+
+Quando si inizia a utilizzare AFX, è utile iniziare con una panoramica generale dei componenti fisici così come sono installati nel data center.
+
+
+
+=== Nodi controller
+
+I nodi controller AFX eseguono una personalità specializzata del software ONTAP progettata per supportare i requisiti dell'ambiente AFX.  I client accedono ai nodi tramite più protocolli, tra cui NFS, SMB e S3.  Ogni nodo ha una visione completa dello storage, a cui può accedere in base alle richieste del client.  I nodi sono dotati di stato e di memoria non volatile per mantenere le informazioni sullo stato critico e includono ulteriori miglioramenti specifici per i carichi di lavoro di destinazione.
+
+
+
+=== Ripiani portaoggetti e dischi
+
+Gli scaffali di archiviazione AFX utilizzano la tecnologia Non-volatile Memory Express over Fabrics (NVMe-oF) per collegare SSD ad alta densità.  I dischi comunicano tramite una struttura a latenza ultra-bassa utilizzando RDMA su Converged Ethernet (RoCE).  Gli scaffali di archiviazione, compresi i moduli I/O, le schede di rete, le ventole e gli alimentatori, sono completamente ridondanti e non presentano alcun singolo punto di guasto.  La tecnologia autogestita viene utilizzata per amministrare e controllare tutti gli aspetti della configurazione RAID e del layout del disco.
+
+
+
+=== Rete di switch di archiviazione cluster
+
+Switch ridondanti e ad alte prestazioni collegano i nodi del controller AFX con gli scaffali di stoccaggio.  Per ottimizzare le prestazioni vengono utilizzati protocolli avanzati.  La progettazione si basa sul tagging VLAN con più percorsi di rete, nonché su configurazioni di aggiornamento tecnologico, per garantire un funzionamento continuo e facilità di aggiornamento.
+
+
+
+=== Ambiente di formazione del cliente
+
+L'ambiente di formazione del cliente è un ambiente di laboratorio con hardware fornito dal cliente, come cluster GPU e workstation AI.  In genere è progettato per supportare l'addestramento dei modelli, l'inferenza e altre attività correlate all'intelligenza artificiale e all'apprendimento automatico.  I clienti accedono ad AFX utilizzando protocolli standard del settore quali NFS, SMB e S3.
+
+
+
+=== Rete clienti
+
+Questa rete interna collega l'ambiente di formazione del client al cluster di archiviazione AFX.  La rete è fornita e gestita dal cliente, anche se NetApp prevede di fornire consigli sul campo per requisiti e progettazione.
+
+
+
+== Componenti logici
+
+AFX include diversi componenti logici.  Vengono implementati nel software insieme ai componenti fisici del cluster.  I componenti logici impongono una struttura che determina l'uso e la configurazione dei sistemi AFX.
+
+
+
+=== Pool di archiviazione comune
+
+La Storage Availability Zone (SAZ) è un pool di storage comune per l'intero cluster.  Si tratta di una raccolta di dischi negli scaffali di archiviazione che fornisce un singolo namespace unificato a tutti i nodi controller.  SAZ offre un modello di provisioning senza restrizioni fisse riguardo agli scaffali di archiviazione utilizzati dai nodi.  I clienti possono visualizzare lo spazio libero e l'utilizzo dello storage come proprietà dell'intero cluster AFX.
+
+
+
+=== FlexVolumes, FlexGroups e bucket
+
+FlexVolumes, FlexGroups e i bucket S3 sono i _contenitori di dati_ esposti agli amministratori AFX in base ai protocolli di accesso client.  Questi contenitori scalabili sono progettati per astrarre molti dei complessi dettagli di archiviazione interna.
+
+
+
+=== Disposizione e accesso ai dati
+
+Il layout e l'accesso ai dati sono ottimizzati per un accesso fluido e un utilizzo efficiente delle GPU.  Ciò svolge un ruolo fondamentale nell'eliminare i colli di bottiglia e nel mantenere prestazioni costanti.
+
+
+
+=== SVM e multi-tenancy
+
+AFX fornisce un modello di tenant che si basa sul modello SVM disponibile con i sistemi AFF e FAS .  Il modello di inquilino AFX è stato semplificato per semplificare l'amministrazione.
+
+
+
+== Distribuzione del cluster AFX
+
+La figura seguente illustra una tipica distribuzione di cluster AFX.  I nodi controller sono disaccoppiati dagli scaffali di stoccaggio e collegati tramite una rete condivisa.
+
+image:afx-cluster.png["Architettura del cluster AFX"]

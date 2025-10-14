@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: get-started/quick-start.html 
+keywords: afx, afx system, quick start 
+summary: Per iniziare a utilizzare il sistema AFX, è necessario installare i componenti hardware, configurare il cluster e prepararsi ad amministrare il cluster e le SVM. 
+---
+= Guida rapida per la configurazione di un sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Per iniziare a utilizzare il sistema AFX, è necessario installare i componenti hardware, configurare il cluster e prepararsi ad amministrare il cluster e le SVM.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"]Installa e configura il tuo hardware
+[role="quick-margin-para"]
+link:../install-setup/install-setup-workflow.html["Installare"]il tuo sistema di archiviazione AFX e preparati a configurare il cluster.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Configura il tuo cluster
+[role="quick-margin-para"]
+Segui la procedura semplice e veloce perlink:../install-setup/cluster-setup.html["impostare"] il tuo cluster ONTAP utilizzando System Manager.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Preparati ad amministrare il tuo cluster
+[role="quick-margin-para"]
+Prima di distribuire AFX in un ambiente di produzione, è essenzialelink:../get-started/prepare-cluster-admin.html["preparare"] comprendendo la struttura amministrativa, comprese le macchine virtuali di archiviazione (SVM), gli utenti, i ruoli e le interfacce di gestione, per garantire una gestione del cluster sicura, efficiente ed efficace.

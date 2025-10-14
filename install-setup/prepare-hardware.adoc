@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: install-setup/prepare-hardware.html 
+keywords: prepare, hardware installation, afx, afx 1k 
+summary: 'Preparatevi a installare il sistema di archiviazione AFX 1K nel vostro ambiente ONTAP e registrate l"hardware per accedere ai vantaggi dell"assistenza.' 
+---
+= Preparati a installare il tuo sistema di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Preparatevi a installare il vostro sistema di archiviazione AFX 1K preparando il sito, disimballando le scatole e confrontando il contenuto delle scatole con la bolla di accompagnamento, e registrando il sistema per accedere ai vantaggi dell'assistenza.
+
+
+
+== Fase 1: preparare il sito
+
+Per installare il sistema di archiviazione AFX 1K, assicurati che il sito e l'armadio o il rack che intendi utilizzare siano conformi alle specifiche della tua configurazione.
+
+.Passi
+. Utilizzo https://hwu.netapp.com["Hardware Universe NetApp"^] per confermare che il tuo sito soddisfa i requisiti ambientali ed elettrici del tuo sistema di stoccaggio.
+. Assicurati di avere spazio sufficiente nell'armadio o nel rack per il tuo sistema di archiviazione, i ripiani e gli interruttori:
++
+** 2U per ogni nodo controller AFX e scaffale NX224
+** 1U o 2U per switch, a seconda del modello.
+
+
+
+
+
+
+== Fase 2: disfare le scatole
+
+Dopo aver verificato che il sito e l'armadio siano conformi alle specifiche, disimballare le scatole e confrontare il contenuto con la bolla di accompagnamento.
+
+.Passi
+. Aprire con attenzione tutte le scatole e disporre il contenuto in modo ordinato.
+. Confronta il contenuto che hai disimballato con l'elenco riportato sulla bolla di accompagnamento.  Se riscontri delle discrepanze, annotale per prendere le misure necessarie.
++
+Puoi ottenere la lista dei colli scansionando il codice QR presente sul lato della scatola di spedizione.
+
++
+Di seguito sono riportati alcuni dei contenuti che potresti trovare nelle scatole.
+
++
+[cols="12,9,4"]
+|===
+
+
+| *Hardware* | *Cavi* |  
+
+
+ a| 
+** Lunetta
+** Sistema di archiviazione
+** Kit ferroviari con istruzioni
+** Scaffale portaoggetti
+** Switch Cisco Nexus 9332D-GX2B o 9364D-GX2A
+
+ a| 
+** Cavi Ethernet di gestione (cavi RJ-45)
+** cavi di rete
+** cavi di alimentazione
+** Cavi di stoccaggio
+** Cavo porta seriale USB-C
+
+|  
+|===
+
+
+
+
+== Passaggio 3: Registra il tuo sistema di archiviazione
+
+Dopo esserti assicurato che il tuo sito soddisfi i requisiti delle specifiche del tuo sistema di archiviazione AFX 1K e aver verificato di avere a disposizione tutti i componenti ordinati, registra il tuo sistema di archiviazione.
+
+.Passi
+. Individua i numeri di serie del tuo sistema di archiviazione.
++
+Puoi trovare i numeri di serie nei seguenti luoghi:
+
++
+** Sulla bolla di accompagnamento
+** Nella tua email di conferma
+** Su ogni controller o per alcuni sistemi, sul modulo di gestione del sistema di ogni controller
++
+image::../media/drw_ssn_label.svg[Esempio del numero di serie del sistema]
+
+
+
+. Vai al http://mysupport.netapp.com/["Sito di supporto NetApp"^] .
+. Decidi se devi registrare il tuo sistema di archiviazione:
++
+[cols="1a,2a"]
+|===
+| Se sei un... | Segui questi passaggi... 
+
+
+ a| 
+Cliente NetApp esistente
+ a| 
+.. Sign in con il tuo nome utente e password.
+.. Selezionare *Sistemi* > *I miei sistemi*.
+.. Verificare che il nuovo numero di serie sia elencato.
+.. Se il numero di serie non è elencato, seguire le istruzioni per i nuovi clienti NetApp .
+
+
+
+
+ a| 
+Nuovo cliente NetApp
+ a| 
+.. Fai clic su *Registrati ora* e crea un account.
+.. Selezionare *Sistemi* > *Registra sistemi*.
+.. Inserire il numero di serie del sistema di archiviazione e i dettagli richiesti.
+
+
+Una volta che NetApp avrà approvato la tua registrazione, potrai scaricare il software richiesto.  L'approvazione richiede fino a 24 ore.
+
+|===
+
+
+.Cosa succederà ora?
+Dopo esserti preparato per installare l'hardware AFX 1K,link:install-switches.html["installare gli switch per il sistema di archiviazione AFX 1K"] .

@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: install-setup/install-setup-requirements.html 
+keywords: afx, afx 1k, install, setup, requirements, cautions 
+summary: 'Esaminare l"attrezzatura necessaria e le precauzioni di sollevamento per i controller di archiviazione e gli scaffali di archiviazione AFX 1K.' 
+---
+= Requisiti di installazione per i sistemi di archiviazione AFX 1K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esaminare l'attrezzatura necessaria e le precauzioni di sollevamento per il controller di archiviazione AFX 1K e i ripiani di archiviazione.
+
+
+
+== Attrezzatura necessaria per l'installazione
+
+Per installare il sistema di archiviazione AFX 1K, sono necessari i seguenti strumenti e attrezzature.
+
+* Accesso a un browser Web per configurare il sistema di archiviazione
+* Cinghia anti-scarica elettrostatica (ESD)
+* Torcia elettrica
+* Laptop o console con connessione USB/seriale
+* Graffetta o penna a sfera a punta stretta per impostare gli ID degli scaffali di stoccaggio
+* Cacciavite Phillips n. 2
+
+
+
+
+== Precauzioni di sollevamento
+
+Il controller di archiviazione AFX e i ripiani di archiviazione sono pesanti.  Prestare attenzione quando si sollevano e si spostano questi oggetti.
+
+
+
+=== Pesi del controller di archiviazione
+
+Adottare le precauzioni necessarie quando si sposta o si solleva il controller di archiviazione AFX 1K.
+
+Un controller di archiviazione AFX 1K può pesare fino a 62,83 libbre (28,5 kg).  Per sollevare il controller di archiviazione, utilizzare due persone o un sollevatore idraulico.
+
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icona di attenzione al sollevamento ASA A1K]
+
+
+
+=== Pesi per ripiani di stoccaggio
+
+Adottare le precauzioni necessarie quando si sposta o si solleva lo scaffale.
+
+.Ripiano NX224
+--
+Uno scaffale NX224 può pesare fino a 60,1 libbre (27,3 kg).  Per sollevare lo scaffale, utilizzare due persone o un sollevatore idraulico.  Tenere tutti i componenti sullo scaffale (sia davanti che dietro) per evitare di sbilanciare il peso dello scaffale.
+
+image::../media/drw_nx224_lifting_weight_ieops-2437.svg[Attenzione al sollevamento del NX224 NSM100]
+
+.Informazioni correlate
+* https://library.netapp.com/ecm/ecm_download_file/ECMP12475945["Informazioni sulla sicurezza e avvisi normativi"^]
+
+
+.Cosa succederà ora?
+Dopo aver esaminato i requisiti hardware,link:prepare-hardware.html["preparati a installare il tuo sistema di archiviazione AFX 1K"] .
+
+--

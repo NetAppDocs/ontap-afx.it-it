@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: administer/view-dashboard.html 
+keywords: afx, afx system, dashboard, view dashboard, cluster status 
+summary: È possibile accedere a System Manager per accedere alla dashboard AFX e visualizzare lo stato del cluster.  Questo è un buon primo passo prima di iniziare le attività amministrative AFX o se si sospetta un problema operativo. 
+---
+= Visualizza la dashboard del sistema di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+È possibile accedere a System Manager per accedere alla dashboard AFX e visualizzare lo stato del cluster.  Questo è un buon primo passo prima di iniziare le attività amministrative AFX o se si sospetta un problema operativo.
+
+.Prima di iniziare
+Ti serviranno i seguenti elementi:
+
+* Indirizzo IP o nome di dominio del LIF di gestione del cluster
+* Credenziali dell'account amministratore
+
+
+.Passi
+. Connettersi a System Manager tramite un browser e l'indirizzo IP di gestione del cluster:
++
+`\https://$FQDN_IPADDR/`
+
++
+*Esempio*
+
++
+`\https://10.61.25.33/`
+
+. Fornisci il nome utente e la password per l'account amministratore e seleziona * Sign in*.
+. Selezionare *Dashboard* nel riquadro di navigazione a sinistra e rivedere i riquadri nella pagina, incluso il cluster *Health*.
+. Nel riquadro di navigazione, seleziona *Cluster* e poi *Panoramica*.
+. Esaminare il nome del cluster, la versione, la personalità ONTAP e gli altri dettagli.
+. Nella parte superiore della pagina di panoramica, selezionare *Cablaggio* per una visualizzazione dell'hardware e delle connessioni del cluster.
+. Nel riquadro di navigazione, seleziona *Eventi e processi* e poi *Avvisi di sistema* per visualizzare e rivedere gli avvisi di sistema.
+
