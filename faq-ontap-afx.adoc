@@ -50,7 +50,7 @@ Il secondo concetto correlato all'archiviazione disaggregata è che gli aggregat
 == Interoperabilità
 
 .Posso combinare i nodi del sistema AFX con i nodi del sistema AFF, ASA o FAS nello stesso cluster ONTAP ?
-No. Ogni personalità ONTAP è diversa.  Ad esempio, non è possibile combinare nodi AFX e Unified ONTAP nello stesso cluster.
+No. Non è possibile combinare nodi di sistema che eseguono diverse personalità ONTAP nello stesso cluster. Ad esempio, non è possibile combinare nodi AFX (che eseguono la personalità AFX ONTAP ) con nodi AFF o FAS (che eseguono la personalità Unified ONTAP ) nello stesso cluster.
 
 .Se voglio utilizzare sistemi che eseguono Unified ONTAP (FAS, AFF, ASA) con sistemi AFX per SnapMirror o FlexCache, quale versione ONTAP mi servirà?
 Le regole della versione SnapMirror per AFX sono identiche a quelle di Unified ONTAP.  Ciò significa che per replicare da Unified ONTAP, il sistema di origine deve essere compreso nell'intervallo di versioni supportato.  Per replicare da AFX, il sistema Unified ONTAP deve essere ONTAP 9.16.1 o versione successiva (la prima versione supportata dalla funzionalità Advanced Capacity Balancing).  Per FlexCache, le stesse regole si applicano ai sistemi di origine e di destinazione come descritto in https://www.netapp.com/pdf.html?item=/media/7336-tr4743.pdf["TR-4743"^] .
@@ -79,20 +79,23 @@ No. I protocolli dati in AFX funzionano allo stesso modo dei sistemi AFF e FAS .
 .In AFX viene utilizzato il partizionamento avanzato del disco (ADP)?
 No. ADP non viene utilizzato con AFX.  Poiché con AFX non sono presenti aggregati radice, la funzionalità ADP non è necessaria per massimizzare l'efficienza dello spazio su disco.
 
-.Posso utilizzare diversi tipi di switch per la rete back-end del mio sistema di archiviazione AFX?
-No. Per la rete back-end sono supportati solo gli switch specificamente approvati e forniti con la piattaforma di storage AFX.
+.Posso utilizzare qualsiasi tipo di switch nella rete del cluster backend per il mio sistema AFX?
+No. Per la rete cluster sono supportati solo gli switch specificamente approvati e forniti con la piattaforma di storage AFX. Inoltre, questi switch backend sono dedicati alle operazioni del cluster AFX. Le operazioni di accesso client (tramite NFS, SMB e S3) devono essere eseguite solo sulla rete dati client frontend.
+
+.Come sono configurati gli switch del cluster?
+Gli switch di rete del cluster vengono configurati tramite un file di configurazione fornito da NetApp. Le modifiche al file di configurazione non sono supportate.
 
 .Come è organizzato lo storage in un cluster AFX?
 Tutti i dischi e gli scaffali di archiviazione collegati a un cluster AFX fanno parte di una Storage Availability Zone (SAZ).  Ogni cluster AFX supporta una sola SAZ che non può essere condivisa tra i cluster AFX (ad eccezione delle operazioni di replica SnapMirror e FlexCache ).
 
 Ogni nodo ha visibilità su tutto lo storage nella SAZ.  Quando si aggiungono ripiani di archiviazione a un cluster, ONTAP aggiunge automaticamente i dischi.
 
-.Come funziona un'operazione di spostamento di volume in Unified ONTAP rispetto ad AFX?
-Con Unified ONTAP è possibile spostare un volume senza interruzioni da un nodo o aggregarlo a un altro nel cluster.  Questa operazione viene eseguita tramite un'operazione di copia in background con tecnologia SnapMirror , in cui viene creato un nuovo volume di destinazione nella nuova posizione.  A seconda delle dimensioni del volume e dell'utilizzo delle risorse del cluster, il tempo necessario per completare lo spostamento di un volume può variare.
+.In che modo le operazioni di spostamento dei volumi funzionano in modo diverso con i sistemi AFX rispetto ai sistemi AFF o FAS ?
+Con i sistemi AFF e FAS , che eseguono la personalità Unified ONTAP , è possibile spostare un volume senza interruzioni da un nodo o aggregarlo a un altro nel cluster. Questa operazione viene eseguita tramite un'operazione di copia in background con tecnologia SnapMirror , in cui viene creato un nuovo volume di destinazione nella nuova posizione. A seconda delle dimensioni del volume e dell'utilizzo delle risorse del cluster, il tempo necessario per completare lo spostamento di un volume può variare.
 
 Con AFX non ci sono aggregati.  Tutto lo storage è contenuto in un'unica Storage Availability Zone, accessibile da ogni nodo del cluster.  Di conseguenza, gli spostamenti di volume non hanno mai bisogno di copiare effettivamente i dati.  Invece, tutti gli spostamenti di volume vengono eseguiti con aggiornamenti dei puntatori tra i nodi.  Questa operazione è denominata Zero Copy Volume Move (ZCVM) e avviene istantaneamente perché in realtà non vengono copiati o spostati dati.  Si tratta essenzialmente dello stesso processo di spostamento del volume utilizzato con Unified ONTAP senza la copia SnapMirror .
 
-Si noti che nella versione iniziale i volumi verranno spostati solo in scenari di failover dello storage e quando i nodi vengono aggiunti o rimossi dal cluster.  Questi spostamenti sono controllati solo tramite ONTAP.
+Nella versione iniziale di AFX, i volumi verranno spostati solo in scenari di failover dello storage e quando i nodi vengono aggiunti o rimossi dal cluster. Questi spostamenti sono controllati solo tramite ONTAP.
 
 .In che modo AFX determina dove posizionare i dati nella SAZ?
 AFX include una funzionalità nota come Automated Topology Management (ATM) che risponde agli squilibri degli oggetti utente e del sistema.  L'obiettivo principale dell'ATM è bilanciare i volumi nel cluster AFX.  Quando viene rilevato uno squilibrio, viene attivato un processo interno per distribuire uniformemente i dati tra i nodi attivi.  I dati vengono riallocati tramite ZCVM, che deve solo copiare e aggiornare i metadati dell'oggetto.

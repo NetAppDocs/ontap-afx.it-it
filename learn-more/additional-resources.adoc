@@ -20,7 +20,6 @@ Sono disponibili risorse aggiuntive a cui puoi accedere per gestire e supportare
 * https://docs.netapp.com/us-en/ontap/["ONTAP unificato"^]
 * https://docs.netapp.com/us-en/asa-r2/["ASA r2"^]
 * https://docs.netapp.com/us-en/ontap-automation/["Automazione ONTAP"^]
-* https://docs.netapp.com/us-en/ontap-family["Famiglia ONTAP"^]
 
 
 
@@ -28,5 +27,5 @@ Sono disponibili risorse aggiuntive a cui puoi accedere per gestire e supportare
 == Supporto NetApp
 
 * https://mysupport.netapp.com/["Sito di supporto NetApp"^]
-* https://kb.netapp.com/["Base di conoscenza NetApp"]
+* https://kb.netapp.com/["Base di conoscenza NetApp"^]
 

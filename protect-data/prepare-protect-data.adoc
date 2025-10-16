@@ -14,7 +14,7 @@ summary: Prima di proteggere i tuoi dati AFX, dovresti acquisire familiarità co
 Prima di proteggere i tuoi dati AFX, dovresti familiarizzare con alcuni concetti e funzionalità chiave.
 
 
-TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP .
+TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, è opportuno rivedere la documentazione Unified ONTAP per https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["Protezione dei dati e ripristino di emergenza"^] può essere utile.
 
 
 
@@ -27,6 +27,15 @@ Gruppo di coerenza:: Un gruppo di coerenza è una raccolta di volumi gestiti com
 Gruppo di coerenza gerarchica:: I gruppi di coerenza gerarchica sono stati introdotti con ONTAP 9.16.1 e sono disponibili con AFX.  Con una struttura gerarchica, uno o più gruppi di coerenza possono essere configurati come figli di un genitore.  Questi gruppi gerarchici consentono di applicare policy di snapshot individuali ai gruppi di coerenza figlio e di replicare gli snapshot di tutti i figli su un cluster remoto come un'unica unità replicando il padre.
 SnapLock:: SnapLock è una funzionalità ONTAP che consente di proteggere i file spostandoli in uno stato WORM (Write Once Read Many).  Ciò impedisce la modifica o l'eliminazione per un periodo di conservazione specificato.  I volumi SnapLock creati non possono essere convertiti da volumi non SnapLock dopo la creazione in base alla conservazione.
 
+
+
+
+== Limitazioni della protezione dei dati AFX
+
+È necessario essere a conoscenza dei limiti e delle restrizioni sulla protezione dei dati ONTAP applicati dal sistema di archiviazione AFX.
+
+.SnapMirror sincrono (SM-S)
+L'utilizzo di SM-S presenta una limitazione di scala. È possibile avere un massimo di 400 relazioni in un singolo cluster di sistema AFX.
 
 
 
