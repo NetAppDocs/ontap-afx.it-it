@@ -17,7 +17,7 @@ summary: 'È possibile inviare un semplice comando curl per iniziare a utilizzar
 È possibile inviare un semplice comando curl per iniziare a utilizzare l'API REST AFX e verificarne la disponibilità.
 
 .Informazioni su questo compito
-AFX è una delle tre distinte personalità ONTAP .  È possibile utilizzare una chiamata all'API REST per determinare la personalità ONTAP del cluster in base a due campi inclusi nella risposta.
+AFX è una delle tre personalità ONTAP disponibili da NetApp.  È possibile emettere una chiamata API REST per determinare la personalità del cluster ONTAP .  È anche possibile utilizzare System Manager o la CLI per determinare la personalità ONTAP ; per i dettagli, consultare la pagina delle FAQ.
 
 .Prima di iniziare
 Oltre ad avere l'utilità curl disponibile sulla workstation locale, avrai bisogno di quanto segue:

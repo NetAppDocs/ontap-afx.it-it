@@ -111,13 +111,15 @@ Con AFX, una nuova VLAN HA viene aggiunta agli switch del cluster back-end per c
 
 
 
-== Limitazioni di distribuzione del sistema AFX
+== Limitazioni di distribuzione del cluster AFX
 
-Esistono diverse limitazioni, tra cui minimi e massimi, imposte da AFX durante la configurazione e l'utilizzo del cluster.  Questi limiti rientrano in diverse categorie, tra cui:
+Esistono diverse limitazioni, tra cui minimi e massimi, imposte da AFX durante la configurazione e l'utilizzo del cluster. Questi limiti rientrano in diverse categorie, tra cui:
 
 Nodi controller per cluster:: Ogni cluster AFX deve avere almeno quattro nodi.  Il numero massimo di nodi varia in base alla versione ONTAP .
-Capacità di stoccaggio:: Questa è la capacità totale di tutti i dischi SSD nella Storage Availability Zone (SAZ) del cluster.  La capacità di archiviazione massima varia in base alla versione ONTAP .  Dovresti esaminare le informazioni disponibili nello strumento Interoperability Matrix Tool (IMT) per determinare le capacità del tuo cluster.
+Capacità di stoccaggio:: Questa è la capacità totale di tutti i dischi SSD nella Storage Availability Zone (SAZ) del cluster. La capacità di archiviazione massima varia in base alla versione ONTAP .
 
+
+Per determinare le capacità del tuo cluster, dovresti consultare le informazioni disponibili su NetApp Hardware Universe e sullo strumento Interoperability Matrix.
 
 
 
@@ -190,5 +192,8 @@ link:../manage-data/prepare-manage-data.html["Preparare"]per allocare e gestire 
 * https://docs.netapp.com/us-en/ontap/concepts/introducing-ontap-interfaces-concept.html["Interfacce utente ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/set-privilege-level-task.html["Impostare il livello di privilegio nella CLI ONTAP"^]
 * https://docs.netapp.com/us-en/ontap/system-admin/index.html["Scopri di più sull'amministrazione dei cluster con ONTAP CLI"^]
+* https://hwu.netapp.com/["Hardware Universe NetApp"^]
+* https://imt.netapp.com/["Strumento matrice di interoperabilità NetApp"^]
+* https://docs.netapp.com/us-en/interoperability-matrix-tool/["Panoramica dello strumento matrice di interoperabilità"^]
 * link:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione AFX"]
 
