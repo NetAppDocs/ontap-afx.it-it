@@ -41,7 +41,7 @@ Avrai anche bisogno di quanto segue:
 * nomi di dominio DNS
 * Indirizzi IP del server dei nomi DNS
 * Indirizzi IP del server NTP
-* Maschera di sottorete dei dati
+* Maschera di sottorete
 
 
 .Passi
@@ -104,6 +104,6 @@ Durante la configurazione vengono configurate tre aree del cluster ONTAP del sis
 Dovrestilink:../get-started/prepare-cluster-admin.html["Prepararsi a somministrare AFX"] prima di utilizzare il cluster AFX in un ambiente di produzione.
 
 .Informazioni correlate
-* link:../administer/configure-svm.html["Configurare un SVM di dati AFX"]
+* link:../administer/configure-svm.html["Configurare un AFX SVM"]
 * link:../get-started/prepare-cluster-admin.html["Prepararsi a somministrare AFX"]
 

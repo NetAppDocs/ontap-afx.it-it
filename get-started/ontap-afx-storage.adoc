@@ -17,13 +17,28 @@ Il sistema di storage NetApp AFX si basa su un'architettura di storage di nuova 
 
 == Carichi di lavoro tipici delle applicazioni
 
-Lo storage AFX soddisfa le esigenze specifiche tipiche degli ambienti AI/ML e di altre applicazioni correlate incentrate sui dati.  Il sistema di archiviazione AFX è ideale per le organizzazioni che gestiscono diversi carichi di lavoro, tra cui:
+Il sistema di storage NetApp AFX soddisfa le esigenze specifiche tipiche degli ambienti AI/ML e di altre applicazioni correlate incentrate sui dati. Il sistema di archiviazione AFX è ideale per le organizzazioni che gestiscono diversi carichi di lavoro, tra cui:
 
 * Formazione e perfezionamento iterativo del modello associato all'apprendimento profondo, in cui è richiesta un'elevata larghezza di banda continua e l'accesso a enormi set di dati.
 * Elaborazione di diversi tipi di dati, tra cui testo, immagini e video.
 * Applicazioni di inferenza in tempo reale con bassa latenza in cui sono necessarie finestre di tempo di risposta rigorose.
 * Pipeline di data science e machine learning che possono trarre vantaggio dalla gestione self-service dei dati da parte di data engineer e data scientist.
 * Carichi di lavoro che richiedono elevata concorrenza e I/O parallelo, come sistemi multi-GPU con trasporto RDMA.
+
+
+
+
+== Caratteristiche di progettazione del sistema
+
+Il sistema AFX presenta diverse caratteristiche progettuali che gli consentono di funzionare come piattaforma NAS ad alte prestazioni.
+
+Separare le capacità di archiviazione e di elaborazione:: A differenza dei sistemi di archiviazione AFF e FAS , gli elementi di archiviazione e di elaborazione AFX del cluster sono disaccoppiati.  I controller AFX non sono limitati ad accedere a un set limitato di dischi locali.
+Rimozione della gestione degli aggregati e dei RAID:: L'amministratore dello storage non ha più bisogno di gestire gli aggregati e i gruppi RAID.  AFX gestisce queste attività, semplificando l'amministrazione e offrendo anche ai non addetti ai lavori l'opportunità di gestire i propri dati.
+Singolo pool di archiviazione per il cluster:: Disaccoppiando l'elaborazione e l'archiviazione AFX, insieme alla gestione semplificata dell'archiviazione, si ottiene un unico pool di archiviazione.  Questa Storage Availability Zone (SAZ) è disponibile per tutti i nodi controller in un cluster AFX. Vederelink:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione AFX"] per maggiori dettagli.
+Alte prestazioni:: AFX è progettato per garantire le elevate prestazioni richieste dalle applicazioni specializzate di intelligenza artificiale e apprendimento automatico.  Può sfruttare in modo più efficiente l'hardware moderno per fornire una larghezza di banda elevata e costante con una latenza estremamente bassa.
+Semplicità operativa:: Il pool di archiviazione singolo, insieme ad altre funzionalità tra cui la gestione automatica dell'archiviazione, fornisce un modello amministrativo e operativo molto più semplice.
+Scalabilità:: L'insieme dei nodi controller e degli scaffali di archiviazione in un cluster può essere ampliato in modo indipendente in base alle esigenze dell'applicazione.  L'aggiunta di controller o scaffali comporta requisiti amministrativi limitati e interruzioni.
+Miglioramento della mobilità dei dati:: I volumi possono essere spostati tra i nodi del controller del cluster senza interruzioni, senza dover effettivamente copiare i dati.  Vengono invece aggiornati i puntatori alla directory dei metadati e agli indici.  Ciò migliora notevolmente le prestazioni durante le tipiche procedure amministrative e il ripristino in caso di errore.
 
 
 
@@ -37,4 +52,11 @@ I seguenti componenti hardware vengono utilizzati con i cluster AFX:
 * Controller AFX 1K
 * Scaffali NX224
 * Switch Cisco Nexus 9332D-GX2B o Nexus 9364D-GX2A
+
+
+
+
+== Informazioni correlate
+
+* https://www.netapp.com/afx/["NetApp AFX"^]
 

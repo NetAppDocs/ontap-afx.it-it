@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: administer/configure-svm.html 
 keywords: afx, afx system, configure svm 
-summary: Dopo aver creato un SVM dati, puoi aggiornare la configurazione in base alle tue esigenze e a quelle dei tuoi clienti. 
+summary: Dopo aver creato una SVM, puoi aggiornare la configurazione in base alle tue esigenze e a quelle dei tuoi clienti. 
 ---
 = Configurare un sistema di archiviazione AFX SVM
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: Dopo aver creato un SVM dati, puoi aggiornare la configurazione in base
 
 
 [role="lead"]
-Dopo aver creato un SVM dati, puoi aggiornare la configurazione in base alle tue esigenze e a quelle dei tuoi clienti.
+Dopo aver creato una SVM, puoi aggiornare la configurazione in base alle tue esigenze e a quelle dei tuoi clienti.
 
 .Informazioni su questo compito
-Esistono quattro percorsi di accesso alla configurazione SVM, come indicato nelle schede della landing page per uno specifico SVM di dati.  Tra questi:
+Esistono quattro percorsi di accesso alla configurazione SVM, come indicato nelle schede della landing page per una SVM specifica. Tra questi:
 
 * Panoramica
 +
