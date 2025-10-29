@@ -50,7 +50,5 @@ entries:
     url: "/administer/upgrade-ontap.html"
   - title: Aggiorna il firmware
     url: "/administer/update-firmware.html"
-  - title: Mantieni l'hardware
-    url: "/administer/maintain-hardware.html"
 - title: Amministrazione aggiuntiva
   url: "/administer/additional-ontap-cluster.html"
