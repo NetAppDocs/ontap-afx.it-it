@@ -59,13 +59,13 @@ AFX include diversi componenti logici.  Vengono implementati nel software insiem
 
 === Pool di archiviazione comune
 
-La Storage Availability Zone (SAZ) è un pool di storage comune per l'intero cluster.  Si tratta di una raccolta di dischi negli scaffali di archiviazione che fornisce un singolo namespace unificato a tutti i nodi controller.  SAZ offre un modello di provisioning senza restrizioni fisse riguardo agli scaffali di archiviazione utilizzati dai nodi.  I clienti possono visualizzare lo spazio libero e l'utilizzo dello storage come proprietà dell'intero cluster AFX.
+La Storage Availability Zone (SAZ) è un pool di storage comune per l'intero cluster. Si tratta di una raccolta di dischi negli scaffali di archiviazione a cui tutti i nodi controller hanno accesso in lettura e scrittura.  SAZ offre un modello di provisioning senza restrizioni fisse riguardo agli scaffali di archiviazione che possono essere utilizzati dai nodi; il posizionamento del volume tra i nodi è gestito automaticamente da ONTAP. I clienti possono visualizzare lo spazio libero e l'utilizzo dello storage come proprietà dell'intero cluster AFX.
 
 
 
 === FlexVolumes, FlexGroups e bucket
 
-FlexVolumes, FlexGroups e i bucket S3 sono i _contenitori di dati_ esposti agli amministratori AFX in base ai protocolli di accesso client.  Questi contenitori scalabili sono progettati per astrarre molti dei complessi dettagli di archiviazione interna.
+FlexVolumes, FlexGroups e i bucket S3 sono i _contenitori di dati_ esposti agli amministratori AFX in base ai protocolli di accesso client. Funzionano in modo identico a Unified ONTAP.  Questi contenitori scalabili sono progettati per astrarre molti dei complessi dettagli di archiviazione interna, come il posizionamento dei dati e il bilanciamento della capacità.
 
 
 
@@ -77,12 +77,12 @@ Il layout e l'accesso ai dati sono ottimizzati per un accesso fluido e un utiliz
 
 === SVM e multi-tenancy
 
-AFX fornisce un modello di tenant che si basa sul modello SVM disponibile con i sistemi AFF e FAS .  Il modello di inquilino AFX è stato semplificato per semplificare l'amministrazione.
+AFX fornisce un modello di tenant che si basa sul modello SVM disponibile con i sistemi AFF e FAS . Il modello tenant AFX è lo stesso di Unified ONTAP , ma è stato semplificato per un'amministrazione semplificata in un ambiente NAS e S3.  Ad esempio, sono state rimosse le opzioni di configurazione per SAN, aggregati e gruppi RAID.
 
 
 
 == Distribuzione del cluster AFX
 
-La figura seguente illustra una tipica distribuzione di cluster AFX.  I nodi controller sono disaccoppiati dagli scaffali di stoccaggio e collegati tramite una rete condivisa.
+La figura seguente illustra una tipica distribuzione di cluster AFX. Il cluster AFX comprende nodi controller che sono disaccoppiati dagli scaffali di stoccaggio e connessi tramite una rete interna condivisa.  Al di fuori dei confini del cluster AFX, i client accedono al cluster tramite una rete client separata.
 
 image:afx-cluster.png["Architettura del cluster AFX"]
