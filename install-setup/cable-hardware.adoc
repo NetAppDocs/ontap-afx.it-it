@@ -38,14 +38,14 @@ I componenti del connettore sono delicati e occorre fare attenzione quando si ag
 * Quando si esegue il cablaggio verso una connessione in fibra ottica, inserire il transceiver ottico nella porta del controller prima di collegare il cavo alla porta dello switch.
 * Il sistema di storage AFX 1K utilizza 4 cavi breakout da 100 GbE sul cluster e sulla rete di storage.  Le connessioni 400GbE vengono effettuate sulle porte dello switch, mentre le connessioni 100GbE vengono effettuate sulle porte del controller e dello scaffale dell'unità.  Le connessioni di storage e HA/Cluster possono essere effettuate su qualsiasi porta non ISL dello switch.
 +
-Per una determinata connessione tramite cavo breakout 4x100GbE alla porta switch specifica, si collegano tutte e 4 le porte che vanno allo switch tramite questo singolo cavo breakout.
+Per una determinata connessione tramite cavo breakout 4x100GbE alla porta dello switch specifica, si collegano tutte e quattro le porte da un determinato controller allo switch tramite questo singolo cavo breakout.
 
 +
 ** 1 porta HA (slot 1)
 ** 1 porta cluster (slot 7)
 ** 2 porte di archiviazione (slot 10, 11)
 +
-Tutte le porte 'a' si collegano allo switch A e tutte le porte 'b' si collegano allo switch B.
+Tutte le porte "a" si collegano allo switch A e tutte le porte "b" si collegano allo switch B.
 
 
 
@@ -148,14 +148,14 @@ Utilizzare il cavo di interconnessione Cluster e HA per collegare le porte e1a e
 +
 ** Controllore A
 +
-*** e1a
-*** e7a
+*** e1a (HA)
+*** e7a (ammasso)
 
 
 ** Controllore B
 +
-*** e1a
-*** e7a
+*** e1a (HA)
+*** e7a (ammasso)
 +
 *Cavi da 100 GbE*
 
@@ -173,14 +173,14 @@ image::../media/drw_afx_switched_cluster_cabling_a_ieops-2352.svg[Collegamenti d
 +
 ** Controllore A
 +
-*** e1b
-*** e7b
+*** e1b (HA)
+*** e7b (ammasso)
 
 
 ** Controllore B
 +
-*** e1b
-*** e7b
+*** e1b (HA)
+*** e7b (ammasso)
 +
 *Cavi da 100 GbE*
 
