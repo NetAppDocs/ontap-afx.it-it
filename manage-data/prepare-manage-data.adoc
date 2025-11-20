@@ -14,7 +14,7 @@ summary: Prima di gestire i dati AFX, è necessario acquisire familiarità con i
 Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti e le funzionalità di base.
 
 
-TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP .
+TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP . Fare riferimento ai link in <<Informazioni correlate>> per maggiori informazioni.
 
 
 
@@ -89,6 +89,7 @@ Per iniziare a gestire i dati AFX, dovresti visualizzare una panoramica dello st
 
 == Informazioni correlate
 
+* https://docs.netapp.com/us-en/ontap/concept_nas_file_system_analytics_overview.html["Scopri di più su ONTAP File System Analytics"^]
 * link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]
 * link:../get-started/prepare-cluster-admin.html["Preparati a gestire il tuo sistema AFX"]
 * link:../administer/migrate-svm.html["Migrare un sistema AFX SVM"]
