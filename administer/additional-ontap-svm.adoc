@@ -60,9 +60,21 @@ Un gruppo di coerenza è una raccolta di volumi gestiti come un'unica unità. Fa
 
 
 
+== Sicurezza
+
+Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configurare e utilizzare con la tua distribuzione AFX.
+
+
+
+=== Politica F
+
+FPolicy è un framework di notifica dell'accesso ai file utilizzato per monitorare e gestire gli eventi di accesso ai file sulle macchine virtuali di archiviazione (SVM).  È possibile utilizzare FPolicy per creare policy che definiscono quali operazioni sui file monitorare e, facoltativamente, bloccare, in base ai criteri definiti.  FPolicy è comunemente utilizzato per l'audit di sicurezza, la conformità e la governance dei dati. Fare riferimento a https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Scopri le soluzioni ONTAP FPolicy"^] per maggiori informazioni.
+
+
+
 == Monitoraggio degli eventi e delle prestazioni ONTAP
 
-È possibile monitorare lo stato e le prestazioni di un cluster.  Ciò include l'impostazione di avvisi per gli eventi e la gestione delle notifiche per gli avvisi sullo stato del sistema.  Fare riferimento a https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoraggio di eventi, prestazioni e salute"^] per maggiori informazioni
+È possibile monitorare lo stato e le prestazioni di un cluster. Ciò include l'impostazione di avvisi per gli eventi e la gestione delle notifiche per gli avvisi sullo stato del sistema. Fare riferimento a https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoraggio di eventi, prestazioni e salute"^] per maggiori informazioni.
 
 
 
