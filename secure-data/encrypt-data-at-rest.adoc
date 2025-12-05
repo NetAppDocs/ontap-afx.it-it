@@ -46,3 +46,7 @@ Utilizza il gestore delle chiavi integrato AFX o un gestore delle chiavi esterno
 . Selezionare *Crittografia a doppio strato* per abilitare la crittografia software.
 . Seleziona *Salva*.
 
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/concepts/encryption-concept.html["Crittografia"^]
+

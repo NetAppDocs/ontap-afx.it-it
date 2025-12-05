@@ -14,17 +14,15 @@ summary: Prima di gestire i dati AFX, è necessario acquisire familiarità con i
 Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti e le funzionalità principali.
 
 
-TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui sistemi AFF e FAS sono gli stessi dei sistemi di archiviazione AFX, può essere utile consultare la documentazione Unified ONTAP .
-
-
 
 == Terminologia e opzioni
 
 Esistono diversi termini relativi alla sicurezza dei dati AFX che dovresti conoscere.
 
-Ransomware:: Il ransomware è un software dannoso che crittografa i file rendendoli inaccessibili all'utente.  Di solito è richiesto un pagamento per decriptare i dati.  NetApp ONTAP fornisce soluzioni per la protezione dal ransomware tramite funzionalità come Autonomous Ransomware Protection (ARP).
-Crittografia:: La crittografia è il processo di conversione dei dati in un formato sicuro che non può essere letto facilmente senza la dovuta autorizzazione.  ONTAP offre tecnologie di crittografia sia basate su software che su hardware per proteggere i dati a riposo.  Ciò garantisce che non possa essere letto se il supporto di memorizzazione viene riutilizzato, restituito, smarrito o rubato.  Queste soluzioni di crittografia possono essere gestite tramite un server di gestione delle chiavi esterno o tramite Onboard Key Manager fornito da ONTAP.
-Certificati digitali e PKI:: Un certificato digitale è un documento elettronico utilizzato per dimostrare la proprietà di una chiave pubblica.  La chiave pubblica e la chiave privata associata possono essere utilizzate in vari modi, ad esempio per stabilire l'identità, in genere come parte di un framework di sicurezza più ampio, come TLS e IPsec.  Queste chiavi, insieme ai protocolli di supporto e agli standard di formattazione, costituiscono la base dell'infrastruttura a chiave pubblica (PKI).
+Ransomware:: Il ransomware è un software dannoso che crittografa i file rendendoli inaccessibili all'utente. Di solito è richiesto un pagamento per decifrare i dati.  ONTAP fornisce soluzioni per la protezione dal ransomware attraverso funzionalità come Autonomous Ransomware Protection (ARP).
+Crittografia:: La crittografia è il processo di conversione dei dati in un formato sicuro che non può essere letto facilmente senza la dovuta autorizzazione. ONTAP offre tecnologie di crittografia sia basate su software che su hardware per proteggere i dati a riposo. Ciò garantisce che non possa essere letto se il supporto di memorizzazione viene riutilizzato, restituito, smarrito o rubato. Queste soluzioni di crittografia possono essere gestite tramite un server di gestione delle chiavi esterno o tramite Onboard Key Manager fornito da ONTAP. Fare riferimento alink:../secure-data/encrypt-data-at-rest.html["Crittografare i dati a riposo su un sistema di archiviazione AFX"] per maggiori informazioni.
+Certificati digitali e PKI:: Un certificato digitale è un documento elettronico utilizzato per dimostrare la proprietà di una chiave pubblica. La chiave pubblica e la chiave privata associata possono essere utilizzate in vari modi, ad esempio per stabilire l'identità, in genere come parte di un framework di sicurezza più ampio, come TLS e IPsec. Queste chiavi, insieme ai protocolli di supporto e agli standard di formattazione, costituiscono la base dell'infrastruttura a chiave pubblica (PKI). Fare riferimento alink:../administer/manage-certificates.html#generate-a-certificate-signing-request["Gestire i certificati su un sistema di archiviazione AFX"] per maggiori informazioni.
+Sicurezza del protocollo Internet:: IPsec è uno standard Internet che garantisce la crittografia, l'integrità e l'autenticazione dei dati in transito per il traffico che scorre tra gli endpoint di rete a livello IP.  Protegge tutto il traffico IP tra ONTAP e i client, compresi i protocolli di livello superiore come NFS e SMB.  IPsec offre protezione contro attacchi replay e man-in-the-middle dannosi ai tuoi dati. Fare riferimento alink:../secure-data/secure-ip-connections.html["Connessioni IP sicure sui tuoi sistemi di archiviazione AFX"] per maggiori informazioni.
 
 
 
@@ -32,5 +30,5 @@ Certificati digitali e PKI:: Un certificato digitale è un documento elettronico
 == Informazioni correlate
 
 * link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]
-* link:../get-started/prepare-cluster-admin.html["Preparati ad amministrare il tuo sistema AFX"]
+* link:../get-started/prepare-cluster-admin.html["Preparati a gestire il tuo sistema AFX"]
 

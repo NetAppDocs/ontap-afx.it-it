@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: secure-data/secure-ip-connections.html 
+keywords: netapp afx, afx, ip security, ipsec, secure data, data security, encryption, data-in-flight, secure connections, hardware offload 
+summary: 'IP Security (IPsec) è uno standard di protocollo Internet che garantisce la crittografia, l"integrità e l"autenticazione dei dati per il traffico che scorre tra gli endpoint di rete a livello IP.  È possibile utilizzare IPsec per migliorare la sicurezza della rete front-end tra un cluster AFX e i client.' 
+---
+= Connessioni IP sicure sui tuoi sistemi di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+IP Security (IPsec) è uno standard di protocollo Internet che garantisce la crittografia, l'integrità e l'autenticazione dei dati per il traffico che scorre tra gli endpoint di rete a livello IP.  È possibile utilizzare IPsec per migliorare la sicurezza della rete front-end tra un cluster AFX e i client.
+
+
+
+== Configurazione di IPsec su un sistema AFX
+
+Le procedure di configurazione IPsec per i sistemi di archiviazione AFX sono le stesse dei sistemi AFF e FAS , ad eccezione delle schede NIC (Network Interface Controller) supportate utilizzate con la funzionalità di offload hardware. Fare riferimento a https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepararsi a configurare la sicurezza IP per la rete ONTAP"^] per maggiori informazioni.
+
+
+
+== Funzione di scarico hardware
+
+Molte delle operazioni crittografiche IPsec, come la crittografia e i controlli di integrità, possono essere scaricate su una scheda NIC supportata sul sistema AFX.  Ciò può migliorare significativamente le prestazioni e la produttività del traffico di rete protetto da IPsec.
+
+
+NOTE: A partire da ONTAP 9.18.1, la funzionalità di offload hardware IPsec è stata estesa per supportare il traffico IPv6.
+
+Le seguenti schede NIC sono supportate per la funzionalità di offload hardware IPsec sui sistemi di archiviazione AFX a partire da ONTAP 9.17.1:
+
+* X50130B (controller Ethernet 2p, 40G/100G)
+* X50131B (controller Ethernet 2p, 40G/100G/200G/400G)
+
+
+Fare riferimento al https://hwu.netapp.com/["Hardware Universe NetApp"^] per maggiori informazioni sulle schede supportate per la versione ONTAP in esecuzione sul tuo sistema AFX.
+
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepararsi a configurare la sicurezza IP per la rete ONTAP"^]
+* https://hwu.netapp.com/["Hardware Universe NetApp"^]
+
