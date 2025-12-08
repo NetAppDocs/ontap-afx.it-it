@@ -33,6 +33,8 @@ indexpage:
       url: "/administer/display-svms.html"
     - title: Aggiornare e mantenere il cluster
       url: "/administer/expand-cluster.html"
+    - title: Ripristina limitazione
+      url: "/administer/revert-ontap.html"
     - title: Amministrazione aggiuntiva
       url: "/administer/additional-ontap-cluster.html"
   - title: Gestisci dati e accessi

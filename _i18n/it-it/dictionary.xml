@@ -1766,4 +1766,10 @@
   <block id="9b3ab302175091da61fb00078bbdf676" category="paragraph">Fare riferimento al<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> per maggiori informazioni sulle schede supportate per la versione ONTAP in esecuzione sul tuo sistema AFX.</block>
   <block id="d41e75fa1b06d9a7c925a3f985c520e5" category="list-text"><block ref="d41e75fa1b06d9a7c925a3f985c520e5" category="inline-link-rx"></block></block>
   <block id="0a0e33e3bee1123a43e4178aad30ed45" category="sidebar">Connessioni IP sicure</block>
+  <block id="70aaaf8a9f143b7a315bba12766865d7" category="summary">Il ripristino di un cluster ONTAP è il processo di spostamento di tutti i nodi alla precedente versione principale ONTAP .</block>
+  <block id="ae002bc4aaa91da5f0456bd41f4ec74f" category="doc">ONTAP revert non supportato con i sistemi di archiviazione AFX</block>
+  <block id="25a89c0d2271ffea21d078f4e6d93fd2" category="paragraph">I sistemi di storage NetApp AFX non supportano il ripristino ONTAP . Il tentativo di eseguire un'operazione di ripristino con AFX può causare instabilità del cluster e perdita di dati. Non dovresti tentare un'operazione di ripristino su un sistema AFX.</block>
+  <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">ONTAP ripristina</block>
+  <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">I sistemi di archiviazione AFX non supportano <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> operazioni.</block>
+  <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Ripristina limitazione</block>
 </blocks>

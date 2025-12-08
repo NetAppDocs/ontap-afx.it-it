@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: administer/revert-ontap.html 
+keywords: afx, afx system, revert, revert ontap, revert limitation 
+summary: Il ripristino di un cluster ONTAP è il processo di spostamento di tutti i nodi alla precedente versione principale ONTAP . 
+---
+= ONTAP revert non supportato con i sistemi di archiviazione AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il ripristino di un cluster ONTAP è il processo di spostamento di tutti i nodi alla precedente versione principale ONTAP .
+
+I sistemi di storage NetApp AFX non supportano il ripristino ONTAP . Il tentativo di eseguire un'operazione di ripristino con AFX può causare instabilità del cluster e perdita di dati. Non dovresti tentare un'operazione di ripristino su un sistema AFX.
