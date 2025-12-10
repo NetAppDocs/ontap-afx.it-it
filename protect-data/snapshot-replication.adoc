@@ -86,8 +86,6 @@ Una relazione di replica snapshot stabilisce una connessione tra il sistema AFX 
 Per proteggersi dagli attacchi ransomware, quando si imposta la relazione di replica, è possibile scegliere di bloccare gli snapshot di destinazione.  Gli snapshot bloccati non possono essere eliminati accidentalmente o intenzionalmente.  È possibile utilizzare snapshot bloccati per recuperare i dati se un volume viene compromesso da un attacco ransomware.
 
 .Prima di iniziare
-Se vuoi bloccare gli snapshot di destinazione, devilink:../secure-data/ransomware-protection.html#initialize-the-snaplock-compliance-clock["inizializzare l'orologio di conformità Snapshot"] prima di creare la relazione di replicazione.
-
 Creare una relazione di replica con o senza snapshot di destinazione bloccati.
 
 [role="tabbed-block"]

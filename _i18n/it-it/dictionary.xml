@@ -444,7 +444,6 @@
   <block id="c06b2149bbe3e94f6eac8a64039cc025" category="list-text">Leggi l'EULA.</block>
   <block id="d6aeb9cf91111f522e0f1901518a3836" category="list-text">Accetta le impostazioni predefinite per *Mostra notifica* degli aggiornamenti consigliati.  Facoltativamente, seleziona *Aggiorna automaticamente* o *Ignora automaticamente* gli aggiornamenti consigliati.</block>
   <block id="17ac6cdd9934a4f4aca00f5228a64555" category="list-text">Seleziona per accettare che le modifiche apportate all'aggiornamento verranno applicate a tutti gli aggiornamenti attuali e futuri.</block>
-  <block id="09190524572cf4f2b42ddf32f3f54ce7" category="paragraph">Gli aggiornamenti consigliati vengono scaricati e installati automaticamente sul tuo sistema OTAP AFX in base alle tue selezioni di aggiornamento.</block>
   <block id="5de0adb95551ff3c1458ae6247a4959f" category="section-title">Disattiva gli aggiornamenti automatici</block>
   <block id="6141cdc0ba26479d87d6b8c24af9fc18" category="paragraph">Disattiva gli aggiornamenti automatici se desideri avere la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano installati.  Se si disattivano gli aggiornamenti automatici, sarà necessario eseguire manualmente gli aggiornamenti del firmware e dei file di sistema.</block>
   <block id="9c2cdad0235d8d361f21c8343ef95363" category="list-text">In System Manager, seleziona *Cluster &gt; Impostazioni*.</block>
@@ -1409,8 +1408,6 @@
   <block id="ce587252d09bb3dfb2d53f154ba81d93" category="section-title">Passaggio 3: creare una relazione di replicazione</block>
   <block id="c8733c85583475859780bc7c89c97d92" category="paragraph">Una relazione di replica snapshot stabilisce una connessione tra il sistema AFX e una posizione remota, in modo da poter replicare i gruppi di coerenza su un cluster remoto.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o per la migrazione dei dati.</block>
   <block id="c5d439ea8d2444de271a6842180ae515" category="paragraph">Per proteggersi dagli attacchi ransomware, quando si imposta la relazione di replica, è possibile scegliere di bloccare gli snapshot di destinazione.  Gli snapshot bloccati non possono essere eliminati accidentalmente o intenzionalmente.  È possibile utilizzare snapshot bloccati per recuperare i dati se un volume viene compromesso da un attacco ransomware.</block>
-  <block id="bf5d4ab274f571d57107a348e35cb081" category="inline-link-macro">inizializzare l'orologio di conformità Snapshot</block>
-  <block id="a2070fe1416691eeb91c53762fd2a74c" category="paragraph">Se vuoi bloccare gli snapshot di destinazione, devi<block ref="27d9d0ff36409c51abdcd0a6f30da304" category="inline-link-macro-rx"></block> prima di creare la relazione di replicazione.</block>
   <block id="f07148b3f2fd0f0a23b807626916df29" category="paragraph">Creare una relazione di replica con o senza snapshot di destinazione bloccati.</block>
   <block id="b581751404702669bf568b5f9581e76c" category="open-title">Con istantanee bloccate</block>
   <block id="82fd6aa34bfb21de39dd81c963a0a2e8" category="list-text">In Gestione sistema, seleziona *Protezione &gt; Gruppi di coerenza*.</block>
@@ -1772,4 +1769,5 @@
   <block id="b34a4582eb04bf97b29749b7a8e1ee38" category="inline-link-macro">ONTAP ripristina</block>
   <block id="dbca7577f0796430f28fd2f1f5805bc9" category="admonition">I sistemi di archiviazione AFX non supportano <block ref="af98218b92f959dac30e2de6f742409f" category="inline-link-macro-rx"></block> operazioni.</block>
   <block id="0f3715b1b8b72110fa162f2666d15f10" category="sidebar">Ripristina limitazione</block>
+  <block id="c29e3429d133a5255487ffdb4b3cd5b3" category="paragraph">Gli aggiornamenti consigliati vengono scaricati e installati automaticamente sul tuo sistema ONTAP AFX in base alle tue selezioni di aggiornamento.</block>
 </blocks>

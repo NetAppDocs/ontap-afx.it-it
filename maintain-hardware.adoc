@@ -7,7 +7,7 @@ summary: Consultare la documentazione sulla manutenzione AFX per scoprire come e
 = Mantenere l'hardware del sistema di archiviazione AFX
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: Questo elenco di FAQ fornisce le risposte alle domande che i clienti so
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
