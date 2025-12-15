@@ -72,6 +72,10 @@ Definisci i dettagli per i tuoi server DNS e NTP.
 +
 È possibile definire i dettagli per la crittografia del cluster. Selezionare *Continua*.
 
++
+
+NOTE: Per informazioni su come creare un cluster per un ambiente non Windows, vedere link:https://docs.netapp.com/us-en/ontap/software_setup/setup-cluster.html["Crea un cluster ONTAP e unisci i nodi"^].
+
 
 
 .Cosa c'è dopo?

@@ -136,7 +136,7 @@ Per istruzioni su come configurare la porta della console seriale, consultare la
 .. Collegare il cavo della console al laptop e collegare la porta seriale della console sul controller utilizzando il cavo della console fornito con il sistema di archiviazione.
 .. Collegare il laptop allo switch sulla subnet di gestione.
 +
-image::../media/drw_a1k_70-90_console_connection_ieops-1702.svg[Connessioni della console]
+image::../media/drw_afx_1k_console_connection_ieops-2708.svg[Connessioni della console]
 
 
 
