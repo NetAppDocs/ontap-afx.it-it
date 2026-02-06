@@ -15,6 +15,12 @@ Dopo aver cablato il sistema di archiviazione AFX 1K, è necessario accendere e 
 
 .Passi
 . Collegare i cavi di alimentazione degli interruttori alle fonti di alimentazione.
+. Collega i cavi ISL tra i due switch.
++
+** Per gli switch Cisco Nexus 9332D-GX2B, utilizzare le porte 31/32 per le connessioni ISL. Consultare il link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Guida all'installazione hardware dello switch Cisco Nexus 9332D-GX2B NX-OS Mode"^] per ulteriori informazioni.
+** Per gli switch Cisco Nexus 9364D-GX2A, utilizzare le porte 63/64 per le connessioni ISL. Consultare la link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide/m_overview1.html["Guida all'installazione hardware dello switch Cisco Nexus 9364D-GX2A NX-OS Mode"^] per ulteriori informazioni.
+
+
 . Accendere ogni interruttore.
 . Configurare gli switch per supportare il sistema di archiviazione AFX 1K.
 +
