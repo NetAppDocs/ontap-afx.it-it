@@ -139,12 +139,14 @@ image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Cavo alla rete Ethernet
 
 
 
-== Passaggio 3: Cablare il cluster e le connessioni HA
+== Passaggio 3: cablare le connessioni del cluster, HA e storage allo switch di rete A
 
-Utilizzare il cavo di interconnessione Cluster e HA per collegare le porte e1a ed e7a allo switch A e e1b ed e7b allo switch B. Le porte e1a/e1b vengono utilizzate per le connessioni HA, mentre le porte e7a/e7b vengono utilizzate per le connessioni cluster.
+Utilizzare il cavo breakout 4x100GbE per collegare le porte cluster, HA e storage sui controller allo switch di rete A. Utilizzare il cavo di interconnessione cluster e HA per collegare le porte e1a ed e7a allo switch A. Le porte e1a sono utilizzate per le connessioni HA, mentre le porte e7a sono utilizzate per le connessioni cluster. Per le connessioni storage, collegare le porte e10a ed e11a allo switch A.
+
+Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi https://hwu.netapp.com["Hardware Universe"^] per maggiori informazioni.
 
 .Passi
-. Collegare le seguenti porte del controller a qualsiasi porta non ISL sullo switch di rete del cluster A.
+. Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete A.
 +
 ** Controllore A
 +
@@ -160,47 +162,11 @@ Utilizzare il cavo di interconnessione Cluster e HA per collegare le porte e1a e
 *Cavi da 100 GbE*
 
 +
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cavo Cluster HA]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_a_ieops-2352.svg[Collegamenti del cluster via cavo alla rete del cluster]
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
 
 
 
 
-
-. Collegare le seguenti porte del controller a qualsiasi porta non ISL sullo switch di rete del cluster B.
-+
-** Controllore A
-+
-*** e1b (HA)
-*** e7b (ammasso)
-
-
-** Controllore B
-+
-*** e1b (HA)
-*** e7b (ammasso)
-+
-*Cavi da 100 GbE*
-
-+
-image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cavo Cluster HA]
-
-+
-image::../media/drw_afx_switched_cluster_cabling_b_ieops-2353.svg[Collegamenti del cluster via cavo alla rete del cluster]
-
-
-
-
-
-
-
-
-
-== Passaggio 4: cablare le connessioni di archiviazione dal controller allo switch
-
-Collegare le porte di archiviazione del controller agli switch.  Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedere https://hwu.netapp.com["Hardware Universe"^] per maggiori informazioni.
 
 . Collegare le seguenti porte di archiviazione a qualsiasi porta non ISL sullo switch A.
 +
@@ -221,7 +187,39 @@ Collegare le porte di archiviazione del controller agli switch.  Assicurati di a
 image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Cavo di archiviazione del controller per commutare A]
+image::../media/drw_afx_ha_cluster_storage_a_ieops-2779.svg[Cluster del controller via cavo,HA,and storage to switch A]
+
+
+
+
+
+
+
+
+
+== Passaggio 4: cabla le connessioni del cluster, HA e storage allo switch di rete B
+
+Utilizzare il cavo breakout 4x100GbE per collegare le porte cluster, HA e storage sui controller allo switch di rete B. Utilizzare il cavo di interconnessione cluster e HA per collegare le porte e1b ed e7b allo switch B. Le porte e1b sono utilizzate per le connessioni HA, mentre le porte e7b sono utilizzate per le connessioni cluster. Per le connessioni storage, collegare le porte e10b ed e11b allo switch B.
+
+Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi https://hwu.netapp.com["Hardware Universe"^] per maggiori informazioni.
+
+. Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete B.
++
+** Controllore A
++
+*** e1b (HA)
+*** e7b (ammasso)
+
+
+** Controllore B
++
+*** e1b (HA)
+*** e7b (ammasso)
++
+*Cavi da 100 GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
 
 
 
@@ -246,7 +244,7 @@ image::../media/drw_afx_controller_storage_cable_a_ieops-2354.svg[Cavo di archiv
 image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
 
 +
-image::../media/drw_afx_controller_storage_cable_b_ieops-2355.svg[Cavo di archiviazione del controller per switch B]
+image::../media/drw_afx_ha_cluster_storage_b_ieops-2780.svg[Cluster del controller via cavo,HA,and storage to switch B]
 
 
 

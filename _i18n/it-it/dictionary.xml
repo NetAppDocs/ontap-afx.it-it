@@ -792,28 +792,18 @@
   <block id="808f3fa88e6266b2beb8f1153dd991ec" category="list-text">Collegare le seguenti porte allo switch di rete dati Ethernet B.</block>
   <block id="53c535a8b8a2c8bb670d136b82e73f99" category="list-text">e2b</block>
   <block id="969d430598a257671bdf944480e4d46b" category="list-text">e3b</block>
-  <block id="4015e00b406d10c628519f953d69e086" category="section-title">Passaggio 3: Cablare il cluster e le connessioni HA</block>
-  <block id="093fe9dff1e5370d0b97313cefba5acd" category="paragraph">Utilizzare il cavo di interconnessione Cluster e HA per collegare le porte e1a ed e7a allo switch A e e1b ed e7b allo switch B. Le porte e1a/e1b vengono utilizzate per le connessioni HA, mentre le porte e7a/e7b vengono utilizzate per le connessioni cluster.</block>
-  <block id="7d1e8fb2f50320f7b5004ba0fd39055b" category="list-text">Collegare le seguenti porte del controller a qualsiasi porta non ISL sullo switch di rete del cluster A.</block>
   <block id="595df28a8a4a9361a6231a9d84e8cd08" category="list-text">Controllore A</block>
   <block id="9cb7b36b3f2bccc776862e6f2f494077" category="list-text">e1a</block>
   <block id="a9e70fa35de61f4ac25cc4bcd706a55d" category="list-text">Controllore B</block>
-  <block id="29b62d617481485649ea2d5b54fca512" category="image-alt">Cavo Cluster HA</block>
-  <block id="f1d133e33e29362e931a34312a961d0b" category="image-alt">Collegamenti del cluster via cavo alla rete del cluster</block>
-  <block id="ac32cb5bd4dc17916ab1ece800d39226" category="list-text">Collegare le seguenti porte del controller a qualsiasi porta non ISL sullo switch di rete del cluster B.</block>
   <block id="e737b5ac24a63afc00e81377a906728d" category="list-text">e1b</block>
-  <block id="c61349783073807f1993874d0e3a4a8c" category="section-title">Passaggio 4: cablare le connessioni di archiviazione dal controller allo switch</block>
   <block id="da160308e3b4b4a80bf1b72b5bdbedb8" category="inline-link">Hardware Universe</block>
-  <block id="7bebd570400c9d8d9796caad43fdcebd" category="paragraph">Collegare le porte di archiviazione del controller agli switch.  Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedere<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> per maggiori informazioni.</block>
   <block id="d7434100057b78673eee73421ad29942" category="list-text">Collegare le seguenti porte di archiviazione a qualsiasi porta non ISL sullo switch A.</block>
   <block id="405e469b4aa3065616ee04f4a4b2b35e" category="list-text">e10a</block>
   <block id="2772fdc65a945771c18178a5b650c575" category="list-text">e11a</block>
   <block id="b222cca23840b6a495e76b8c300b08f2" category="image-alt">Cavo da 100 Gb</block>
-  <block id="56812cf9e76eb2dfaa41475474798d4b" category="image-alt">Cavo di archiviazione del controller per commutare A</block>
   <block id="dc1921771bb6c193442045d9a99b8c9d" category="list-text">Collegare le seguenti porte di archiviazione a qualsiasi porta non ISL sullo switch B.</block>
   <block id="d5dec99b9c0f6ad0c56335c85d42e40b" category="list-text">e10b</block>
   <block id="6dfe0149eb6951bd7c7e5c94c1713869" category="list-text">e11b</block>
-  <block id="73b33ccdc5c989a11800499004721836" category="image-alt">Cavo di archiviazione del controller per switch B</block>
   <block id="18154dcfffa2547c8d59ed9df65fb3ac" category="section-title">Fase 5: Cablare i collegamenti tra scaffale e switch</block>
   <block id="b1ea5415ee8f031dcace291f9c98e0be" category="paragraph">Collegare gli scaffali portaoggetti NX224 agli switch.</block>
   <block id="5a684badbec5242d1800f819ca49559e" category="paragraph">Per il numero massimo di ripiani supportati dal tuo sistema di archiviazione e per tutte le opzioni di cablaggio, consulta<block ref="43b42c26c42f7c6fe4ef77f9f2ed17ff" category="inline-link-macro-rx"></block> .</block>
@@ -1776,4 +1766,12 @@
   <block id="f8979ce4e5d66f41e330415672140ef8" category="list-text">Per gli switch Cisco Nexus 9364D-GX2A, utilizzare le porte 63/64 per le connessioni ISL. Consultare la <block ref="d3ef7ae1e3bea631e525704fa9f8906b" category="inline-link-macro-rx"></block> per ulteriori informazioni.</block>
   <block id="35baa74f76db10604e3f71a16b4078d1" category="paragraph">NetApp AFX è ottimizzato per carichi di lavoro NAS e a oggetti dalle performance elevate. Per questo motivo, ci sono differenze rispetto ai sistemi di storage AFF e FAS. Le seguenti funzionalità non sono disponibili con NetApp AFX; l'elenco è organizzato per funzionalità principale o area funzionale. Si consiglia inoltre di esaminare gli aggiornamenti e le modifiche per AFX in <block ref="e4ac4a7dd877729340e2b0880473ea1b" category="inline-link-macro-rx"></block> in base alla versione di ONTAP in uso.</block>
   <block id="86daf5160966102a39f5f3c0390bde11" category="list-text">Mirror di condivisione del carico</block>
+  <block id="8c60e60e96c6540bd35beb72adc17cb0" category="section-title">Passaggio 3: cablare le connessioni del cluster, HA e storage allo switch di rete A</block>
+  <block id="1255d6bb11db98e4f919212687145a90" category="paragraph">Utilizzare il cavo breakout 4x100GbE per collegare le porte cluster, HA e storage sui controller allo switch di rete A. Utilizzare il cavo di interconnessione cluster e HA per collegare le porte e1a ed e7a allo switch A. Le porte e1a sono utilizzate per le connessioni HA, mentre le porte e7a sono utilizzate per le connessioni cluster. Per le connessioni storage, collegare le porte e10a ed e11a allo switch A.</block>
+  <block id="245afd341214dde6198c6abfdac71264" category="paragraph">Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi<block ref="16a6d09025d51cb8dd3516798b3fee8a" category="inline-link-rx"></block> per maggiori informazioni.</block>
+  <block id="e42929c9f069074fd111dfa1c107772e" category="list-text">Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete A.</block>
+  <block id="c1209a2ef5ab3b20312d0aebe91b01d3" category="image-alt">Cluster del controller via cavo</block>
+  <block id="c42589aeb6cdc4aab7c9ee5517ef1f84" category="section-title">Passaggio 4: cabla le connessioni del cluster, HA e storage allo switch di rete B</block>
+  <block id="14aa705a8a71a02fb1b277002e0c52ed" category="paragraph">Utilizzare il cavo breakout 4x100GbE per collegare le porte cluster, HA e storage sui controller allo switch di rete B. Utilizzare il cavo di interconnessione cluster e HA per collegare le porte e1b ed e7b allo switch B. Le porte e1b sono utilizzate per le connessioni HA, mentre le porte e7b sono utilizzate per le connessioni cluster. Per le connessioni storage, collegare le porte e10b ed e11b allo switch B.</block>
+  <block id="8cff5fa6944271f10e636cadf3153077" category="list-text">Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete B.</block>
 </blocks>
