@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: get-started/learn-about-aide.html 
+keywords: ai, ai data engine, aide, learn about aide, aide pipeline data management, data governance 
+summary: 'NetApp AI Data Engine (AIDE) è un servizio dati AI integrato nello storage che viene eseguito su nodi di elaborazione dati collegati a un cluster AFX. Puoi opzionalmente installare e integrare AIDE con il tuo cluster AFX, estendendo AFX fornendo un"elaborazione dati dedicata e accelerata da GPU per carichi di lavoro AI e ML, mantenendo tutti i vantaggi di ONTAP.' 
+---
+= Scopri il NetApp AI Data Engine
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp AI Data Engine (AIDE) è un servizio dati AI integrato nello storage che viene eseguito su nodi di elaborazione dati collegati a un cluster AFX. Puoi opzionalmente installare e integrare AIDE con il tuo cluster AFX, estendendo AFX fornendo un'elaborazione dati dedicata e accelerata da GPU per carichi di lavoro AI e ML, mantenendo tutti i vantaggi di ONTAP.
+
+
+
+== Panoramica di AIDE
+
+AIDE è un sistema progettato per accelerare e semplificare la preparazione e la gestione dei tuoi dati per carichi di lavoro AI e ML. Viene installato separatamente e si integra strettamente con un cluster sistema storage AFX. AIDE sfrutta la base storage AFX dalle performance elevate e scalabile, aggiungendo servizi specializzati per l'elaborazione dei dati AI, la governance e l'automazione dei workflow.
+
+Uno dei punti di forza di AIDE è la sua capacità di centralizzare e automatizzare la gestione dei metadati su grandi dataset distribuiti. Può essere configurato per catalogare e aggiornare continuamente la base storage dei metadati in base ai dati presenti nei volumi ONTAP, consentendo agli utenti di cercare, classificare e applicare policy di governance in modo efficiente. La pipeline di elaborazione interna genera dataset pronti per l'AI, inclusa la creazione necessaria di incorporamenti vettoriali per attività di ricerca e recupero semantico.
+
+Sicurezza e governance sono anch'esse centrali nella sua progettazione. AIDE fornisce autenticazione, controllo degli accessi con nuovi ruoli RBAC, classificazione dei dati e applicazione basata su policy per la protezione delle informazioni sensibili. Funzionalità come la redazione automatica, il mascheramento e la registrazione degli audit aiutano a soddisfare i requisiti normativi applicabili e a proteggere i dati critici durante l'intero ciclo di vita dell'AI.
+
+AIDE consente a data engineer e data scientist di disporre di strumenti per la rapida individuazione dei dati, la curation e la gestione dei workflow. Con la console AIDE dedicata e l'API REST AFX migliorata, gli utenti possono creare raccolte di dati curate, eseguire ricerche vettoriali e integrarsi con applicazioni AI e GenAI esterne. AIDE riduce lo sforzo manuale richiesto e consente ai team di concentrarsi sull'estrazione di insight dai propri dati.
+
+
+
+== Opzioni di installazione
+
+Esistono due opzioni per installare e integrare AIDE con il tuo cluster storage AFX.
+
+
+
+=== Configura AFX e AIDE insieme
+
+L'implementazione simultanea del sistema storage AFX e di AIDE offre un processo di installazione unificato e semplificato, garantendo un'integrazione immediata e una configurazione ottimale. Questo approccio chiavi in mano semplifica l'onboarding, garantisce la compatibilità e consente di sfruttare rapidamente una piattaforma dati AI completamente operativa, ideale per le nuove implementazioni che richiedono un rapido time-to-value.
+
+
+
+=== Integrare AIDE con un cluster AFX esistente
+
+Se disponi già di un cluster storage AFX installato e operativo, puoi aggiungere AIDE in qualsiasi momento per migliorare l'accesso e il valore dei tuoi dati. AIDE viene implementato come componente aggiuntivo dell'ambiente di storage AFX esistente, connettendosi alla rete di storage del cluster consolidata senza interrompere le operazioni. Il processo di integrazione rileva automaticamente i volumi ONTAP disponibili e sincronizza i metadati. I flussi di lavoro di elaborazione dei dati vengono migliorati tramite strumenti di automazione, governance e curation basati sull'intelligenza artificiale, preservando al contempo la base storage esistente.
+
+
+
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ai-data-engine/get-started/learn-about.html["Scopri AI Data Engine"^]
+* https://docs.netapp.com/us-en/ai-data-engine/faq-aide.html["FAQ per NetApp AI Data Engine"^]
+* https://docs.netapp.com/us-en/ai-data-engine/install-setup/cluster-setup-afx.html["Configura il tuo cluster ONTAP AIDE"^]
+* https://www.netapp.com/data-services/ai-data-engine/["NetApp AI Data Engine"^]
+
