@@ -38,6 +38,9 @@ NOTE: I cavi di collegamento non sono inclusi nel kit passante.  Contattare NetA
 
 NOTE: Se il flusso d'aria degli switch è configurato per l'aspirazione lato porta (ventole e alimentatori di colore bordeaux), le porte di rete degli switch devono essere installate rivolte verso la parte anteriore del cabinet e le ventole di scarico devono essere rivolte verso la parte posteriore del cabinet. Con questa configurazione, è necessario assicurarsi di utilizzare cavi sufficientemente lunghi da collegare le porte di rete nella parte anteriore del cabinet alle porte di storage nella parte posteriore del cabinet. + Per informazioni più dettagliate su questi switch, visitare il sito web Cisco: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch Cisco Nexus 9332D-GX2B NX-OS Mode"^] e  https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch Cisco Nexus 9364D-GX2A NX-OS Mode"^].
 
+
+CAUTION: Indossare sempre un braccialetto con messa a terra collegato a un punto di messa a terra verificato durante le procedure di installazione e manutenzione. La mancata osservanza delle opportune precauzioni ESD può causare danni permanenti ai nodi controller, ai ripiani di storage e agli switch di rete.
+
 .Passi
 . Installare il pannello cieco passante.
 +

@@ -159,4 +159,8 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Schema di collegamen
 
 
 .Cosa succederà ora?
-Dopo aver acceso il sistema di archiviazione AFX 1K,link:../install-setup/cluster-setup.html["impostare un cluster AFX"] .
+Dopo aver acceso il tuo sistema storage AFX 1K, completa la configurazione in base all'opzione di distribuzione:
+
+* Per le distribuzioni dedicate del sistema storage AFX 1K, vai su link:../install-setup/cluster-setup.html["Impostare un cluster AFX"].
+* Per le distribuzioni AFX 1K con AI Data Engine (AIDE), vai a link:https://docs.netapp.com/us-en/ai-data-engine/install-setup/aide-hardware-requirements.html["Installare i nodi di elaborazione dati AIDE"].
+

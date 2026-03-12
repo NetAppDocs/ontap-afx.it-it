@@ -40,3 +40,6 @@ Collega l'hardware, quindi accendi e configura gli switch per il tuo sistema di 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sette"]link:power-on-hardware.html["Accendi il tuo sistema di archiviazione AFX 1K"]
 [role="quick-margin-para"]
 Accendere ogni ripiano di archiviazione e assegnare un ID ripiano univoco prima di accendere i nodi del controller per identificare chiaramente ogni ripiano nella configurazione.
+
+
+NOTE: Se si distribuisce AFX 1K con l'AI Data Engine (AIDE), installare i nodi di elaborazione dati AIDE dopo aver acceso il sistema AFX. Consultare link:https://docs.netapp.com/us-en/ai-data-engine/install-setup/aide-hardware-requirements.html["Installare i nodi di elaborazione dati AIDE"] per ulteriori informazioni.
