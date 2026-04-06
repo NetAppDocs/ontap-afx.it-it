@@ -58,9 +58,7 @@ NOTE: Le configurazioni degli switch Cisco Nexus 9332D-GX2B e 9364D-GX2A per il 
 
 == Fase 1: collegare i controller alla rete di gestione
 
-Collegare la porta di gestione su ogni switch a uno degli switch di gestione (se ordinati) oppure collegarli direttamente alla rete di gestione.
-
-La porta di gestione è la porta in alto a destra situata sul lato PSU dello switch.  Dopo l'installazione degli switch, il cavo CAT6 di ogni switch deve essere instradato attraverso il pannello passante per connettersi agli switch di gestione o alla rete di gestione.
+Collega la porta di gestione (chiave inglese) di ciascun controller a uno degli switch di gestione oppure collegali direttamente alla rete di gestione.
 
 Utilizzare i cavi RJ-45 1000BASE-T per collegare le porte di gestione (chiave inglese) su ciascun controller agli switch di rete di gestione.
 
@@ -68,7 +66,7 @@ image::../media/oie_cable_rj45.png[cavi RJ-45]
 
 *Cavi RJ-45 1000BASE-T*
 
-image::../media/drw_afx_management_connection_ieops-2349.svg[Connettiti alla tua rete di gestione]
+image::../media/drw_afx_management_connection_ieops-2815.svg[Connettiti alla tua rete di gestione]
 
 
 IMPORTANT: Non collegare ancora i cavi di alimentazione.
@@ -87,13 +85,7 @@ Questa procedura può variare a seconda della configurazione del modulo I/O.  Di
 .Passi
 . Collegare le seguenti porte allo switch di rete dati Ethernet A.
 +
-** Controller A (esempio)
-+
-*** e2a
-*** e3a
-
-
-** Controller B (esempio)
+** Controllore (Esempio)
 +
 *** e2a
 *** e3a
@@ -104,7 +96,7 @@ Questa procedura può variare a seconda della configurazione del modulo I/O.  Di
 image::../media/oie_cable100_gbe_qsfp28.png[Cavo Ethernet da 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cavo alla rete Ethernet]
+image::../media/drw_afx_network_cabling_a_ieops-2813.svg[Cavo alla rete Ethernet]
 
 
 
@@ -112,13 +104,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cavo alla rete Ethernet
 
 . Collegare le seguenti porte allo switch di rete dati Ethernet B.
 +
-** Controller A (esempio)
-+
-*** e2b
-*** e3b
-
-
-** Controller B (esempio)
+** Controllore (Esempio)
 +
 *** e2b
 *** e3b
@@ -129,7 +115,7 @@ image::../media/drw_afx_network_cabling_a_ieops-2350.svg[Cavo alla rete Ethernet
 image::../media/oie_cable100_gbe_qsfp28.png[Cavo Ethernet da 100 Gb]
 
 +
-image::../media/drw_afx_network_cabling_b_ieops-2351.svg[Cavo alla rete Ethernet]
+image::../media/drw_afx_network_cabling_b_ieops-2814.svg[Cavo alla rete Ethernet]
 
 
 
@@ -148,38 +134,12 @@ Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi https
 .Passi
 . Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete A.
 +
-** Controllore A
+** Controller
 +
 *** e1a (HA)
 *** e7a (ammasso)
-
-
-** Controllore B
-+
-*** e1a (HA)
-*** e7a (ammasso)
-+
-*Cavi da 100 GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
-
-
-
-
-
-. Collegare le seguenti porte di archiviazione a qualsiasi porta non ISL sullo switch A.
-+
-** Controllore A
-+
-*** e10a
-*** e11a
-
-
-** Controllore B
-+
-*** e10a
-*** e11a
+*** e10a (Storage)
+*** e11a (Storage)
 +
 *Cavi da 100 GbE*
 
@@ -205,38 +165,12 @@ Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi https
 
 . Collegare le seguenti porte del controller a qualsiasi porta non-ISL sullo switch di rete B.
 +
-** Controllore A
+** Controller
 +
 *** e1b (HA)
 *** e7b (ammasso)
-
-
-** Controllore B
-+
-*** e1b (HA)
-*** e7b (ammasso)
-+
-*Cavi da 100 GbE*
-
-+
-image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
-
-
-
-
-
-. Collegare le seguenti porte di archiviazione a qualsiasi porta non ISL sullo switch B.
-+
-** Controllore A
-+
-*** e10b
-*** e11b
-
-
-** Controllore B
-+
-*** e10b
-*** e11b
+*** e10b (Storage)
+*** e11b (Archiviazione)
 +
 *Cavi da 100 GbE*
 
