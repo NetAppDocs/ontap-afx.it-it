@@ -4,25 +4,42 @@ permalink: administer/monitor-cluster-performance.html
 keywords: afx, afx system, cluster performance 
 summary: È possibile visualizzare una panoramica di alto livello delle prestazioni del cluster AFX. 
 ---
-= Monitorare le prestazioni del cluster del sistema di archiviazione AFX
+= Monitorare le prestazioni del cluster del sistema storage AFX e l'utilizzo dello storage
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-È possibile visualizzare una panoramica di alto livello delle prestazioni del cluster AFX.
+È possibile visualizzare una panoramica high-level delle prestazioni e dell'utilizzo dello storage del cluster AFX.
 
 
 
 == Capacità di stoccaggio
 
-La dashboard di System Manager include una visualizzazione di alto livello dell'utilizzo dello storage per il cluster.
+Monitora l'utilizzo dello storage per assicurarti di avere una capacità di storage sufficiente per i carichi di lavoro attuali e futuri.
+
+
+
+=== Monitorare l'utilizzo dello storage a livello high-level del cluster
+
+In ONTAP System Manager, è possibile visualizzare una panoramica high-level dell'utilizzo dello storage per l'intero cluster.
 
 .Passi
 . In System Manager, seleziona *Dashboard* nel riquadro di navigazione.
 . Individua il riquadro *Capacità* e visualizza lo spazio di archiviazione fisico disponibile e utilizzato.
 . Selezionare *Cronologia* per accedere ad Active IQ e visualizzare i dati storici.
+
+
+
+
+=== Monitora i dettagli sulla capacità della zona di disponibilità dello storage
+
+A partire da ONTAP 9.19.1, puoi visualizzare i dettagli della capacità della tua zona di disponibilità dello storage, inclusi le soglie di spazio, lo spazio consumato dagli snapshot e la riduzione dei dati. Puoi anche impostare le soglie di utilizzo dello spazio alla percentuale alla quale desideri che ONTAP generi avvisi di warning e critici.
+
+.Passi
+. In System Manager, selezionare *Cluster > Panoramica* e quindi selezionare *Zona di disponibilità*.
+. Per modificare le soglie di avviso o di spazio critico, selezionare image:icon_edit_pencil_blue_outline.png["icona di modifica a matita blu"] sotto la soglia che si desidera modificare.
 
 
 

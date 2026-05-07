@@ -45,6 +45,20 @@ Una licenza ONTAP è un registro di uno o più diritti software.  Tutte le licen
 
 
 
+== Prestazioni
+
+Utilizza le comuni funzionalità ONTAP per ottimizzare le prestazioni del cluster del sistema storage AFX.
+
+
+
+=== Modifica le impostazioni predefinite che controllano gli aumenti automatici del limite massimo di throughput QoS
+
+I gruppi di criteri QoS adattivi e non adattivi vengono abilitati automaticamente per aumentare temporaneamente del 50% il limite massimo di throughput di un carico di lavoro per una durata di 1 secondo, al fine di rispondere alle richieste a breve termine di prestazioni superiori per impostazione predefinita. A partire da ONTAP 9.19.1, è possibile modificare queste impostazioni predefinite. In ONTAP 9.18.1 e versioni precedenti, queste impostazioni non possono essere modificate.
+
+Fare riferimento a link:https://docs.netapp.com/us-en/ontap/performance-admin/guarantee-throughput-qos-task.html["Limiti massimi di throughput QoS"^].
+
+
+
 == Sicurezza
 
 Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configurare e utilizzare con la tua distribuzione AFX.
@@ -60,6 +74,12 @@ Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configur
 === Autenticazione e controllo degli accessi ONTAP
 
 Il sistema di archiviazione AFX offre diverse opzioni per la configurazione dei servizi di autenticazione e controllo degli accessi. Fare riferimento a https://docs.netapp.com/us-en/ontap/authentication-access-control/index.html["Autenticazione e controllo degli accessi"^] per maggiori informazioni.
+
+
+
+=== Offload hardware TLS ONTAP
+
+È possibile delegare la crittografia e la decrittografia Transport Layer Security (TLS) dell'intero cluster alle schede Ethernet supportate. Ciò riduce il carico sulla CPU e migliora le prestazioni dei sistemi che utilizzano TLS. Consultare  https://docs.netapp.com/us-en/ontap/networking/configure-tls-offload.html["Configurare l'offload hardware TLS di ONTAP"^] per ulteriori informazioni.
 
 
 
