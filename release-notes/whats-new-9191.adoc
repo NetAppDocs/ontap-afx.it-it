@@ -21,16 +21,11 @@ TIP: Scopri il nuovo e migliorato supporto per  https://docs.netapp.com/us-en/ai
 
 
 
-== Prestazioni e scala
+== Prestazioni
 
 [cols="2,4"]
 |===
 | Aggiornamento | Descrizione 
-
-
-| Dimensione del cluster AFX espansa  a| 
-ONTAP 9.19.1 supporta l'espansione di un cluster AFX fino a un massimo di 32 nodi. Ciò consente di scalare il sistema storage AFX per soddisfare le crescenti esigenze dei carichi di lavoro e delle applicazioni.
-
 
 
 | Lettura sequenziale tra file (CFSR)  a| 
@@ -40,6 +35,11 @@ La funzione Cross File Sequential Read può migliorare significativamente le pre
 
 | Deduplicazione globale  a| 
 La deduplicazione globale estende il risparmio di spazio derivante dalla deduplicazione ONTAP all'intera Storage Availability Zone (SAZ). Eliminando i blocchi di dati duplicati in tutti i volumi della SAZ, è possibile migliorare significativamente l'efficienza dello storage e ridurre il costo totale di proprietà. Questa funzionalità è abilitata di default sui sistemi AFX e opera in modo trasparente senza necessità di configurazione amministrativa. Consultare link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva per un sistema di archiviazione AFX SVM"] per ulteriori informazioni.
+
+
+
+| Efficienza dinamica di storage  a| 
+Dynamic Storage Efficiency ottimizza in modo intelligente le operazioni di efficienza dello storage (compressione, deduplicazione e compaction) per carichi di lavoro di grandi dimensioni che richiedono prestazioni elevate e massimo throughput. Rileva automaticamente le condizioni di scrittura ad alto volume e sospende temporaneamente i processi di efficienza dello storage in linea e in background per prevenire il peggioramento delle performance durante i picchi di carico. Quando il throughput scende al di sotto di una soglia definita, le operazioni di efficienza dello storage vengono ripristinate e i risparmi vengono recuperati senza intervento manuale. La funzionalità è disponibile sui sistemi storage AFX ed è abilitata di default senza necessità di configurazione.
 
 |===
 

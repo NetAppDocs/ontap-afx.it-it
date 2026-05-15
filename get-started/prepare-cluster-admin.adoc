@@ -124,7 +124,7 @@ Capacità di stoccaggio:: Questa è la capacità totale di tutti i dischi SSD ne
 Interruttori a grappolo:: Sono necessari almeno due switch nella rete di archiviazione del cluster.  Il numero massimo consentito è determinato in base al numero totale di nodi controller nel cluster.
 
 
-Per determinare le capacità del tuo cluster AFX, dovresti consultare i dettagli disponibili su NetApp Hardware Universe e Interoperability Matrix Tool.
+È consigliabile consultare i dettagli disponibili nello NetApp Hardware Universe e nell'Interoperability Matrix Tool per determinare le funzionalità del cluster AFX. Consultare anche link:../release-notes/changes-to-limits-defaults.html["Modifiche ai limiti e alle impostazioni predefinite di ONTAP"] nella sezione delle note di rilascio di AFX.
 
 
 
