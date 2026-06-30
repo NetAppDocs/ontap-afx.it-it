@@ -39,9 +39,10 @@ Il controller di archiviazione AFX e i ripiani di archiviazione sono pesanti.  P
 
 Adottare le precauzioni necessarie quando si sposta o si solleva il controller di archiviazione AFX 1K.
 
-Un controller di archiviazione AFX 1K può pesare fino a 62,83 libbre (28,5 kg).  Per sollevare il controller di archiviazione, utilizzare due persone o un sollevatore idraulico.
+Un AFX 1K storage controller può pesare fino a 62,83 lb (28,5 kg). Per sollevare lo storage controller, usa due persone o un sollevatore idraulico.
 
-image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icona di attenzione al sollevamento ASA A1K]
+.Precauzione per il sollevamento del controller AFX 1K.
+image::../media/drw_a1k_weight_caution_ieops-1698.svg[Icona di avvertimento per il sollevamento di AFX 1K]
 
 
 
@@ -51,8 +52,9 @@ Adottare le precauzioni necessarie quando si sposta o si solleva lo scaffale.
 
 .Ripiano NX224
 --
-Uno scaffale NX224 può pesare fino a 60,1 libbre (27,3 kg).  Per sollevare lo scaffale, utilizzare due persone o un sollevatore idraulico.  Tenere tutti i componenti sullo scaffale (sia davanti che dietro) per evitare di sbilanciare il peso dello scaffale.
+Un ripiano NX224 può pesare fino a 60,1 lb (27,3 kg). Per sollevare il ripiano, usa due persone o un sollevatore idraulico. Tieni tutti i componenti nel ripiano (sia davanti che dietro) per evitare di sbilanciare il peso del ripiano.
 
+.Precauzione per il sollevamento dello shelf NX224.
 image::../media/drw_nx224_lifting_weight_ieops-2437.svg[Attenzione al sollevamento del NX224 NSM100]
 
 .Informazioni correlate

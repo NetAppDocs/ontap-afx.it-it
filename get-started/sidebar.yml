@@ -16,30 +16,58 @@ entries:
   url: "/get-started/quick-start.html"
 - title: Installa il tuo sistema AFX
   entries:
-  - title: Installa flusso di lavoro
-    url: "/install-setup/install-setup-workflow.html"
-  - title: Esaminare i requisiti hardware
-    url: "/install-setup/install-setup-requirements.html"
-  - title: Prepararsi all'installazione
-    url: "/install-setup/prepare-hardware.html"
-  - title: Installare l'hardware
+  - title: AFX 1K
     entries:
-    - title: Installare gli interruttori
-      url: "/install-setup/install-switches.html"
-    - title: Installare un sistema di stoccaggio e scaffali
-      url: "/install-setup/deploy-hardware.html"
-  - title: Cablaggio
+    - title: Installa flusso di lavoro
+      url: "/install-setup/install-setup-workflow.html"
+    - title: Esaminare i requisiti hardware
+      url: "/install-setup/install-setup-requirements.html"
+    - title: Prepararsi all'installazione
+      url: "/install-setup/prepare-hardware.html"
+    - title: Installare l'hardware
+      entries:
+      - title: Installare gli interruttori
+        url: "/install-setup/install-switches.html"
+      - title: Installare un sistema di stoccaggio e scaffali
+        url: "/install-setup/deploy-hardware.html"
+    - title: Cablaggio
+      entries:
+      - title: Esaminare le configurazioni supportate
+        url: "/install-setup/afx-cable-overview.html"
+      - title: Raccogliere informazioni di rete
+        url: "/install-setup/install-network-reqs.html"
+      - title: Hardware per cavi
+        url: "/install-setup/cable-hardware.html"
+    - title: Accendere e configurare gli switch
+      url: "/install-setup/power-on-configure-switch.html"
+    - title: Accendere il sistema
+      url: "/install-setup/power-on-hardware.html"
+  - title: AFX 2K
     entries:
-    - title: Esaminare le configurazioni supportate
-      url: "/install-setup/afx-cable-overview.html"
-    - title: Raccogliere informazioni di rete
-      url: "/install-setup/install-network-reqs.html"
-    - title: Hardware per cavi
-      url: "/install-setup/cable-hardware.html"
-  - title: Accendere e configurare gli switch
-    url: "/install-setup/power-on-configure-switch.html"
-  - title: Accendere il sistema
-    url: "/install-setup/power-on-hardware.html"
+    - title: Installa flusso di lavoro
+      url: "/install-afx-2k/install-setup-workflow.html"
+    - title: Esaminare i requisiti hardware
+      url: "/install-afx-2k/install-setup-requirements.html"
+    - title: Prepararsi all'installazione
+      url: "/install-afx-2k/prepare-hardware.html"
+    - title: Installare l'hardware
+      entries:
+      - title: Installare gli interruttori
+        url: "/install-afx-2k/install-switches.html"
+      - title: Installare un sistema di stoccaggio e scaffali
+        url: "/install-afx-2k/deploy-hardware.html"
+    - title: Cablaggio
+      entries:
+      - title: Esaminare le configurazioni supportate
+        url: "/install-afx-2k/afx-cable-overview.html"
+      - title: Raccogliere informazioni di rete
+        url: "/install-afx-2k/install-network-reqs.html"
+      - title: Hardware per cavi
+        url: "/install-afx-2k/cable-hardware.html"
+    - title: Accendere e configurare gli switch
+      url: "/install-afx-2k/power-on-configure-switch.html"
+    - title: Accendere il sistema
+      url: "/install-afx-2k/power-on-hardware.html"
 - title: Imposta il tuo sistema AFX
   url: "/install-setup/cluster-setup.html"
 - title: Prepararsi a somministrare AFX

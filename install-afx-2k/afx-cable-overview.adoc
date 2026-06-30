@@ -1,0 +1,74 @@
+---
+permalink: install-afx-2k/afx-cable-overview.html 
+sidebar: sidebar 
+keywords: afx, afx 2k, cable, overview, cisco 9332, cisco 9364, cabling, hardware, switches, storage shelves, disk shelves, controller nodes 
+summary: Scopri come cablare i nodi del controller alla rete, agli switch e agli scaffali di archiviazione. 
+---
+= Configurazioni supportate per il tuo sistema storage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Scopri i componenti hardware e le opzioni di cablaggio supportati per il sistema storage AFX 2K, inclusi gli alloggiamenti per dischi di storage compatibili, gli switch e i tipi di cavo necessari per una corretta configurazione del sistema.
+
+
+
+== Configurazione di cablaggio AFX 2K supportata
+
+La configurazione iniziale del sistema storage AFX 2K supporta un minimo di quattro nodi controller collegati tramite doppi switch agli alloggiamenti dei dischi di storage.
+
+Nodi controller e alloggiamenti per dischi aggiuntivi espandono la configurazione iniziale del sistema storage AFX 2K. Le configurazioni AFX 2K espanse seguono la stessa metodologia di cablaggio basata su switch dello schema illustrato di seguito.
+
+image:../media/drw_afx_2k_cable_overview_half_node_ieops-2871.svg["Esempio di cablaggio del sistema storage AFX 2K, larghezza=1000px"]
+
+
+
+== Componenti hardware supportati
+
+Verifica i disk shelf, gli switch e i tipi di cavo compatibili con il sistema storage AFX 2K.
+
+[cols="35%,65%"]
+|===
+| Componente hardware | Cavi supportati 
+
+
+| AFX 2K (shelf del controller)  a| 
+* Cavi da 400GbE QDD a 400GbE QSFP (connessioni dal controller allo switch)
+* Cavi RJ-45 per connessioni di gestione
+
+
+
+
+| NX224 (shelf di dischi)  a| 
+* Cavi breakout da 400GbE QSFP-DD a 4x100GbE QSFP breakout (connessioni tra switch e disk shelf)
+
+
+
+
+| Cisco Nexus 9808 (Switch)  a| 
+* Cavi breakout da 400GbE QSFP-DD a 4x100GbE QSFP breakout (connessioni tra switch e disk shelf)
+* 2 cavi 400GbE per connessioni ISL tra switch A e switch B
+* Cavi RJ-45 per connessioni di gestione
+
+
+
+
+| Cisco Nexus 9332D-GX2B (Switch)  a| 
+* Cavi breakout da 400GbE QSFP-DD a 4x100GbE QSFP breakout (connessioni tra switch e disk shelf)
+* 2 cavi 400GbE per connessioni ISL tra switch A e switch B
+* Cavi RJ-45 per connessioni di gestione
+
+
+
+
+| Cisco Nexus 9364D-GX2A (Switch)  a| 
+* Cavi breakout da 400GbE QSFP-DD a 4x100GbE QSFP breakout (connessioni tra switch e disk shelf)
+* 2 cavi 400GbE per connessioni ISL tra switch A e switch B
+* Cavi RJ-45 per connessioni di gestione
+
+
+|===
+.Cosa succederà ora?
+Dopo aver esaminato la configurazione di sistema supportata e i componenti hardware, link:install-network-reqs.html["Verifica i requisiti di rete per il tuo sistema storage AFX 2K"].

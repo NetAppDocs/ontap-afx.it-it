@@ -51,9 +51,9 @@ TIP: Dovresti rivedere illink:../faq-ontap-afx.html["FAQ sui sistemi di archivia
 
 I seguenti componenti hardware vengono utilizzati con i cluster AFX:
 
-* Controller AFX 1K
+* Controller AFX 1K o 2K
 * Scaffali NX224
-* Switch Cisco Nexus 9332D-GX2B o Nexus 9364D-GX2A
+* Cisco Nexus 9332D-GX2B, Nexus 9364D-GX2A o Nexus 9808 switch
 
 
 

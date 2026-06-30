@@ -1,0 +1,316 @@
+---
+sidebar: sidebar 
+permalink: install-afx-2k/cable-hardware.html 
+keywords: afx, afx 2k, cable controllers, Cisco Nexus 9808, Cisco Nexus 9332D-GX2B, Cisco Nexus 9364D-GX2A, switches, switch, cable hardware, cable storage shelves 
+summary: Scopri come collegare i cavi del controller AFX 2K alla tua rete e cablare i controller agli shelf. 
+---
+= Collega l'hardware del tuo sistema storage AFX 2K
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dopo aver installato l'hardware del rack per il tuo sistema storage AFX 2K, installa i cavi di rete per i controller e collega i cavi tra i controller e gli shelf di storage.
+
+.Prima di iniziare
+Per informazioni su come collegare il sistema di archiviazione agli switch di rete, contattare l'amministratore di rete.
+
+.Informazioni su questo compito
+* Queste procedure mostrano configurazioni comuni.  Il cablaggio specifico dipende dai componenti ordinati per il sistema di storage.  Per dettagli completi sulla configurazione e sulle priorità degli slot, vederelink:https://hwu.netapp.com["Hardware Universe NetApp"^] .
+* Gli slot di I/O su un controller AFX 2K sono numerati da 1 a 11.
++
+image::../media/drw_afx_2k_rear_slots_ieops-2862.svg[Numerazione degli slot su un controller AFX]
+
++
+[cols="10%,23%,10%,24%,10%,23%"]
+|===
+| Numero di slot | Slot I/O | Numero di slot | Slot I/O | Numero di slot | Slot I/O 
+
+
+ a| 
+image::../media/icon_round_1.svg[Numero di chiamata 1]
+| HA  a| 
+image::../media/icon_round_4.svg[Callout numero 4]
+
+image::../media/icon_round_5.svg[Callout numero 5]
+| NVRAM12  a| 
+image::../media/icon_round_9.svg[Callout numero 9]
+| Rete 
+
+
+ a| 
+image::../media/icon_round_2.svg[Numero di chiamata 2]
+| Grappolo  a| 
+image::../media/icon_round_6.svg[Callout numero 6]
+
+image::../media/icon_round_7.svg[Callout numero 7]
+| NVRAM12-EX  a| 
+image::../media/icon_round_10.svg[Callout numero 10]
+| Storage 
+
+
+ a| 
+image::../media/icon_round_3.svg[Callout numero 3]
+| Rete  a| 
+image::../media/icon_round_8.svg[Callout numero 8]
+| Storage  a| 
+image::../media/icon_round_11.svg[Callout numero 11]
+| (*Opzionale*) Quattro porte 25GbE SFP28 per connettività di gestione aggiuntiva 
+|===
+* La grafica del cablaggio mostra delle icone a forma di freccia che indicano il corretto orientamento (verso l'alto o verso il basso) della linguetta di estrazione del connettore del cavo quando si inserisce un connettore in una porta.
++
+Quando inserisci il connettore, dovresti sentire uno scatto; se non lo senti, rimuovilo, giralo e riprova.
+
++
+image:../media/drw_cable_pull_tab_direction_ieops-1699.svg["Direzione della linguetta di trazione del cavo"]
+
++
+[NOTE]
+====
+I componenti del connettore sono delicati e occorre fare attenzione quando si agganciano in posizione.
+
+====
+* Quando si esegue il cablaggio verso una connessione in fibra ottica, inserire il transceiver ottico nella porta del controller prima di collegare il cavo alla porta dello switch.
+* Il sistema storage AFX 2K utilizza cavi 400GbE. Le connessioni 400GbE vengono effettuate tra i controller e gli switch. Le connessioni tra gli shelf di storage e gli switch utilizzano cavi breakout 4x100GbE, con le connessioni 100GbE collegate alle porte degli shelf di dischi.
++
+I collegamenti per lo storage a scaffale possono essere effettuati su qualsiasi porta breakout 100GbE dello switch. I collegamenti HA/Cluster possono essere effettuati su qualsiasi porta 400GbE dello switch. Tutte le porte controller "a" si collegano allo switch A e tutte le porte controller "b" si collegano allo switch B.
+
+
+
+
+
+== Fase 1: collegare i controller alla rete di gestione
+
+Collega la porta di gestione (chiave inglese) di ciascun controller a uno degli switch di gestione oppure collegali direttamente alla rete di gestione.
+
+Utilizzare i cavi RJ-45 1000BASE-T per collegare le porte di gestione (chiave inglese) su ciascun controller agli switch di rete di gestione.
+
+image::../media/oie_cable_rj45.png[cavi RJ-45]
+
+*Cavi RJ-45 1000BASE-T*
+
+image::../media/drw_afx_2k_management_connection_ieops-2863.svg[Connettiti alla tua rete di gestione]
+
+
+IMPORTANT: Non collegare ancora i cavi di alimentazione.
+
+.Passi
+. Connettiti alla rete di gestione.
+
+
+
+
+== Passaggio 2: collegare i controller alla rete host
+
+Collegare le porte del modulo Ethernet alla rete host.
+
+Questa procedura può variare a seconda della configurazione del modulo I/O.  Di seguito sono riportati alcuni esempi tipici di cablaggio di rete host.  Vederelink:https://hwu.netapp.com["Hardware Universe NetApp"^] per la configurazione specifica del tuo sistema.
+
+.Passi
+. Collegare le seguenti porte allo switch di rete dati Ethernet A.
++
+** Controller
++
+*** e3a
+*** e9a
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo Ethernet da 400 Gb]
+
++
+image::../media/drw_afx_2k_host_switch_a_ieops-2864.svg[Cavo alla rete Ethernet]
+
+
+
+
+
+. Collegare le seguenti porte allo switch di rete dati Ethernet B.
++
+** Controller
++
+*** e3b
+*** e9b
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo Ethernet da 400 Gb]
+
++
+image::../media/drw_afx_2k_host_switch_b_ieops-2865.svg[Cavo alla rete Ethernet]
+
+
+
+
+
+
+
+
+
+== Passaggio 3: Collega il cluster e le connessioni HA
+
+Usa il cavo di interconnessione Cluster e HA per collegare le porte e1a ed e2a allo switch A e le porte e1b ed e2b allo switch B. Le porte e1a/e1b sono usate per le connessioni HA, mentre le porte e2a/e2b sono usate per le connessioni del cluster.
+
+.Passi
+. Collega le seguenti porte del controller a una qualsiasi porta non ISL dello switch di rete del cluster A.
++
+** Controller
++
+*** e1a (HA)
+*** e2a (Cluster)
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cavo cluster HA]
+
++
+image::../media/drw_afx_2k_cluster_switch_a_ieops-2866.svg[Collega i cavi del cluster alla rete cluster]
+
+
+
+
+
+. Collega le seguenti porte del controller a una qualsiasi porta non ISL dello switch di rete del cluster B.
++
+** Controller
++
+*** e1b (HA)
+*** e2b (Cluster)
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable_25Gb_Ethernet_SFP28_ieops-1069.png[Cavo cluster HA]
+
++
+image::../media/drw_afx_2k_cluster_switch_b_ieops-2867.svg[Collega i cavi del cluster alla rete cluster]
+
+
+
+
+
+
+
+
+
+== Passaggio 4: Collega il controller allo switch per le connessioni di storage
+
+Collega le porte storage del controller agli switch. Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi  https://hwu.netapp.com["Hardware Universe"^] per maggiori informazioni.
+
+
+NOTE: Le porte e10b ed e8a sui controller non vengono utilizzate per le connessioni di storage nella configurazione del sistema storage AFX 2K.
+
+.Passi
+. Collega le seguenti porte di storage a una qualsiasi porta non ISL sullo switch A.
++
+** Controller
++
+*** e10a
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
+
++
+image::../media/drw_afx_2k_storage_connection_a_ieops-2868.svg[Collega lo storage controller allo switch A]
+
+
+
+
+
+. Collega le seguenti porte di storage a una qualsiasi porta non ISL sullo switch B.
++
+** Controller
++
+*** e8b
++
+*Cavi 400GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
+
++
+image::../media/drw_afx_2k_storage_connection_b_ieops-2870.svg[Collega lo storage controller allo switch B]
+
+
+
+
+
+
+
+
+
+== Fase 5: Cablare i collegamenti tra scaffale e switch
+
+Collega gli alloggiamenti di storage NX224 alle porte breakout 100GbE degli switch.
+
+Per il numero massimo di ripiani supportati dal tuo sistema di archiviazione e per tutte le opzioni di cablaggio, consultalink:https://hwu.netapp.com["Hardware Universe NetApp"^] .
+
+.Passi
+. Collega le seguenti porte shelf a una qualsiasi porta breakout su switch A e switch B per il modulo A.
++
+** Modulo A per commutare le connessioni A
++
+*** e1a
+*** e2a
+*** e3a
+*** e4a
+
+
+** Modulo A per commutare le connessioni B
++
+*** e1b
+*** e2b
+*** e3b
+*** e4b
++
+*Cavi da 100 GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
+
++
+image::../media/drw_afx_shelf_cabling_a_ieops-2356.svg[Mensola portacavi per interruttore A e interruttore B]
+
+
+
+
+
+. Collega le seguenti porte shelf a una qualsiasi porta breakout sullo switch A e sullo switch B per il modulo B.
++
+** Modulo B per commutare le connessioni A
++
+*** e1a
+*** e2a
+*** e3a
+*** e4a
+
+
+** Modulo B per commutare le connessioni B
++
+*** e1b
+*** e2b
+*** e3b
+*** e4b
++
+*Cavi da 100 GbE*
+
++
+image::../media/oie_cable100_gbe_qsfp28.png[Cavo da 100 Gb]
+
++
+image::../media/drw_afx_shelf_cabling_b_ieops-2357.svg[Mensola portacavi per interruttore A e interruttore B]
+
+
+
+
+
+
+
+.Cosa succederà ora?
+Dopo aver cablato l'hardware,link:power-on-configure-switch.html["accendere e configurare gli switch"] .

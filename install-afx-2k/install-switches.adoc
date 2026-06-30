@@ -1,19 +1,19 @@
 ---
 sidebar: sidebar 
-permalink: install-setup/install-switches.html 
-keywords: afx, afx 1k, install, setup, switches, cisco 9332, cisco 9336, switches, 
-summary: Scopri come installare gli interruttori per il sistema di archiviazione AFX 1K e i ripiani di stoccaggio. 
+permalink: install-afx-2k/install-switches.html 
+keywords: afx, afx 2k, install, setup, switches, cisco 9332, cisco 9336, switches, 
+summary: Scopri come installare gli switch per il sistema storage AFX 2K e i ripiani storage. 
 ---
-= Installa gli switch per il tuo sistema di archiviazione AFX 1K
+= Installa gli switch per il tuo sistema storage AFX 2K
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Dopo aver completato la preparazione per l'installazione del sistema di archiviazione AFX 1K, è necessario installare gli switch nell'armadio o nel rack Telco.
+Dopo che hai completato la preparazione per l'installazione del sistema storage AFX 2K, dovresti installare gli switch nell'armadio o nel rack telco.
 
-Installare gli switch Cisco Nexus 9332D-GX2B o 9364D-GX2A nell'armadio o nel rack.  Se si utilizza lo switch Cisco Nexus 9364D-GX2A, installare un kit pannello passante.
+Installa gli switch Cisco Nexus 9808, 9332D-GX2B o 9364D-GX2A nell'armadio o nel rack. Installa un kit di pannello passante se usi lo switch Cisco Nexus 9364D-GX2A.
 
 .Prima di iniziare
 Assicurati di avere a disposizione i seguenti componenti:
@@ -36,10 +36,22 @@ Il kit del pannello pass-through NetApp contiene il seguente hardware:
 NOTE: I cavi di collegamento non sono inclusi nel kit passante.  Contattare NetApp per ordinare i cavi jumper corretti se non vengono forniti con gli switch.
 
 
-NOTE: Se il flusso d'aria degli switch è configurato per l'aspirazione lato porta (ventole e alimentatori di colore bordeaux), le porte di rete degli switch devono essere installate rivolte verso la parte anteriore del cabinet e le ventole di scarico devono essere rivolte verso la parte posteriore del cabinet. Con questa configurazione, è necessario assicurarsi di utilizzare cavi sufficientemente lunghi da collegare le porte di rete nella parte anteriore del cabinet alle porte di storage nella parte posteriore del cabinet. + Per informazioni più dettagliate su questi switch, visitare il sito web Cisco: https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch in modalità Cisco Nexus 9332D-GX2B"^] e  https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch in modalità Cisco Nexus 9364D-GX2A"^].
+NOTE: Se il flusso d'aria per i tuoi switch è configurato per l'aspirazione dal lato delle porte (ventole e alimentatori di colore bordeaux), le porte di rete degli switch devono essere installate rivolte verso la parte anteriore dell'armadio e le ventole di scarico devono essere rivolte verso la parte posteriore dell'armadio. Con questa configurazione, devi assicurarti di usare cavi abbastanza lunghi da collegare le porte di rete nella parte anteriore dell'armadio alle porte di storage nella parte posteriore dell'armadio. Per informazioni più dettagliate su questi switch, visita il sito web Cisco: link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-modular-overview-ph2.html["Guida all'installazione hardware dello switch Cisco Nexus 9808 Mode"^], link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9332d-gx2b/cisco-nexus-9332d-gx2b-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch in modalità Cisco Nexus 9332D-GX2B"^] e link:https://www.cisco.com/c/en/us/td/docs/dcn/hw/nx-os/nexus9000/9364d-gx2a/cisco-nexus-9364d-gx2a-nx-os-mode-switch-hardware-installation-guide.html["Guida all'installazione hardware dello switch in modalità Cisco Nexus 9364D-GX2A"^].
 
 
 CAUTION: Indossare sempre un braccialetto con messa a terra collegato a un punto di messa a terra verificato durante le procedure di installazione e manutenzione. La mancata osservanza delle opportune precauzioni ESD può causare danni permanenti ai nodi controller, ai ripiani di storage e agli switch di rete.
+
+
+
+== Installazione dello switch Cisco Nexus 9808
+
+Se stai installando lo switch Cisco Nexus 9808, consulta la link:https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/hw/9800/9808/nx-os/cisco-nexus-9808-nx-os-mode-switch-hardware-installation-guide/m-8000-install-chassis.html["Guida all'installazione hardware dello switch Cisco Nexus 9808 Mode"^] per istruzioni dettagliate su come installare gli switch nell'armadio o nel rack.
+
+
+
+== Installazione degli switch Cisco Nexus 9332D-GX2B e 9364D-GX2A
+
+Se stai installando Cisco Nexus 9332D-GX2B o 9364D, segui i passaggi seguenti per installare gli switch nell'armadio o nel rack.
 
 .Passi
 . Installare il pannello cieco passante.
@@ -47,7 +59,7 @@ CAUTION: Indossare sempre un braccialetto con messa a terra collegato a un punto
 .. Determinare la posizione verticale degli switch e del pannello cieco nell'armadio o nel rack.
 .. Installare due dadi a clip su ciascun lato nei fori quadrati appropriati per le guide anteriori del mobile.
 .. Centrare il pannello verticalmente per evitare intrusioni nello spazio rack adiacente, quindi serrare le viti.
-.. Inserire i connettori femmina di entrambi i cavi di collegamento dalla parte posteriore del pannello e attraverso il gruppo spazzole.
+.. Fai passare i connettori femmina di entrambi i cavi jumper dal retro del pannello attraverso il gruppo spazzole.
 +
 image::../media/cisco_9148_jumper_cords.gif[Connettori femmina del cavo di collegamento]
 
@@ -80,7 +92,7 @@ image::../media/3132q_front_bracket.gif[staffa anteriore]
 image::../media/ru_locations_for_3132q_v.gif[Posizioni dei dadi a clip]
 
 +
-Montare i due switch 9332D-GX2B in posizioni dell'armadio che consentano un accesso efficiente ai controller e agli scaffali, come le file centrali.
+Monta i due switch in posizioni all'interno dell'armadio che offrano un accesso efficiente ai controller e ai shelf, come le file centrali.
 
 . Installare le guide scorrevoli nell'armadio o nel rack.
 +
@@ -174,4 +186,4 @@ La porta di rete di gestione è la porta RJ-45 inferiore vicino all'alimentatore
 
 
 .Cosa succederà ora?
-Dopo aver installato gli switch nell'armadio o nel rack, è possibilelink:deploy-hardware.html["installare il sistema di archiviazione AFX 1K e i ripiani nell'armadio o nel rack"] .
+Dopo aver installato gli switch nell'armadio o nel rack, devi link:deploy-hardware.html["Installa il sistema storage AFX 2K e i ripiani nell'armadio o nel rack"].

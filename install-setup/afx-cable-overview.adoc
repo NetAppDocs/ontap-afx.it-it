@@ -21,7 +21,7 @@ La configurazione iniziale del sistema di archiviazione AFX 1K supporta un minim
 
 Ulteriori nodi controller e ripiani per dischi ampliano la configurazione iniziale del sistema di storage AFX 1K.  Le configurazioni AFX 1K espanse seguono la stessa metodologia di cablaggio basata su switch dello schema illustrato di seguito.
 
-image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Esempio di cablaggio del sistema di archiviazione AFK 1K"]
+image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Esempio di cablaggio del sistema storage AFX 1K, larghezza=1000px"]
 
 
 
