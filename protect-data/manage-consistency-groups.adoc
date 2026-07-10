@@ -15,6 +15,7 @@ summary: È possibile gestire i gruppi di coerenza su un sistema AFX.  Ciò può
 
 
 
+[[add-snapshot-data-protection-to-a-consistency-group]]
 == Aggiungere la protezione dei dati snapshot a un gruppo di coerenza
 
 Quando si aggiunge la protezione dei dati snapshot a un gruppo di coerenza, è possibile acquisire snapshot locali del gruppo di coerenza a intervalli regolari in base a una pianificazione predefinita.
@@ -59,6 +60,7 @@ quindi selezionaimage:icon_dropdown_arrow.gif["freccia blu rivolta verso il bass
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Scopri di più sui gruppi di coerenza ONTAP"^]

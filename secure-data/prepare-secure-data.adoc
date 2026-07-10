@@ -15,6 +15,7 @@ Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti
 
 
 
+[[terminology-and-options]]
 == Terminologia e opzioni
 
 Esistono diversi termini relativi alla sicurezza dei dati AFX che dovresti conoscere.
@@ -27,6 +28,7 @@ Sicurezza del protocollo Internet:: IPsec è uno standard Internet che garantisc
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]

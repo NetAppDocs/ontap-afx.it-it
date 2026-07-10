@@ -20,6 +20,7 @@ NOTE: Per gestire AutoSupport è necessario accedere a System Manager utilizzand
 
 
 
+[[test-autosupport-connectivity]]
 == Test di connettività AutoSupport
 
 Dopo aver configurato il cluster, dovresti testare la connettività AutoSupport per verificare che il supporto tecnico possa ricevere i messaggi generati da AutoSupport.
@@ -32,6 +33,7 @@ Dopo aver configurato il cluster, dovresti testare la connettività AutoSupport 
 
 
 
+[[add-autosupport-recipients]]
 == Aggiungi destinatari AutoSupport
 
 Facoltativamente, puoi aggiungere i membri della tua organizzazione di supporto interna all'elenco degli indirizzi e-mail che ricevono i messaggi AutoSupport .
@@ -54,6 +56,7 @@ Gli indirizzi email che hai aggiunto riceveranno nuovi messaggi AutoSupport per 
 
 
 
+[[send-autosupport-data]]
 == Invia dati AutoSupport
 
 Se si verifica un problema con il sistema AFX, è necessario inviare manualmente i dati AutoSupport .  Ciò può ridurre significativamente il tempo necessario per identificare e risolvere il problema.
@@ -70,6 +73,7 @@ I tuoi dati AutoSupport vengono inviati al supporto tecnico.
 
 
 
+[[suppress-support-case-generation]]
 == Sopprimi la generazione del caso di supporto
 
 Se stai eseguendo un aggiornamento o una manutenzione sul tuo sistema AFX, potresti voler sopprimere la generazione di casi di supporto AutoSupport finché l'aggiornamento o la manutenzione non saranno completati.
@@ -86,6 +90,7 @@ I casi AutoSupport non verranno generati durante il periodo di tempo specificato
 
 
 
+[[resume-support-case-generation]]
 == Generazione di casi di supporto al curriculum
 
 Se hai soppresso la generazione di casi di supporto durante una finestra di aggiornamento o manutenzione, dovresti riprendere la generazione di casi di supporto subito dopo il completamento dell'aggiornamento o della manutenzione.
@@ -102,6 +107,7 @@ I casi AutoSupport verranno generati automaticamente per il tuo sistema AFX in b
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap/system-admin/manage-autosupport-concept.html["Scopri di più su ONTAP AutoSupport"^]

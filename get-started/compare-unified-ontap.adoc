@@ -18,6 +18,7 @@ TIP: La documentazione AFX include collegamenti a vari argomenti sul sito di doc
 
 
 
+[[configuration-differences]]
 == Differenze di configurazione
 
 Ci sono alcuni aspetti in cui la configurazione AFX differisce dai sistemi AFF e FAS .
@@ -27,12 +28,14 @@ Bilanciamento avanzato della capacità:: La funzione avanzata di bilanciamento d
 
 
 
+[[unsupported-or-restricted-unified-ontap-capabilities]]
 == Funzionalità Unified ONTAP non supportate o limitate
 
 NetApp AFX è ottimizzato per carichi di lavoro NAS e a oggetti dalle performance elevate. Per questo motivo, ci sono differenze rispetto ai sistemi di storage AFF e FAS. Le seguenti funzionalità non sono disponibili con NetApp AFX; l'elenco è organizzato per funzionalità principale o area funzionale. Si consiglia inoltre di esaminare gli aggiornamenti e le modifiche per AFX in link:../release-notes/whats-new-9171.html["Cosa c'è di nuovo"] in base alla versione di ONTAP in uso.
 
 
 
+[[block-and-san]]
 === Blocco e SAN
 
 * Amministrazione SAN e accesso client
@@ -42,6 +45,7 @@ NetApp AFX è ottimizzato per carichi di lavoro NAS e a oggetti dalle performanc
 
 
 
+[[aggregates-and-physical-storage]]
 === Aggregati e archiviazione fisica
 
 * MetroCluster
@@ -56,6 +60,7 @@ NetApp AFX è ottimizzato per carichi di lavoro NAS e a oggetti dalle performanc
 
 
 
+[[data-replication-snapmirror]]
 === Replica dei dati (SnapMirror)
 
 
@@ -67,6 +72,7 @@ NOTE: Tutta la replica dei dati è supportata in entrambe le direzioni tra Unifi
 
 
 
+[[manageability]]
 === Gestibilità
 
 * API ONTAPI (ZAPI)
@@ -78,6 +84,7 @@ NOTE: Tutta la replica dei dati è supportata in entrambe le direzioni tra Unifi
 
 
 
+[[changes-to-the-command-line-interface]]
 == Modifiche all'interfaccia della riga di comando
 
 La CLI ONTAP disponibile con AFX rispecchia generalmente la CLI disponibile con i sistemi AFF e FAS .  Ma ci sono diverse differenze, tra cui:
@@ -95,6 +102,7 @@ La CLI ONTAP disponibile con AFX rispecchia generalmente la CLI disponibile con 
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../get-started/system-design.html["Caratteristiche del sistema AFX"]

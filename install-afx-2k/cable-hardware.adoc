@@ -76,10 +76,19 @@ I componenti del connettore sono delicati e occorre fare attenzione quando si ag
 +
 I collegamenti per lo storage a scaffale possono essere effettuati su qualsiasi porta breakout 100GbE dello switch. I collegamenti HA/Cluster possono essere effettuati su qualsiasi porta 400GbE dello switch. Tutte le porte controller "a" si collegano allo switch A e tutte le porte controller "b" si collegano allo switch B.
 
+* L'uso misto di connessioni breakout in rame e in fibra ottica (cavi) non è supportato dagli adattatori NIC NVIDIA C6X-DX e CX7 (100GbE). Dovresti usare esclusivamente connessioni in rame o in fibra ottica ed evitare di combinare diversi tipi di connessione. La combinazione di tipi diversi può portare alla saturazione del collegamento dopo un uso prolungato.
++
+Assicurati di avere i cavi corretti per il tipo di connessione prima di collegare gli switch.
+
++
+
+NOTE: Per ulteriori informazioni sulla combinazione di diversi tipi di connessione, consulta l'articolo della Knowledge Base di NetApp link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-Issues/CHW-3504["Sono stati rilevati errori di collegamento CRC sulla NIC CX6-DX con cavi breakout misti in rame e fibra sulle porte"^].
 
 
 
 
+
+[[step-1-connect-the-controllers-to-the-management-network]]
 == Fase 1: collegare i controller alla rete di gestione
 
 Collega la porta di gestione (chiave inglese) di ciascun controller a uno degli switch di gestione oppure collegali direttamente alla rete di gestione.
@@ -101,6 +110,7 @@ IMPORTANT: Non collegare ancora i cavi di alimentazione.
 
 
 
+[[step-2-connect-the-controllers-to-the-host-network]]
 == Passaggio 2: collegare i controller alla rete host
 
 Collegare le porte del modulo Ethernet alla rete host.
@@ -150,6 +160,7 @@ image::../media/drw_afx_2k_host_switch_b_ieops-2865.svg[Cavo alla rete Ethernet]
 
 
 
+[[step-3-cable-the-cluster-and-ha-connections]]
 == Passaggio 3: Collega il cluster e le connessioni HA
 
 Usa il cavo di interconnessione Cluster e HA per collegare le porte e1a ed e2a allo switch A e le porte e1b ed e2b allo switch B. Le porte e1a/e1b sono usate per le connessioni HA, mentre le porte e2a/e2b sono usate per le connessioni del cluster.
@@ -197,6 +208,7 @@ image::../media/drw_afx_2k_cluster_switch_b_ieops-2867.svg[Collega i cavi del cl
 
 
 
+[[step-4-cable-the-controller-to-switch-storage-connections]]
 == Passaggio 4: Collega il controller allo switch per le connessioni di storage
 
 Collega le porte storage del controller agli switch. Assicurati di avere i cavi e i connettori corretti per i tuoi switch. Vedi  https://hwu.netapp.com["Hardware Universe"^] per maggiori informazioni.
@@ -245,6 +257,7 @@ image::../media/drw_afx_2k_storage_connection_b_ieops-2870.svg[Collega lo storag
 
 
 
+[[step-5-cable-the-shelf-to-switch-connections]]
 == Fase 5: Cablare i collegamenti tra scaffale e switch
 
 Collega gli alloggiamenti di storage NX224 alle porte breakout 100GbE degli switch.

@@ -15,6 +15,7 @@ Prima di distribuire AFX in un ambiente di produzione, è essenziale comprendere
 
 
 
+[[understand-storage-virtual-machines]]
 == Comprendere le macchine virtuali di archiviazione
 
 Una macchina virtuale di archiviazione (SVM) è un ambiente server o tenant isolato all'interno di un cluster ONTAP .  È possibile configurare una SVM per fornire dati ai client connessi.  Dovresti avere familiarità con le capacità e le caratteristiche degli AFX SVM.
@@ -28,6 +29,7 @@ Interfacce di rete dedicate:: Ogni SVM ha il proprio set dedicato di interfacce 
 
 
 
+[[two-afx-administrative-levels]]
 == Due livelli amministrativi AFX
 
 Le attività amministrative ONTAP che svolgi con AFX rientrano generalmente in due categorie diverse.  Alcune attività si applicano al cluster ONTAP nel suo complesso, mentre altre si applicano a una SVM specifica.  Ciò si traduce in un modello amministrativo a due livelli.
@@ -43,6 +45,7 @@ Amministratore SVM:: Il ruolo di amministratore SVM ha il controllo di uno speci
 
 
 
+[[three-administrative-interfaces]]
 == Tre interfacce amministrative
 
 Come i sistemi AFF e FAS , AFX ha tre interfacce amministrative.  Il LIF (o indirizzo IP) da utilizzare varia in base all'interfaccia amministrativa e all'ambiente.
@@ -65,12 +68,14 @@ NOTE: Per la maggior parte delle attività amministrative è preferibile l'inter
 |===
 
 
+[[learn-to-search-filter-and-sort-information-in-system-manager]]
 == Impara a cercare, filtrare e ordinare le informazioni in System Manager
 
 L'interfaccia utente di System Manager include un solido set di funzionalità che consentono di accedere e visualizzare le informazioni necessarie.  Imparare a utilizzare queste funzionalità ti aiuterà a gestire meglio il sistema di archiviazione AFX. Vedere https://docs.netapp.com/us-en/ontap/task_admin_search_filter_sort.html["Cerca, filtra, ordina le informazioni in System Manager"^] per maggiori informazioni.
 
 
 
+[[access-the-ontap-cli]]
 == Accedi alla CLI ONTAP
 
 Sebbene sia possibile utilizzare System Manager per la maggior parte delle attività di amministrazione di AFX, alcune attività possono essere eseguite solo tramite l'interfaccia della riga di comando ONTAP .
@@ -104,6 +109,7 @@ Ti serviranno i seguenti elementi:
 
 
 
+[[working-with-ontap-ha-pairs]]
 == Lavorare con coppie ONTAP HA
 
 Come con Unified ONTAP, i nodi del cluster AFX sono configurati in coppie ad alta disponibilità (HA) per la tolleranza agli errori e le operazioni non disruptive.  L'associazione HA consente alle operazioni di archiviazione di rimanere online in caso di guasto di un nodo, ad esempio un failover dell'archiviazione.  Ogni nodo è associato a un altro nodo per formare una singola coppia.  In genere, ciò avviene tramite una connessione diretta tra i moduli NVRAM dei due nodi.
@@ -112,6 +118,7 @@ Con AFX, una nuova VLAN HA viene aggiunta agli switch del cluster back-end per c
 
 
 
+[[afx-cluster-deployment-limitations]]
 == Limitazioni di distribuzione del cluster AFX
 
 Esistono diverse limitazioni, tra cui valori minimi e massimi, imposte da AFX durante la configurazione e l'utilizzo del cluster. Tali limitazioni rientrano in diverse categorie.
@@ -128,6 +135,7 @@ Interruttori a grappolo:: Sono necessari almeno due switch nella rete di archivi
 
 
 
+[[confirm-afx-system-health]]
 == Confermare lo stato di salute del sistema AFX
 
 Prima di eseguire qualsiasi attività di amministrazione AFX, è necessario verificare lo stato del cluster.
@@ -170,6 +178,7 @@ link:../administer/view-insights.html["Utilizza Insights per ottimizzare le pres
 
 
 
+[[quick-start-for-creating-and-using-an-svm]]
 == Avvio rapido per la creazione e l'utilizzo di una SVM
 
 Dopo aver installato e configurato il cluster AFX, è possibile iniziare a svolgere le attività di amministrazione tipiche della maggior parte delle distribuzioni AFX.  Ecco i passaggi principali necessari per iniziare a condividere i dati con i clienti.
@@ -192,6 +201,7 @@ link:../manage-data/prepare-manage-data.html["Preparare"]per allocare e gestire 
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://hwu.netapp.com/["Hardware Universe NetApp"^]

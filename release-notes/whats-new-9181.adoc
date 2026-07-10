@@ -21,6 +21,7 @@ TIP: Scopri il nuovo e migliorato supporto per  https://docs.netapp.com/us-en/ai
 
 
 
+[[storage-resource-management-enhancements]]
 == Miglioramenti nella gestione delle risorse di archiviazione
 
 [cols="2,4"]

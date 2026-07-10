@@ -18,6 +18,7 @@ L'API REST fornita con AFX si basa sull'API REST Unified ONTAP .  Sono state app
 
 
 
+[[unsupported-features]]
 == Funzionalità non supportate
 
 AFX è un sistema di archiviazione NAS e S3 ad alte prestazioni.  Consente ai client di accedere ai dati tramite NFS, SMB/CIFS e S3.  A causa di questa specializzazione, ci sono diverse funzionalità non supportate, tra cui:
@@ -29,6 +30,7 @@ AFX è un sistema di archiviazione NAS e S3 ad alte prestazioni.  Consente ai cl
 
 
 
+[[removed-api-endpoints]]
 == Endpoint API rimossi
 
 Diversi endpoint sono stati rimossi dall'API REST in corrispondenza delle funzionalità non supportate.
@@ -71,6 +73,7 @@ Diversi endpoint sono stati rimossi dall'API REST in corrispondenza delle funzio
 ====
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap-automation["Automazione ONTAP"^]

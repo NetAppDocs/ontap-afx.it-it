@@ -15,6 +15,7 @@ NetApp AI Data Engine (AIDE) è un servizio dati di intelligenza artificiale int
 
 
 
+[[aide-overview]]
 == Panoramica di AIDE
 
 AIDE è un sistema progettato per accelerare e semplificare la preparazione e la gestione dei tuoi dati per carichi di lavoro AI e ML. Viene installato separatamente e si integra strettamente con un cluster sistema storage AFX. AIDE sfrutta la base storage AFX dalle performance elevate e scalabile, aggiungendo servizi specializzati per l'elaborazione dei dati AI, la governance e l'automazione dei workflow.
@@ -27,24 +28,28 @@ AIDE consente a data engineer e data scientist di disporre di strumenti per la r
 
 
 
+[[installation-options]]
 == Opzioni di installazione
 
 Esistono due opzioni per installare e integrare AIDE con il tuo cluster storage AFX.
 
 
 
+[[set-up-afx-and-aide-together]]
 === Configura AFX e AIDE insieme
 
 L'implementazione simultanea del sistema storage AFX e di AIDE offre un processo di installazione unificato e semplificato, garantendo un'integrazione immediata e una configurazione ottimale. Questo approccio chiavi in mano semplifica l'onboarding, garantisce la compatibilità e consente di sfruttare rapidamente una piattaforma dati AI completamente operativa, ideale per le nuove implementazioni che richiedono un rapido time-to-value.
 
 
 
+[[integrate-aide-with-an-existing-afx-cluster]]
 === Integrare AIDE con un cluster AFX esistente
 
 Se disponi già di un cluster storage AFX installato e operativo, puoi aggiungere AIDE in qualsiasi momento per migliorare l'accesso e il valore dei tuoi dati. AIDE viene implementato come componente aggiuntivo dell'ambiente di storage AFX esistente, connettendosi alla rete di storage del cluster consolidata senza interrompere le operazioni. Il processo di integrazione rileva automaticamente i volumi ONTAP disponibili e sincronizza i metadati. I flussi di lavoro di elaborazione dei dati vengono migliorati tramite strumenti di automazione, governance e curation basati sull'intelligenza artificiale, preservando al contempo la base storage esistente.
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ai-data-engine/get-started/learn-about.html["Scopri AI Data Engine"^]

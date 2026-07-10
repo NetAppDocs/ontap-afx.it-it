@@ -15,6 +15,7 @@ summary: 'È possibile utilizzare criteri di snapshot per proteggere i dati nei 
 
 
 
+[[create-a-new-protection-policy-schedule]]
 == Crea una nuova pianificazione della politica di protezione
 
 Una pianificazione della policy di protezione definisce la frequenza con cui viene eseguita una policy di snapshot.  È possibile creare pianificazioni da eseguire a intervalli regolari in base a un numero di giorni, ore o minuti.  Ad esempio, puoi creare una pianificazione in modo che venga eseguita ogni ora oppure solo una volta al giorno.  È anche possibile creare pianificazioni da eseguire in orari specifici, in giorni specifici della settimana o del mese.  Ad esempio, puoi creare una pianificazione che venga eseguita alle 00:15 del 20 di ogni mese.
@@ -33,6 +34,7 @@ Ora che hai creato una nuova pianificazione delle policy, puoi utilizzare la pia
 
 
 
+[[create-a-snapshot-policy]]
 == Creare un criterio di snapshot
 
 Una policy di snapshot definisce la frequenza con cui vengono acquisiti gli snapshot, il numero massimo di snapshot consentiti e per quanto tempo vengono conservati.
@@ -51,6 +53,7 @@ Ora che hai creato un criterio snapshot, puoi applicarlo a un gruppo di coerenza
 
 
 
+[[apply-a-snapshot-policy-to-a-consistency-group]]
 == Applicare un criterio di snapshot a un gruppo di coerenza
 
 Applica un criterio di snapshot a un gruppo di coerenza per creare, conservare ed etichettare automaticamente gli snapshot del gruppo di coerenza.
@@ -67,6 +70,7 @@ Ora che i tuoi dati sono protetti con gli snapshot, dovrestilink:snapshot-replic
 
 
 
+[[edit-delete-or-disable-a-snapshot-policy]]
 == Modifica, elimina o disabilita un criterio di snapshot
 
 Modifica un criterio di snapshot per cambiare il nome del criterio, il numero massimo di snapshot o l'etichetta SnapMirror .  Elimina un criterio per rimuoverlo e i relativi dati di backup dal cluster.  Disabilitare un criterio per interrompere temporaneamente la creazione o il trasferimento degli snapshot specificati dal criterio.
@@ -82,6 +86,7 @@ Hai modificato, eliminato o disabilitato il criterio snapshot.
 
 
 
+[[edit-a-replication-policy]]
 == Modificare una politica di replicazione
 
 Modificare una policy di replicazione per modificare la descrizione della policy, la pianificazione del trasferimento e le regole.  È anche possibile modificare il criterio per abilitare o disabilitare la compressione di rete.

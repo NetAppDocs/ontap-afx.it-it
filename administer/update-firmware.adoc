@@ -15,6 +15,7 @@ Per impostazione predefinita, ONTAP scarica e aggiorna automaticamente il firmwa
 
 
 
+[[enable-automatic-updates]]
 == Abilita gli aggiornamenti automatici
 
 Quando si abilitano gli aggiornamenti automatici per il cluster AFX, gli aggiornamenti consigliati per il firmware di archiviazione, il firmware SP/ BMC e i file di sistema vengono scaricati e installati automaticamente per impostazione predefinita.
@@ -33,6 +34,7 @@ Gli aggiornamenti consigliati vengono scaricati e installati automaticamente sul
 
 
 
+[[disable-automatic-updates]]
 == Disattiva gli aggiornamenti automatici
 
 Disattiva gli aggiornamenti automatici se desideri avere la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano installati.  Se si disattivano gli aggiornamenti automatici, sarà necessario eseguire manualmente gli aggiornamenti del firmware e dei file di sistema.
@@ -47,6 +49,7 @@ Gli aggiornamenti automatici sono disattivati.  Dovresti controllare regolarment
 
 
 
+[[view-automatic-updates]]
 == Visualizza gli aggiornamenti automatici
 
 Visualizza un elenco degli aggiornamenti del firmware e dei file di sistema scaricati sul cluster e programmati per l'installazione automatica.  Visualizza anche gli aggiornamenti che sono stati precedentemente installati automaticamente.
@@ -58,6 +61,7 @@ Visualizza un elenco degli aggiornamenti del firmware e dei file di sistema scar
 
 
 
+[[edit-automatic-updates]]
 == Modifica gli aggiornamenti automatici
 
 È possibile scegliere di scaricare e installare automaticamente sul cluster gli aggiornamenti consigliati per il firmware di storage, il firmware SP/ BMC e i file di sistema, oppure di ignorare automaticamente gli aggiornamenti consigliati.  Se vuoi controllare manualmente l'installazione o l'eliminazione degli aggiornamenti, seleziona la possibilità di essere avvisato quando è disponibile un aggiornamento consigliato; potrai quindi scegliere manualmente se installarlo o eliminarlo.
@@ -74,6 +78,7 @@ Gli aggiornamenti automatici vengono modificati in base alle tue selezioni.
 
 
 
+[[update-firmware-manually]]
 == Aggiornare manualmente il firmware
 
 Se desideri avere la flessibilità di visualizzare gli aggiornamenti consigliati prima che vengano scaricati e installati, puoi disattivare gli aggiornamenti automatici e aggiornare il firmware manualmente.

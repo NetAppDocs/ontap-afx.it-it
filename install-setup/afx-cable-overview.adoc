@@ -15,6 +15,7 @@ Scopri i componenti hardware supportati e le opzioni di cablaggio per il sistema
 
 
 
+[[supported-afx-1k-cabling-configuration]]
 == Configurazione di cablaggio AFX 1K supportata
 
 La configurazione iniziale del sistema di archiviazione AFX 1K supporta un minimo di quattro nodi controller collegati tramite doppi switch agli scaffali dei dischi di archiviazione.
@@ -25,6 +26,7 @@ image:../media/drw_afx_cable_overview_half_node_ieops-2358.svg["Esempio di cabla
 
 
 
+[[supported-hardware-components]]
 == Componenti hardware supportati
 
 Esaminare i ripiani per dischi di archiviazione, gli switch e i tipi di cavi compatibili con il sistema di archiviazione AFX 1K.

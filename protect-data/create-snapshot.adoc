@@ -15,6 +15,7 @@ Per eseguire il backup dei dati sul sistema AFX, è necessario creare uno snapsh
 
 
 
+[[before-you-begin]]
 == Prima di iniziare
 
 Uno snapshot è una copia locale e di sola lettura dei dati che puoi utilizzare per ripristinare i volumi in punti specifici nel tempo.  Gli snapshot possono essere creati manualmente su richiesta o automaticamente a intervalli regolari in base a unlink:policies-schedules.html["politica e pianificazione degli snapshot"] .
@@ -36,6 +37,7 @@ Gli snapshot automatizzati vengono creati in base alle definizioni dei criteri d
 
 
 
+[[create-a-snapshot]]
 == Crea uno snapshot
 
 Crea uno snapshot di un volume o di un gruppo di coerenza.
@@ -149,6 +151,7 @@ Per impostazione predefinita, il trasferimento iniziale dei dati per la replicaz
 ====
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare un criterio di snapshot ONTAP"^]

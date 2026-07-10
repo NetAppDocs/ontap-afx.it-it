@@ -18,6 +18,7 @@ TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui
 
 
 
+[[terminology-and-options]]
 == Terminologia e opzioni
 
 Esistono diversi termini correlati all'archiviazione AFX che dovresti conoscere.
@@ -40,12 +41,14 @@ Analisi del file system:: File System Analytics (FSA) è una funzionalità ONTAP
 
 
 
+[[data-migration-options]]
 == Opzioni di migrazione dei dati
 
 Esistono diverse opzioni per la migrazione dei dati.  L'attenzione è rivolta alla migrazione dei dati esterni in un cluster AFX.
 
 
 
+[[migrating-data-from-aff-or-fas-systems]]
 === Migrazione dei dati dai sistemi AFF o FAS
 
 È disponibile un percorso di migrazione completamente integrato dai sistemi AFF o FAS (che eseguono la personalità Unified ONTAP ) ad AFX utilizzando le seguenti tecnologie:
@@ -59,18 +62,21 @@ Inoltre, i volumi FlexCache possono essere collegati tra i sistemi AFX e AFF o F
 
 
 
+[[migrating-data-from-a-non-ontap-source]]
 === Migrazione dei dati da una sorgente non ONTAP
 
 La migrazione dei dati da sistemi non ONTAP può essere eseguita utilizzando operazioni di copia a livello di file. Utilità di copia rapida come https://docs.netapp.com/us-en/xcp/["XCP"^] O https://docs.netapp.com/us-en/data-services-copy-sync/["Copia e sincronizza"^] può essere utilizzato sia con utility standard come RoboCopy (per SMB) e rsync (per NFS), sia con strumenti di terze parti come DataDobi.
 
 
 
+[[migration-limitations]]
 === Limitazioni alla migrazione
 
 È possibile replicare i dati dai sistemi AFF o FAS ad AFX se il volume dei dati di origine non contiene LUN o namespace NVMe. Quando si esegue la replica dai sistemi AFX a AFF o FAS , la versione ONTAP minima supportata per il sistema AFF o FAS è 9.16.1. Questa è la prima versione ONTAP che supporta Advanced Capacity Balancing.
 
 
 
+[[display-an-overview-of-your-storage]]
 == Visualizza una panoramica del tuo spazio di archiviazione
 
 Per iniziare a gestire i dati AFX, dovresti visualizzare una panoramica dello storage.
@@ -87,6 +93,7 @@ Per iniziare a gestire i dati AFX, dovresti visualizzare una panoramica dello st
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap/concept_nas_file_system_analytics_overview.html["Scopri di più su ONTAP File System Analytics"^]

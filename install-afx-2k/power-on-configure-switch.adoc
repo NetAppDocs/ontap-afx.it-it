@@ -25,7 +25,7 @@ Dopo aver cablato il tuo sistema storage AFX 2K, devi accendere e configurare gl
 . Accendere ogni interruttore.
 . Configura gli switch per supportare il sistema storage AFX 2K.
 +
-** Per ulteriori informazioni sulla configurazione degli switch, consulta la link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configura gli switch per i sistemi storage AFX"^].
+** Per ulteriori informazioni sulla configurazione degli switch, vedi link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configura gli switch per i sistemi storage AFX"^].
 
 
 

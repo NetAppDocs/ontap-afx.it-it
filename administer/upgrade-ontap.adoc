@@ -26,6 +26,7 @@ Dopo aver preparato l'aggiornamento, si consiglia di eseguire gli aggiornamenti 
 
 
 
+[[execute-automated-pre-upgrade-checks-before-a-planned-upgrade]]
 == Eseguire controlli automatici preliminari all'aggiornamento prima di un aggiornamento pianificato
 
 Non è necessario essere in fase di aggiornamento del software ONTAP per eseguire i controlli preliminari automatici di ONTAP. L'esecuzione dei controlli preliminari indipendentemente dal processo di aggiornamento automatico di ONTAP consente di visualizzare quali controlli vengono effettuati sul cluster e fornisce un elenco di eventuali errori o avvisi da correggere prima di avviare l'aggiornamento vero e proprio.

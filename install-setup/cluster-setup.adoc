@@ -15,12 +15,14 @@ Dopo che l'hardware AFX è stato installato, puoi completare la configurazione d
 
 
 
+[[prepare-to-set-up-an-afx-storage-system]]
 == Preparati a configurare un sistema storage AFX
 
 Prima di configurare il tuo ONTAP cluster, dovresti rivedere i requisiti principali di AFX e le ulteriori considerazioni su AIDE per assicurarti di avere tutte le informazioni e le risorse necessarie per completare con successo il processo di configurazione.
 
 
 
+[[core-afx-requirements]]
 === Requisiti core AFX
 
 Ci sono diversi requisiti fondamentali da considerare quando si configura il cluster AFX.
@@ -53,6 +55,7 @@ Avrai inoltre bisogno delle seguenti informazioni di rete correlate:
 
 
 
+[[additional-aide-considerations]]
 === Ulteriori considerazioni AIDE
 
 Quando si installa e si configura AFX per la prima volta, è possibile includere facoltativamente NetApp AI Data Engine (AIDE). AIDE supporta due modelli di implementazione: software AIDE su server di terze parti o nodi di calcolo dati (DCN) forniti da NetApp. Se si intende configurare AIDE, completare prima i prerequisiti per il modello di implementazione scelto:
@@ -64,6 +67,7 @@ Quando si installa e si configura AFX per la prima volta, è possibile includere
 
 
 
+[[perform-initial-cluster-setup]]
 == Eseguire la configurazione iniziale del cluster
 
 È possibile collegare il dispositivo portatile al cluster AFX e impostare diversi valori di configurazione globali.
@@ -111,6 +115,7 @@ Verrai reindirizzato alla pagina di accesso di System Manager.  Eseguire i passa
 
 
 
+[[complete-cluster-setup]]
 == Configurazione completa del cluster
 
 Dopo aver eseguito la configurazione iniziale, è possibile completare l'installazione del cluster ONTAP utilizzando System Manager.
@@ -139,6 +144,7 @@ Durante la configurazione vengono configurate tre aree del cluster ONTAP del sis
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../get-started/learn-about-aide.html["Scopri il NetApp AI Data Engine"]

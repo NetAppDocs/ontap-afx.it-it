@@ -40,21 +40,3 @@ Collega l'hardware, quindi accendi e configura gli switch per il tuo sistema di 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sette"]link:power-on-hardware.html["Accendi il tuo sistema di archiviazione AFX 1K"]
 [role="quick-margin-para"]
 Accendere ogni ripiano di archiviazione e assegnare un ID ripiano univoco prima di accendere i nodi del controller per identificare chiaramente ogni ripiano nella configurazione.
-
-[NOTE]
-====
-Se si sta implementando AFX 1K con AI Data Engine (AIDE), è possibile installare i nodi di elaborazione dati AIDE dopo aver completato l'installazione del sistema AFX.
-
-* Per le implementazioni di server di terze parti, vedere  https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Requisiti per AI Data Engine con software AIDE su server di terze parti"^] e  https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["installare il software AIDE su server di terze parti"^].
-* Per le implementazioni NetApp DCN, vedere  https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["requisiti per AI Data Engine sui nodi di elaborazione dati forniti da NetApp"^].
-
-
-====
-* Per le implementazioni di server di terze parti, vedere  https://docs.netapp.com/us-en/ai-data-engine/install-aide-server/aide-mde-server-hardware-requirements.html["Requisiti per AI Data Engine con software AIDE su server di terze parti"^] e  https://docs.netapp.com/us-en/ai-data-engine/install-setup/install-aide-as-software.html["installare il software AIDE su server di terze parti"^].
-* Per le implementazioni NetApp DCN, vedere  https://docs.netapp.com/us-en/ai-data-engine/install-dcn/aide-dcn-hardware-requirements.html["requisiti per AI Data Engine sui nodi di elaborazione dati forniti da NetApp"^].
-
-
-[]
-====
-
-====

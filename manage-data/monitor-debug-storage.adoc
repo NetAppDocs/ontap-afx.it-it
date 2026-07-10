@@ -15,6 +15,7 @@ Il sistema AFX include diverse opzioni per monitorare lo storage gestito da cias
 
 
 
+[[display-nas-clients]]
 == Visualizza i client NAS
 
 È possibile visualizzare un elenco dei client NFS e SMB/CIFS attualmente connessi al cluster AFX.
@@ -27,6 +28,7 @@ Il sistema AFX include diverse opzioni per monitorare lo storage gestito da cias
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../manage-data/prepare-manage-data.html["Preparati a gestire i tuoi dati AFX"]

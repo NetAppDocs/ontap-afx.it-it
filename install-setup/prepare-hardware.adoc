@@ -15,6 +15,7 @@ Preparatevi a installare il vostro sistema di archiviazione AFX 1K preparando il
 
 
 
+[[step-1-prepare-the-site]]
 == Fase 1: preparare il sito
 
 Per installare il sistema di archiviazione AFX 1K, assicurati che il sito e l'armadio o il rack che intendi utilizzare siano conformi alle specifiche della tua configurazione.
@@ -31,6 +32,7 @@ Per installare il sistema di archiviazione AFX 1K, assicurati che il sito e l'ar
 
 
 
+[[step-2-unpack-the-boxes]]
 == Fase 2: disfare le scatole
 
 Dopo aver verificato che il sito e l'armadio siano conformi alle specifiche, disimballare le scatole e confrontare il contenuto con la bolla di accompagnamento.
@@ -72,6 +74,7 @@ Di seguito sono riportati alcuni dei contenuti che potresti trovare nelle scatol
 
 
 
+[[step-3-register-your-storage-system]]
 == Passaggio 3: Registra il tuo sistema di archiviazione
 
 Dopo esserti assicurato che il tuo sito soddisfi i requisiti delle specifiche del tuo sistema di archiviazione AFX 1K e aver verificato di avere a disposizione tutti i componenti ordinati, registra il tuo sistema di archiviazione.
@@ -112,7 +115,7 @@ Cliente NetApp esistente
  a| 
 Nuovo cliente NetApp
  a| 
-.. Fai clic su *Registrati ora* e crea un account.
+.. Seleziona *Registrati ora* e crea un account.
 .. Selezionare *Sistemi* > *Registra sistemi*.
 .. Inserire il numero di serie del sistema di archiviazione e i dettagli richiesti.
 

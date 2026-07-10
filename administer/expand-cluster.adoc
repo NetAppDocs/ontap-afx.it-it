@@ -15,18 +15,21 @@ summary: 'È possibile espandere la capacità di elaborazione di un cluster AFX 
 
 
 
+[[prepare-to-expand-a-cluster]]
 == Preparati ad espandere un cluster
 
 Prima di espandere un cluster AFX, è necessario acquisire familiarità con i requisiti di base e l'approccio generale alla risoluzione dei problemi.
 
 
 
+[[requirements]]
 === Requisiti
 
 Sono necessarie le credenziali di un account amministratore del cluster e la possibilità di connettersi alla CLI ONTAP tramite SSH.  Quando si espande un cluster, è necessario aggiungere un numero pari di nodi e rispettare i limiti di dimensione del sistema AFX in base alla versione.
 
 
 
+[[troubleshooting]]
 === Risoluzione dei problemi
 
 Ci sono alcuni concetti e scenari di risoluzione dei problemi di cui dovresti essere a conoscenza quando esegui l'espansione del cluster.
@@ -61,6 +64,7 @@ Se necessario, contattare l'assistenza NetApp per ulteriore assistenza.
 
 
 
+[[add-nodes-to-expand-a-cluster]]
 == Aggiungi nodi per espandere un cluster
 
 Questa procedura descrive come aggiungere una coppia di nodi a un cluster esistente e può essere adattata ad altri ambienti di distribuzione.  Sarà necessario utilizzare sia l'interfaccia amministrativa ONTAP CLI sia quella System Manager.
@@ -140,6 +144,7 @@ Questo passaggio è necessario solo se le altre interfacce non utilizzano gli in
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../get-started/prepare-cluster-admin.html["Preparati a gestire il tuo sistema AFX"]

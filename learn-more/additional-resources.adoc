@@ -15,6 +15,7 @@ Sono disponibili risorse aggiuntive a cui puoi accedere per gestire e supportare
 
 
 
+[[ontap-documentation]]
 == Documentazione ONTAP
 
 * https://docs.netapp.com/us-en/ontap/["ONTAP unificato"^]
@@ -24,6 +25,7 @@ Sono disponibili risorse aggiuntive a cui puoi accedere per gestire e supportare
 
 
 
+[[netapp-support]]
 == Supporto NetApp
 
 * https://mysupport.netapp.com/["Sito di supporto NetApp"^]

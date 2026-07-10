@@ -18,30 +18,35 @@ NOTE: Le funzionalità e l'amministrazione ONTAP descritte sono comuni ai sistem
 
 
 
+[[storage-management-and-performance]]
 == Gestione e prestazioni dello storage
 
 Sono disponibili numerose funzionalità opzionali di gestione dello storage e delle prestazioni che puoi configurare e utilizzare con la tua distribuzione AFX.
 
 
 
+[[ontap-nas-storage-management]]
 === Gestione dell'archiviazione NAS ONTAP
 
 Il Network Attached Storage (NAS) fornisce file storage a cui possono accedere più client nella rete. ONTAP supporta diversi protocolli NAS. Scopri di più su https://docs.netapp.com/us-en/ontap/nas-management/index.html["Gestione dello storage NAS"^].
 
 
 
+[[ontap-flexcache-volumes]]
 === Volumi ONTAP FlexCache
 
 FlexCache è una funzionalità di caching remoto di ONTAP. Avvicina i dati ai client, migliorando le prestazioni di accesso e riducendo i costi. La creazione di un volume FlexCache, che inizialmente copia solo i metadati dal file system di origine, semplifica la distribuzione dei file e riduce il traffico WAN. Scopri di più su  https://docs.netapp.com/us-en/ontap/flexcache/index.html["Volumi ONTAP FlexCache"^].
 
 
 
+[[ontap-flexgroup-volumes]]
 === Volumi ONTAP FlexGroup
 
 Un FlexGroup volume è costituito da diversi volumi membri che condividono il traffico in modo automatico e trasparente. FlexGroup volumi offrono numerosi vantaggi, tra cui prestazioni elevate e gestione semplificata. Scopri di più su  https://docs.netapp.com/us-en/ontap/flexgroup/creation-workflow-task.html["Configurazione del volume FlexGroup"^].
 
 
 
+[[cross-file-sequential-read]]
 === Lettura sequenziale tra file
 
 Cross File Sequential Read (CFSR) è una funzionalità disponibile sui sistemi AFX a partire da ONTAP 9.19.1 che migliora le prestazioni delle applicazioni di editing video e di quelle correlate. Per i flussi di lavoro che memorizzano i fotogrammi video come singoli file sequenziali, in genere da 50 a 250 MB ciascuno, CFSR prevede e precarica in modo intelligente i file successivi in base a modelli di nomi file sequenziali. È possibile precaricare fino a 10 file o 500 MB di dati, riducendo significativamente la latenza e garantendo una riproduzione fluida di video raw 4K/8K a 30 fotogrammi al secondo.
@@ -67,30 +72,35 @@ CFSR non è supportato su nessun'altra piattaforma ONTAP (FAS, AFF o ASA) o in i
 
 
 
+[[data-protection]]
 == Protezione dei dati
 
 Sono disponibili diverse funzionalità opzionali di protezione dei dati che puoi configurare e utilizzare con la tua distribuzione AFX.
 
 
 
+[[consistency-groups]]
 === Gruppi di coerenza
 
 Un gruppo di coerenza è una raccolta di volumi gestiti come un'unica unità. Scopri di più su  https://docs.netapp.com/us-en/ontap/consistency-groups/index.html["Gruppi di coerenza ONTAP"^].
 
 
 
+[[snaplock]]
 === SnapLock
 
 È possibile proteggere i file convertendoli in uno stato WORM (Write Once Read Many) a livello di volume. SnapLock supporta due modalità. La modalità di conformità garantisce che i file non possano essere eliminati fino alla scadenza del periodo di conservazione, in conformità con le normative governative o specifiche del settore. La modalità aziendale consente agli utenti con privilegi di eliminare i file prima della scadenza del periodo di conservazione. Ulteriori informazioni su  https://docs.netapp.com/us-en/ontap/snaplock/index.html["ONTAP SnapLock"^].
 
 
 
+[[storage-efficiency]]
 == efficienza di storage
 
 ONTAP offre diverse funzionalità per l'efficienza dello storage che possono aiutarti a ottimizzare l'utilizzo dello storage e a ridurre i costi.
 
 
 
+[[global-deduplication]]
 === Deduplicazione globale
 
 https://docs.netapp.com/us-en/ontap/concepts/deduplication-concept.html["Deduplicazione"^] è una https://docs.netapp.com/us-en/ontap/volumes/deduplication-data-compression-efficiency-concept.html["Efficienza dello storage ONTAP"^] funzionalità che riduce i requisiti di storage fisico identificando ed eliminando i blocchi di dati duplicati. La deduplica tradizionale opera a livello di volume o di aggregato. Questa funzionalità esistente offre una significativa efficienza dello storage per i clienti su tutte le piattaforme ONTAP.
@@ -101,24 +111,28 @@ La deduplicazione globale è abilitata di default sui sistemi AFX A1K e opera in
 
 
 
+[[security]]
 == Sicurezza
 
 Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configurare e utilizzare con la tua distribuzione AFX.
 
 
 
+[[fpolicy]]
 === Politica F
 
 FPolicy è un framework di notifica per l'accesso ai file utilizzato per monitorare e gestire gli eventi di accesso ai file sulle macchine virtuali di storage (SVM). È possibile utilizzare FPolicy per creare policy che definiscono quali operazioni sui file monitorare e, facoltativamente, bloccare, in base a criteri definiti dall'utente. FPolicy è comunemente utilizzato per audit di sicurezza, conformità e governance dei dati. Ulteriori informazioni su  https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Soluzioni ONTAP FPolicy"^].
 
 
 
+[[ontap-event-and-performance-monitoring]]
 == Monitoraggio degli eventi e delle prestazioni ONTAP
 
 È possibile monitorare lo stato e le prestazioni di un cluster. Ciò include la configurazione di avvisi per gli eventi e la gestione delle notifiche per gli avvisi relativi allo stato del sistema. Per saperne di più https://docs.netapp.com/us-en/ontap/event-performance-monitoring/index.html["Monitoraggio di eventi, prestazioni e salute"^].
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../faq-ontap-afx.html["FAQ sui sistemi di archiviazione AFX"]

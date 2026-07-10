@@ -18,6 +18,7 @@ NOTE: A ciascun utente ONTAP deve essere assegnato un ruolo.  Un ruolo include p
 
 
 
+[[create-an-account-role]]
 == Crea un ruolo di account
 
 I ruoli per gli amministratori del cluster e gli amministratori delle VM di storage vengono creati automaticamente quando il cluster AFX viene configurato e inizializzato.  È possibile creare ruoli di account utente aggiuntivi per definire funzioni specifiche che gli utenti assegnati ai ruoli possono eseguire sul cluster.
@@ -32,6 +33,7 @@ I ruoli per gli amministratori del cluster e gli amministratori delle VM di stor
 
 
 
+[[create-a-cluster-account]]
 == Crea un account cluster
 
 È possibile creare un account a livello di cluster da utilizzare durante l'amministrazione del cluster o della SVM.
@@ -54,6 +56,7 @@ Viene creato un nuovo account, disponibile per l'uso con il tuo cluster AFX.
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/prepare-authentication.html["Preparare i servizi di autenticazione"]

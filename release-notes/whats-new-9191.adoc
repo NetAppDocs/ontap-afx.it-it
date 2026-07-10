@@ -21,6 +21,7 @@ TIP: Scopri il nuovo e migliorato supporto per  https://docs.netapp.com/us-en/ai
 
 
 
+[[performance]]
 == Prestazioni
 
 [cols="2,4"]
@@ -44,6 +45,7 @@ Dynamic Storage Efficiency ottimizza in modo intelligente le operazioni di effic
 |===
 
 
+[[rest-api]]
 == API REST
 
 [cols="2,4"]
@@ -57,6 +59,7 @@ ONTAP 9.19.1 aggiunge sei parametri attualmente disponibili nell'endpoint  `/s
 |===
 
 
+[[security]]
 == Sicurezza
 
 [cols="2,4"]
@@ -75,6 +78,7 @@ ARP/AI supporta volumi primari idonei in relazioni SnapMirror sincrone con i sis
 |===
 
 
+[[storage-resource-management]]
 == gestione delle risorse di storage
 
 [cols="2,4"]
@@ -93,6 +97,7 @@ ARP/AI supporta volumi primari idonei in relazioni SnapMirror sincrone con i sis
 |===
 
 
+[[upgrade]]
 == Aggiornamento
 
 [cols="2,4"]

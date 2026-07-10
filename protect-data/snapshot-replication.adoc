@@ -17,6 +17,7 @@ Per impostare la replica Snapshot, è necessario stabilire una relazione di repl
 
 
 
+[[step-1-create-a-cluster-peer-relationship]]
 == Passaggio 1: creare una relazione peer del cluster
 
 Prima di poter proteggere i dati replicandoli su un cluster remoto, è necessario creare una relazione peer tra il cluster locale e quello remoto.
@@ -38,6 +39,7 @@ Hai effettuato il peering per un cluster AFX locale con un cluster remoto.  Ora 
 
 
 
+[[step-2-optionally-create-a-replication-policy]]
 == Passaggio 2: Facoltativamente, creare una policy di replicazione
 
 La policy di replica degli snapshot definisce quando gli aggiornamenti eseguiti sul cluster AFX vengono replicati sul sito remoto.
@@ -79,6 +81,7 @@ Hai creato una policy di replicazione e ora sei pronto a creare una relazione di
 
 
 
+[[step-3-create-a-replication-relationship]]
 == Passaggio 3: creare una relazione di replicazione
 
 Una relazione di replica snapshot stabilisce una connessione tra il sistema AFX e una posizione remota, in modo da poter replicare i gruppi di coerenza su un cluster remoto.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o per la migrazione dei dati.
@@ -166,6 +169,7 @@ Ora che hai creato una politica e una relazione di replicazione, il trasferiment
 
 
 
+[[step-4-test-replication-failover]]
 == Passaggio 4: testare il failover della replica
 
 Facoltativamente, verifica di poter servire correttamente i dati dai volumi replicati su un cluster remoto se il cluster di origine è offline.

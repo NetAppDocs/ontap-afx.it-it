@@ -15,6 +15,7 @@ summary: 'È possibile esaminare gli eventi e i messaggi del registro di control
 
 
 
+[[events]]
 == Eventi
 
 I messaggi di evento forniscono una preziosa registrazione dell'attività del sistema.  Ogni evento include una descrizione e un identificatore univoco, insieme a un'azione consigliata.
@@ -28,6 +29,7 @@ I messaggi di evento forniscono una preziosa registrazione dell'attività del si
 
 
 
+[[audit-log]]
 == Registro di controllo
 
 Il registro di controllo include una registrazione dell'attività del sistema basata sull'uso di protocolli di accesso come HTTP.
@@ -39,6 +41,7 @@ Il registro di controllo include una registrazione dell'attività del sistema ba
 
 
 
+[[manage-notifications]]
 == Gestisci le notifiche
 
 AFX supporta diversi tipi di notifiche che puoi inoltrare.

@@ -15,6 +15,7 @@ Scopri i componenti hardware e le opzioni di cablaggio supportati per il sistema
 
 
 
+[[supported-afx-2k-cabling-configuration]]
 == Configurazione di cablaggio AFX 2K supportata
 
 La configurazione iniziale del sistema storage AFX 2K supporta un minimo di quattro nodi controller collegati tramite doppi switch agli alloggiamenti dei dischi di storage.
@@ -25,6 +26,7 @@ image:../media/drw_afx_2k_cable_overview_half_node_ieops-2871.svg["Esempio di ca
 
 
 
+[[supported-hardware-components]]
 == Componenti hardware supportati
 
 Verifica i disk shelf, gli switch e i tipi di cavo compatibili con il sistema storage AFX 2K.

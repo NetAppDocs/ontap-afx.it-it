@@ -15,6 +15,7 @@ Le porte utilizzate dal sistema AFX costituiscono la base per la connettività e
 
 
 
+[[create-a-vlan]]
 == Creare un VLAN
 
 Una VLAN è costituita da porte switch raggruppate in un dominio broadcast.  Le VLAN consentono di aumentare la sicurezza, isolare potenziali problemi e limitare i percorsi disponibili all'interno dell'infrastruttura di rete IP.
@@ -45,6 +46,7 @@ Hai creato una VLAN per aumentare la sicurezza, isolare i problemi e limitare i 
 
 
 
+[[create-a-lag]]
 == Creare un LAG
 
 Un gruppo di aggregati di collegamenti (LAG) è una tecnica che combina più connessioni di rete fisiche in un'unica connessione logica.  È possibile utilizzarlo per aumentare la larghezza di banda e garantire ridondanza tra i nodi.
@@ -58,6 +60,7 @@ Un gruppo di aggregati di collegamenti (LAG) è una tecnica che combina più con
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/manage-cluster-networking.html["Gestire la rete del cluster AFX"]

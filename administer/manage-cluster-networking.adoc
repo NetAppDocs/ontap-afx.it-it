@@ -18,6 +18,7 @@ NOTE: Creare una risorsa di rete è un primo passo importante.  È inoltre neces
 
 
 
+[[create-a-broadcast-domain]]
 == Crea un dominio di trasmissione
 
 Un dominio broadcast semplifica la gestione della rete cluster raggruppando le porte che fanno parte della stessa rete di livello due.  Alle macchine virtuali di archiviazione (SVM) possono quindi essere assegnate porte nel gruppo per il traffico dati o di gestione.
@@ -49,6 +50,7 @@ L'MTU è il pacchetto dati più grande che può essere accettato nel dominio bro
 
 
 
+[[create-an-ipspace]]
 == Crea uno spazio IP
 
 Uno spazio IP è un dominio amministrativo per gli indirizzi IP e la relativa configurazione di rete.  Questi spazi possono essere utilizzati per supportare le SVM tramite amministrazione e routing isolati.  Ad esempio, sono utili quando i client hanno indirizzi IP sovrapposti provenienti dallo stesso intervallo di indirizzi IP e subnet.
@@ -71,6 +73,7 @@ Tutti i nomi IPspace devono essere univoci all'interno di un cluster.
 
 
 
+[[create-a-subnet]]
 == Crea una sottorete
 
 Una sottorete o subnet impone una divisione logica dello spazio degli indirizzi IP nella rete.  Consente di allocare blocchi dedicati di indirizzi IP per la creazione di un'interfaccia di rete (LIF).  Le subnet semplificano la creazione di LIF consentendo di utilizzare il nome della subnet anziché una combinazione specifica di indirizzo IP e maschera di rete.
@@ -94,6 +97,7 @@ La nuova subnet semplificherà la creazione delle interfacce di rete.
 
 
 
+[[create-a-network-interface]]
 == Creare un'interfaccia di rete
 
 Un'interfaccia di rete logica (LIF) è costituita da un indirizzo IP e dai relativi parametri di configurazione di rete.  Può essere associato a una porta fisica o logica e viene solitamente utilizzato dai client per accedere ai dati forniti da una SVM.  I LIF garantiscono resilienza in caso di guasto e possono migrare tra le porte del nodo in modo che la comunicazione non venga interrotta.
@@ -107,6 +111,7 @@ Un'interfaccia di rete logica (LIF) è costituita da un indirizzo IP e dai relat
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/manage-ethernet-ports.html["Gestisci le porte Ethernet AFX"]

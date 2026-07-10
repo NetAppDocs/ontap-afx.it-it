@@ -15,6 +15,7 @@ Dopo aver installato l'hardware del rack per il tuo sistema storage AFX 2K e ave
 
 
 
+[[step-1-power-on-the-shelf-and-assign-shelf-id]]
 == Passaggio 1: accendere lo scaffale e assegnare l'ID dello scaffale
 
 Ogni ripiano ha un ID univoco, che ne garantisce la distinzione nella configurazione del sistema di archiviazione.
@@ -122,6 +123,7 @@ L'alimentatore si accende non appena si collega il cavo di alimentazione.  Il su
 
 
 
+[[step-2-power-on-the-controller-nodes]]
 == Passaggio 2: accendere i nodi del controller
 
 Dopo aver acceso gli scaffali di archiviazione e assegnato loro ID univoci, accendere l'alimentazione ai nodi del controller di archiviazione.
@@ -160,6 +162,7 @@ image::../media/drw_affa1k_power_source_icon_ieops-1700.svg[Schema di collegamen
 
 
 
+[[step-3-verify-the-switch-connections]]
 == Passaggio 3: Verifica i collegamenti dello switch
 
 Dalla CLI dello switch, verifica che le porte dello switch collegate alle porte del cluster siano attive, che i nodi del cluster si trovino nelle VLAN del cluster corrette e che la connessione ISL tra i due switch sia funzionante.
@@ -639,7 +642,4 @@ cs1#
 
 
 .Cosa succederà ora?
-Dopo aver acceso il tuo sistema storage AFX 2K, completa la configurazione in base all'opzione di distribuzione:
-
-* Per le distribuzioni dedicate del sistema storage AFX 2K, vai su link:../install-setup/cluster-setup.html["Impostare un cluster AFX"].
-
+Dopo aver acceso il tuo sistema storage AFX 2K, link:../install-setup/cluster-setup.html["configura il cluster AFX"].

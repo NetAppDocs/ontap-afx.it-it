@@ -15,12 +15,14 @@ summary: È possibile visualizzare una panoramica di alto livello delle prestazi
 
 
 
+[[storage-capacity]]
 == Capacità di stoccaggio
 
 Monitora l'utilizzo dello storage per assicurarti di avere una capacità di storage sufficiente per i carichi di lavoro attuali e futuri.
 
 
 
+[[monitor-high-level-cluster-storage-utilization]]
 === Monitorare l'utilizzo dello storage a livello high-level del cluster
 
 In ONTAP System Manager, è possibile visualizzare una panoramica high-level dell'utilizzo dello storage per l'intero cluster.
@@ -33,6 +35,7 @@ In ONTAP System Manager, è possibile visualizzare una panoramica high-level del
 
 
 
+[[monitor-storage-availability-zone-capacity-details]]
 === Monitora i dettagli sulla capacità della zona di disponibilità dello storage
 
 A partire da ONTAP 9.19.1, puoi visualizzare i dettagli della capacità della tua zona di disponibilità dello storage, inclusi le soglie di spazio, lo spazio consumato dagli snapshot e la riduzione dei dati. Puoi anche impostare le soglie di utilizzo dello spazio alla percentuale alla quale desideri che ONTAP generi avvisi di warning e critici.
@@ -44,6 +47,7 @@ A partire da ONTAP 9.19.1, puoi visualizzare i dettagli della capacità della tu
 
 
 
+[[cluster-performance]]
 == Prestazioni del cluster
 
 System Manager fornisce una panoramica dettagliata delle prestazioni del cluster AFX.
@@ -57,6 +61,7 @@ System Manager fornisce una panoramica dettagliata delle prestazioni del cluster
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/additional-ontap-cluster.html["Amministrazione aggiuntiva del cluster AFX"]

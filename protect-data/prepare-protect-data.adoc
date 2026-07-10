@@ -18,6 +18,7 @@ TIP: Poiché molti dei concetti e delle procedure amministrative disponibili sui
 
 
 
+[[terminology-and-options]]
 == Terminologia e opzioni
 
 Esistono diversi termini relativi alla protezione dei dati AFX che dovresti conoscere.
@@ -30,6 +31,7 @@ SnapLock:: SnapLock è una funzionalità ONTAP che consente di proteggere i file
 
 
 
+[[afx-data-protection-limitations]]
 == Limitazioni della protezione dei dati AFX
 
 È necessario essere a conoscenza dei limiti e delle restrizioni sulla protezione dei dati ONTAP applicati dal sistema di archiviazione AFX.
@@ -39,6 +41,7 @@ L'utilizzo di SM-S presenta una limitazione di scala. È possibile avere un mass
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * link:../administer/additional-ontap-svm.html["Amministrazione aggiuntiva AFX SVM"]

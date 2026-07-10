@@ -15,12 +15,14 @@ IP Security (IPsec) è uno standard di protocollo Internet che garantisce la cri
 
 
 
+[[configuring-ipsec-on-an-afx-system]]
 == Configurazione di IPsec su un sistema AFX
 
 Le procedure di configurazione IPsec per i sistemi di archiviazione AFX sono le stesse dei sistemi AFF e FAS , ad eccezione delle schede NIC (Network Interface Controller) supportate utilizzate con la funzionalità di offload hardware. Fare riferimento a https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepararsi a configurare la sicurezza IP per la rete ONTAP"^] per maggiori informazioni.
 
 
 
+[[hardware-offload-feature]]
 == Funzione di scarico hardware
 
 Molte delle operazioni crittografiche IPsec, come la crittografia e i controlli di integrità, possono essere scaricate su una scheda NIC supportata sul sistema AFX.  Ciò può migliorare significativamente le prestazioni e la produttività del traffico di rete protetto da IPsec.
@@ -38,6 +40,7 @@ Fare riferimento al https://hwu.netapp.com/["Hardware Universe NetApp"^] per mag
 
 
 
+[[related-information]]
 == Informazioni correlate
 
 * https://docs.netapp.com/us-en/ontap/networking/ipsec-prepare.html["Prepararsi a configurare la sicurezza IP per la rete ONTAP"^]
