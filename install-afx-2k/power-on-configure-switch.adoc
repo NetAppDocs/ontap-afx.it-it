@@ -25,7 +25,9 @@ Dopo aver cablato il tuo sistema storage AFX 2K, devi accendere e configurare gl
 . Accendere ogni interruttore.
 . Configura gli switch per supportare il sistema storage AFX 2K.
 +
-** Per ulteriori informazioni sulla configurazione degli switch, vedi link:https://docs.netapp.com/us-en/ontap-systems-switches/afx/index.html["Configura gli switch per i sistemi storage AFX"^].
+** Per gli switch Cisco Nexus 9808, consulta la documentazione relativa agli switch cluster e di storage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9808/configure-switch-workflow-9808.html["Configura lo switch Cisco Nexus 9808"^].
+** Per gli switch Cisco Nexus 9332D-GX2B, consulta la documentazione sugli switch cluster e di storage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9332d-gx2b/configure-switch-workflow-9332d.html["Configurare lo switch Cisco Nexus 9332D-GX2B"^].
+** Per gli switch Cisco Nexus 9364D-GX2A, consulta la documentazione sugli switch cluster e di storage link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9364d-gx2a/configure-switch-workflow-9364d.html["Configurare lo switch Cisco Nexus 9364D-GX2A"^].
 
 
 
