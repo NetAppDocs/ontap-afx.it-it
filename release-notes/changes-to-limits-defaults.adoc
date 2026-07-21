@@ -24,14 +24,19 @@ TIP: Per determinare le capacità del tuo cluster AFX, dovresti consultare i det
 [[changes-to-ontap-limits]]
 == Modifiche ai limiti ONTAP
 
-[cols="2,4,4"]
+[cols="1,3,1"]
 |===
 | Caratteristica | Modifica limite | Modificato nella versione 
 
 
 | Nodi per cluster  a| 
-È possibile espandere il cluster AFX fino a un massimo di 32 nodi. Ciò consente di scalare il sistema storage AFX per soddisfare le crescenti esigenze dei carichi di lavoro e delle applicazioni.
-| ONTAP 9.19.1 RC 
+Puoi espandere il tuo cluster AFX fino a un massimo di 32 nodi. Questo ti permette di scalare il tuo sistema storage AFX per soddisfare le crescenti esigenze dei tuoi carichi di lavoro e delle tue applicazioni. Nota che il supporto per 32 nodi è disponibile con un set di funzionalità limitato; consulta il tuo team account NetApp per i dettagli.
+| ONTAP 9.19.1 
+
+
+| Volumi per FlexGroup  a| 
+Il numero massimo di volumi in un FlexGroup è stato aumentato a 512 con 32 nodi. Questo permette al sistema storage AFX di offrire appieno le capacità prestazionali per cluster di grandi dimensioni.
+| ONTAP 9.19.1 
 |===
 
 

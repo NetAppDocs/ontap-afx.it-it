@@ -93,6 +93,13 @@ Un gruppo di coerenza è una raccolta di volumi gestiti come un'unica unità. Sc
 
 
 
+[[snapmirror-active-sync-for-nas]]
+=== SnapMirror active sync per NAS
+
+SnapMirror active sync consente ai servizi aziendali di continuare a funzionare anche in caso di guasto completo del sito. Questa tecnologia permette alle applicazioni di passare senza interruzioni a una copia secondaria senza intervento manuale o script personalizzati. Scopri di più su  https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/protect-nas-task.html["SnapMirror active sync per NAS"^].
+
+
+
 [[storage-efficiency]]
 == efficienza di storage
 
@@ -122,6 +129,13 @@ Sono disponibili numerose funzionalità di sicurezza opzionali che puoi configur
 === Politica F
 
 FPolicy è un framework di notifica per l'accesso ai file utilizzato per monitorare e gestire gli eventi di accesso ai file sulle macchine virtuali di storage (SVM). È possibile utilizzare FPolicy per creare policy che definiscono quali operazioni sui file monitorare e, facoltativamente, bloccare, in base a criteri definiti dall'utente. FPolicy è comunemente utilizzato per audit di sicurezza, conformità e governance dei dati. Ulteriori informazioni su  https://docs.netapp.com/us-en/ontap/nas-audit/two-parts-fpolicy-solution-concept.html["Soluzioni ONTAP FPolicy"^].
+
+
+
+[[nfs-over-tls]]
+=== NFS su TLS
+
+A partire da ONTAP 9.19.1, ONTAP aggiunge il supporto on-premises per NFS su TLS con TLS 1.3 per crittografare il traffico NFS in transito su SVM abilitate per NFS. La versione supporta anche l'autenticazione host TLS reciproca opzionale per singola LIF e i controlli delle policy di esportazione per negare l'accesso TCP non TLS ai client corrispondenti. NFS su TLS funziona con l'infrastruttura NFS ONTAP esistente, quindi le applicazioni continuano a usare NFS normalmente mentre TLS crittografa il traffico NFS in transito. NFS su TLS non è disponibile per le piattaforme Cloud in ONTAP 9.19.1. Consulta  https://docs.netapp.com/us-en/ontap/nfs-admin/enable-nfs-over-tls-task.html["Abilita NFS su TLS"^] per ulteriori informazioni.
 
 
 

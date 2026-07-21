@@ -126,7 +126,7 @@ Esistono diverse limitazioni, tra cui valori minimi e massimi, imposte da AFX du
 
 CAUTION: Prima di aumentare un parametro operativo del sistema storage AFX, è necessario valutare come potrebbe influire sulle applicazioni e sull'intero cluster. Ad esempio, mentre l'espansione del numero di nodi controller aumenta la capacità complessiva, potrebbe anche aumentare il traffico nella rete del cluster. È importante comprendere le implicazioni di queste modifiche di configurazione e come potrebbero influire sull'ambiente.
 
-Nodi controller per cluster:: Ogni cluster AFX deve avere almeno quattro nodi. Il numero massimo di nodi varia in base alla release di ONTAP; ad esempio, la release 9.19.1 RC consente fino a 32 nodi per cluster AFX.
+Nodi controller per cluster:: Ogni cluster AFX deve avere almeno quattro nodi. Il numero massimo di nodi varia in base alla release di ONTAP; ad esempio, la release 9.19.1 consente fino a 32 nodi per cluster AFX.
 Capacità di stoccaggio:: Questa è la capacità totale di tutti i dischi SSD nella Storage Availability Zone (SAZ) del cluster. La capacità di archiviazione massima varia in base alla versione ONTAP .
 Interruttori a grappolo:: Sono necessari almeno due switch nella rete di archiviazione del cluster.  Il numero massimo consentito è determinato in base al numero totale di nodi controller nel cluster.
 
