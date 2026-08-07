@@ -37,6 +37,11 @@ Puoi espandere il tuo cluster AFX fino a un massimo di 32 nodi. Questo ti permet
 | Volumi per FlexGroup  a| 
 Il numero massimo di volumi in un FlexGroup è stato aumentato a 512 con 32 nodi. Questo permette al sistema storage AFX di offrire appieno le capacità prestazionali per cluster di grandi dimensioni.
 | ONTAP 9.19.1 
+
+
+| SnapMirror cloud supporto  a| 
+Il numero massimo di bucket S3 supportati da SnapMirror cloud è stato aumentato a 100. Questo ti permette di creare più bucket S3 per i tuoi carichi di lavoro e applicazioni.
+| ONTAP 9.19.1 
 |===
 
 

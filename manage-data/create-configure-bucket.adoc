@@ -25,3 +25,7 @@ Quando si crea un bucket, è necessario fornire una quantità minima di dettagli
 . Facoltativamente, seleziona *Altre opzioni* per configurazioni aggiuntive relative alla protezione dei dati, al blocco e alle autorizzazioni.
 . Selezionare *Salva* per aggiungere il bucket.
 
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/data-protection/cloud-backup-with-snapmirror-task.html["Esegui il backup dei dati sul cloud usando ONTAP SnapMirror Cloud"^]
+
