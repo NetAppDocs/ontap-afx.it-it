@@ -21,6 +21,29 @@ NOTE: Sono disponibili diverse nuove funzionalità per AFX con ONTAP 9.18.1. Alc
 
 
 
+[[security]]
+== Sicurezza
+
+[cols="30%,70%"]
+|===
+| Aggiornamento | Descrizione 
+
+
+ a| 
+xref:../administer/additional-ontap-cluster.html[Amministratore aggiuntivo: offload hardware IPsec]
+ a| 
+Il supporto per l'offload hardware IPsec è esteso a IPv6.
+
+
+
+ a| 
+xref:../administer/additional-ontap-cluster.html[Amministratore aggiuntivo: algoritmi OpenSSL PQC]
+ a| 
+ONTAP supporta algoritmi crittografici postquantistici per SSL. Questi algoritmi offrono una protezione aggiuntiva contro potenziali futuri attacchi di calcolo quantistico e sono disponibili quando la modalità SSL FIPS è disattivata.
+
+|===
+
+
 [[storage-resource-management-enhancements]]
 == Miglioramenti nella gestione delle risorse di archiviazione
 
@@ -31,6 +54,13 @@ NOTE: Sono disponibili diverse nuove funzionalità per AFX con ONTAP 9.18.1. Alc
 
 | Posizionamento del volume migliorato  a| 
 NetApp AFX bilancia automaticamente il posizionamento dei volumi su tutti i nodi di un cluster.  Nelle precedenti versioni ONTAP , l'algoritmo di posizionamento si basava sul numero di volumi nel cluster.  A ogni nodo viene assegnato lo stesso numero di volumi, indipendentemente dall'attività.  A partire da ONTAP 9.18.1, l'algoritmo è stato migliorato per considerare le prestazioni dei nodi durante il posizionamento o lo spostamento dei volumi.  Ciò si traduce in un migliore bilanciamento delle prestazioni tra i nodi del cluster AFX e riduce notevolmente la probabilità che un singolo nodo si sovraccarichi.
+
+
+
+ a| 
+xref:../administer/configure-svm.html[Supporto per gruppi di policy QoS annidati a due livelli su SVM e volumi]
+ a| 
+Puoi assegnare una policy QoS a un SVM e ai volumi sotto l'SVM contemporaneamente.
 
 |===
 .Informazioni correlate
