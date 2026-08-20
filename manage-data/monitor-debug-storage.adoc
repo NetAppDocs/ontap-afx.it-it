@@ -32,4 +32,5 @@ Il sistema AFX include diverse opzioni per monitorare lo storage gestito da cias
 == Informazioni correlate
 
 * link:../manage-data/prepare-manage-data.html["Preparati a gestire i tuoi dati AFX"]
+* https://docs.netapp.com/us-en/ontap/task_nas_file_system_analytics_enable.html["Abilita l'analisi del file system ONTAP"^]
 

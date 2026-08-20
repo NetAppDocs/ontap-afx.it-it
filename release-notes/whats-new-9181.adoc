@@ -63,6 +63,10 @@ xref:../administer/configure-svm.html[Supporto per gruppi di policy QoS annidati
 Puoi assegnare una policy QoS a un SVM e ai volumi sotto l'SVM contemporaneamente.
 
 |===
-.Informazioni correlate
+
+
+[[related-information]]
+== Informazioni correlate
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Punti salienti della versione ONTAP 9"^]
 

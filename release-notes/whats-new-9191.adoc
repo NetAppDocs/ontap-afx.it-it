@@ -170,6 +170,10 @@ A partire da ONTAP 9.19.1, ONTAP aggiunge il supporto on-premises per NFS su TLS
 Durante l'esecuzione dei controlli automatici pre-aggiornamento, gli errori e gli avvisi vengono visualizzati separatamente per consentire di identificare facilmente i problemi che devono essere risolti prima di procedere con l'aggiornamento.
 
 |===
-.Informazioni correlate
+
+
+[[related-information]]
+== Informazioni correlate
+
 * https://docs.netapp.com/us-en/ontap/release-notes/index.html["Punti salienti della versione ONTAP 9"^]
 
