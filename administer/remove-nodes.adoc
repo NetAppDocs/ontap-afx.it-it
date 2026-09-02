@@ -1,0 +1,205 @@
+---
+sidebar: sidebar 
+permalink: administer/remove-nodes.html 
+keywords: netapp afx, remove node, unjoin, cluster remove-node, evacuate volumes, zero-copy volume move 
+summary: 'Scopri come rimuovere i nodi di storage da un NetApp AFX cluster, inclusa l"evacuazione dei volumi, la migrazione delle LIF e la separazione della coppia HA.' 
+---
+= Rimuovi i nodi da un cluster di sistema storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Potresti dover rimuovere dei nodi dal tuo cluster AFX per manutenzione o sostituzione hardware. Puoi rimuovere solo un nodo alla volta e, dopo aver rimosso un nodo, devi rimuovere anche il suo partner HA.
+
+.Informazioni su questo compito
+* Nei sistemi di storage AFX, tutto lo storage è contenuto all'interno di un'unica Storage Availability Zone (SAZ) accessibile da ogni nodo del cluster. Di conseguenza, quando un nodo viene rimosso, non è necessario copiare i dati dal nodo dismesso. Invece, i puntatori ai volumi sul nodo dismesso vengono aggiornati tra i nodi rimanenti. Questa operazione è nota come Zero Copy Volume Move (ZCVM) e avviene istantaneamente perché non viene effettivamente copiato o spostato alcun dato.
++
+[NOTE]
+====
+Prima di rimuovere il nodo, gestisci manualmente tutti i volumi che non possono essere spostati da ZCVM. Questi includono cloni di volumi, volumi offline, volumi crittografati la cui chiave di crittografia originale è stata modificata o rigenerata e volumi ripristinati tramite SnapMirror cloud. I volumi di staging per l'audit e i volumi root vengono spostati da ZCVM durante il processo di disconnessione del nodo.
+
+** Scopri di più su link:https://docs.netapp.com/us-en/ontap/nas-audit/basic-auditing-concept.html["volumi di staging dell'audit"^].
+** Scopri di più su link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/rekey-encrypted-volume-task.html["volumi crittografati con chiavi ricodificate"^].
+
+
+====
+* La disconnessione di un nodo dal cluster avviene correttamente nei seguenti modi:
++
+** Contrassegna il nodo come non idoneo e fuori dal quorum CLAM.
+** Arresta correttamente il nodo e trasferisce la proprietà a un nodo superstite.
+** Pulisce lo stato di alta disponibilità (HA) RAID sul nodo e lo elimina dal database del cluster.
+
+
+
+
+
+
+[[step-1-prepare-to-remove-nodes-from-an-afx-cluster]]
+== Passaggio 1: Preparati a rimuovere i nodi da un cluster AFX
+
+Prima di rimuovere i nodi dal tuo cluster AFX, dovresti verificare che il cluster sia integro e che non ci siano LIF di dati sul nodo da rimuovere.
+
+.Passi
+. Conferma che il cluster è integro:
++
+[source, cli]
+----
+cluster show
+----
+. Verifica che il nodo che desideri rimuovere sia online e integro:
++
+[source, cli]
+----
+system node show -node <node> -health -epsilon
+----
+. Visualizza i LIF sul nodo:
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+. Migra le LIF dei dati dal nodo:
++
+[source, cli]
+----
+network interface migrate -vserver <SVM> -lif <LIF> -dest-node <destination_node> -dest-port <destination_port>
+----
++
+Ripeti questo comando per tutti i LIF di dati. Devono rimanere sul nodo solo i LIF di cluster e i LIF di gestione dei nodi.
+
+. Verifica che tutti i LIF dei dati siano stati rimossi e che sul nodo rimangano solo i LIF del cluster e i LIF di gestione del nodo:
++
+[source, cli]
+----
+network interface show -curr-node <node>
+----
+
+
+.E adesso?
+Dopo aver completato i passaggi di preparazione, puoi rimuovere il primo nodo della coppia HA dal cluster e poi rimuovere il suo partner HA.
+
+
+
+[[step-2-unjoin-a-single-node-from-an-afx-cluster]]
+== Passaggio 2: Scollega un singolo nodo da un cluster AFX
+
+Rimuovi un nodo da un cluster AFX solo dopo che hai completato i passaggi necessari per preparare il nodo alla rimozione. Dopo che hai rimosso un nodo dal cluster, devi poi rimuovere anche la sua coppia HA.
+
+.Prima di iniziare
+Si raccomanda link:manage-autosupport.html["emettere un messaggio AutoSupport"] di informare il supporto tecnico NetApp che stai rimuovendo un nodo dal tuo cluster.
+
+.Passi
+. Evacua i volumi del nodo:
++
+[source, cli]
+----
+system node evacuate-volumes start -node <node_to_remove>
+----
+. Verifica che i volumi dei nodi siano stati svuotati:
++
+[source, cli]
+----
+system node evacuate-volumes show -node <node_to_remove>
+----
++
+Attendi che il *conteggio in sospeso* sia 0 prima di procedere. Non spostare epsilon o l'idoneità finché i volumi non sono stati completamente svuotati.
+
++
+Se necessario, puoi usare il comando  `system node evacuate-volumes abort -node <node>` per interrompere il processo di evacuazione.
+
+. Identifica il nodo che contiene epsilon:
++
+[source, cli]
+----
+cluster show -epsilon true
+----
++
+.. Se il nodo che vuoi rimuovere contiene epsilon, sposta epsilon su un altro nodo:
++
+[source, cli]
+----
+cluster modify -node <surviving_node> -epsilon true
+----
+
+
+. Identifica il nodo primario corrente:
++
+[source, cli]
+----
+cluster ring show
+----
++
+.. Se il nodo che stai rimuovendo è il nodo primario corrente, rendilo non idoneo:
++
+[source, cli]
+----
+cluster modify -node <node_to_remove> -eligibility false
+----
+
+
+. Mostra il nodo home delle LIF di dati rimanenti:
++
+[source, cli]
+----
+network interface show -home-node <node_to_remove>
+----
+. Modifica il nodo principale dei LIF di dati rimanenti su un altro nodo:
++
+[source, cli]
+----
+network interface modify -vserver <SVM> -lif <LIF> -home-node <surviving_node>
+----
++
+Lascia i LIF del cluster e i LIF di gestione dei nodi sul nodo in uscita.
+
+. Disabilita il takeover del nodo da rimuovere:
++
+[source, cli]
+----
+storage failover modify -node <node_to_remove> -enable-takeover-of false
+----
+. Verifica che il takeover sia disabilitato per il nodo da rimuovere:
++
+[source, cli]
+----
+storage failover show
+----
++
+Il takeover non è possibile sulla coppia HA quando il failover è disabilitato.
+
+. Su un nodo funzionante e integro, imposta il livello di privilegio su avanzato:
++
+[source, cli]
+----
+privilege set -level advanced
+----
+. Scollega il nodo dal cluster:
++
+[source, cli]
+----
+cluster remove-node -node <node_to_remove>
+----
++
+Conferma gli avvisi. L'operazione dovrebbe terminare con *Node remove succeeded*.
+
+
+
+.Cosa succederà ora?
+Ripeti i passaggi precedenti per rimuovere il partner HA dal cluster. Non puoi rimuovere altri nodi finché non rimuovi il partner HA del nodo disconnesso.
+
+
+
+[[step-3-optionally-clean-the-removed-hardware]]
+== Passaggio 3: Facoltativamente, pulisci l'hardware rimosso
+
+Se vuoi riutilizzare un nodo che hai rimosso da un cluster, devi cancellare la configurazione del nodo e inizializzare tutti i dischi prima che possa essere reinserito in un cluster.
+
+.Passi
+. Durante il processo di avvio, quando richiesto, premi Ctrl-C per visualizzare il menu di boot.
+. Selezionare l'opzione del menu di boot *(4) Pulisci la configurazione e inizializza tutti i dischi*.
+
+
+.Cosa succederà ora?
+Puoi usare il comando  `cluster add-node` per riutilizzare la coppia HA nello stesso cluster.

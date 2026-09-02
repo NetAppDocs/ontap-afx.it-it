@@ -2113,4 +2113,55 @@
   <block id="05ac85f50d8d37906293d2e2a6c88604" category="list-text"><block ref="05ac85f50d8d37906293d2e2a6c88604" category="inline-link-rx"></block></block>
   <block id="99a1ee6766885a2da62b660dd8ea16ac" category="paragraph"><block ref="99a1ee6766885a2da62b660dd8ea16ac" category="inline-xref-macro-rx"></block></block>
   <block id="d71e1a06e0aeac0cc6a7a6eb58601633" category="paragraph">I volumi creati su SVM di nuova creazione sui cluster ONTAP allocati per i protocolli NAS hanno File System Analytics (FSA) abilitato per impostazione predefinita. FSA si attiva automaticamente non appena viene creato un volume, fornendo funzionalità di analisi immediate senza necessità di ulteriori configurazioni.</block>
+  <block id="7a5cd40812fc4b3d065db77f8ad471a2" category="summary">Scopri come rimuovere i nodi di storage da un NetApp AFX cluster, inclusa l'evacuazione dei volumi, la migrazione delle LIF e la separazione della coppia HA.</block>
+  <block id="4e5ba73143016dcff33719a396a6a145" category="doc">Rimuovi i nodi da un cluster di sistema storage AFX</block>
+  <block id="6f0c0dcb367b5c75b40798fbe71ce6cf" category="paragraph">Potresti dover rimuovere dei nodi dal tuo cluster AFX per manutenzione o sostituzione hardware. Puoi rimuovere solo un nodo alla volta e, dopo aver rimosso un nodo, devi rimuovere anche il suo partner HA.</block>
+  <block id="4dc248d72f6d53f41520e119f1f1df61" category="list-text">Nei sistemi di storage AFX, tutto lo storage è contenuto all'interno di un'unica Storage Availability Zone (SAZ) accessibile da ogni nodo del cluster. Di conseguenza, quando un nodo viene rimosso, non è necessario copiare i dati dal nodo dismesso. Invece, i puntatori ai volumi sul nodo dismesso vengono aggiornati tra i nodi rimanenti. Questa operazione è nota come Zero Copy Volume Move (ZCVM) e avviene istantaneamente perché non viene effettivamente copiato o spostato alcun dato.</block>
+  <block id="2dbbd7a8acfe4ab40ac6e02f5b4365bd" category="paragraph">Prima di rimuovere il nodo, gestisci manualmente tutti i volumi che non possono essere spostati da ZCVM. Questi includono cloni di volumi, volumi offline, volumi crittografati la cui chiave di crittografia originale è stata modificata o rigenerata e volumi ripristinati tramite SnapMirror cloud. I volumi di staging per l'audit e i volumi root vengono spostati da ZCVM durante il processo di disconnessione del nodo.</block>
+  <block id="7b556ab7df79413da0cc234f3e94ae5c" category="inline-link-macro">volumi di staging dell'audit</block>
+  <block id="b94fbeba18cc08b1ba75cabcbc2e50a0" category="list-text">Scopri di più su <block ref="9fec2c3b1c6739fae6e26aee450a7911" category="inline-link-macro-rx"></block>.</block>
+  <block id="791417c8f8a45d10a1481c1cdb8725eb" category="inline-link-macro">volumi crittografati con chiavi ricodificate</block>
+  <block id="1ddf84f2c214ffe15e58979d29d13e7e" category="list-text">Scopri di più su <block ref="c62dc8115ddd949100052ee500f4ed05" category="inline-link-macro-rx"></block>.</block>
+  <block id="03f868c6a771736d2ede498b24db10fd" category="list-text">La disconnessione di un nodo dal cluster avviene correttamente nei seguenti modi:</block>
+  <block id="da83a680025062a416e893d926036b59" category="list-text">Contrassegna il nodo come non idoneo e fuori dal quorum CLAM.</block>
+  <block id="1d6d051efd8278e7af988bc240035964" category="list-text">Arresta correttamente il nodo e trasferisce la proprietà a un nodo superstite.</block>
+  <block id="81969b995904bbc6ec383d70d109fe78" category="list-text">Pulisce lo stato di alta disponibilità (HA) RAID sul nodo e lo elimina dal database del cluster.</block>
+  <block id="ee564f7d2a41885a7b7c447302897684" category="section-title">Passaggio 1: Preparati a rimuovere i nodi da un cluster AFX</block>
+  <block id="20f6fea895a9042d4cb497b9b561472f" category="paragraph">Prima di rimuovere i nodi dal tuo cluster AFX, dovresti verificare che il cluster sia integro e che non ci siano LIF di dati sul nodo da rimuovere.</block>
+  <block id="50ab3243fc412f508feaf2651e35de5a" category="list-text">Conferma che il cluster è integro:</block>
+  <block id="6ed6db99070eb594c7294b2758336a36" category="list-text">Verifica che il nodo che desideri rimuovere sia online e integro:</block>
+  <block id="c8bd62f17e39fb32ef39057543588fff" category="list-text">Visualizza i LIF sul nodo:</block>
+  <block id="b296f30bfe1b8d15961aace982c88ede" category="list-text">Migra le LIF dei dati dal nodo:</block>
+  <block id="b7fb269285f339c28cc4295e470228ce" category="paragraph">Ripeti questo comando per tutti i LIF di dati. Devono rimanere sul nodo solo i LIF di cluster e i LIF di gestione dei nodi.</block>
+  <block id="67ad2de6e0aebb768d64f688a26f3263" category="list-text">Verifica che tutti i LIF dei dati siano stati rimossi e che sul nodo rimangano solo i LIF del cluster e i LIF di gestione del nodo:</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="paragraph-title">E adesso?</block>
+  <block id="af7028a97133d9d6579e0120e4d2ac54" category="paragraph">Dopo aver completato i passaggi di preparazione, puoi rimuovere il primo nodo della coppia HA dal cluster e poi rimuovere il suo partner HA.</block>
+  <block id="129a0f9dbb25cd859dc8156de126758f" category="section-title">Passaggio 2: Scollega un singolo nodo da un cluster AFX</block>
+  <block id="9e84e50094430ea932ef692f2de2fd8d" category="paragraph">Rimuovi un nodo da un cluster AFX solo dopo che hai completato i passaggi necessari per preparare il nodo alla rimozione. Dopo che hai rimosso un nodo dal cluster, devi poi rimuovere anche la sua coppia HA.</block>
+  <block id="ff13cd92e9c877582383685ad84e1408" category="inline-link-macro">emettere un messaggio AutoSupport</block>
+  <block id="e1e010021551213000f9a5ad8268a504" category="paragraph">Si raccomanda <block ref="389d719ba9fa696dc8807adb3c915714" category="inline-link-macro-rx"></block> di informare il supporto tecnico NetApp che stai rimuovendo un nodo dal tuo cluster.</block>
+  <block id="61ef46349dc8aeb8c96f3f89d14d2e3b" category="list-text">Evacua i volumi del nodo:</block>
+  <block id="4352398a52fe792d0d9bc8cd2e093100" category="list-text">Verifica che i volumi dei nodi siano stati svuotati:</block>
+  <block id="4fa4b393f4bd68dcb2697caa0d486054" category="paragraph">Attendi che il *conteggio in sospeso* sia 0 prima di procedere. Non spostare epsilon o l'idoneità finché i volumi non sono stati completamente svuotati.</block>
+  <block id="073a5eccc26b37d386010ab2297fb4ad" category="paragraph">Se necessario, puoi usare il comando <block ref="1800c917431345cdd794d19f800ce56a" prefix=" " category="inline-code"></block> per interrompere il processo di evacuazione.</block>
+  <block id="2cca63e4c1d7ec175a21377faff9a6ec" category="list-text">Identifica il nodo che contiene epsilon:</block>
+  <block id="e23022fe3595885bf954a01c22683bad" category="list-text">Se il nodo che vuoi rimuovere contiene epsilon, sposta epsilon su un altro nodo:</block>
+  <block id="49e8d819c7a12b23ca983a3bc99e1bdf" category="list-text">Identifica il nodo primario corrente:</block>
+  <block id="14029d6b9a69926c796b630bd649fe4a" category="list-text">Se il nodo che stai rimuovendo è il nodo primario corrente, rendilo non idoneo:</block>
+  <block id="7f6abdd99160e3d3527591b98c573c7f" category="list-text">Mostra il nodo home delle LIF di dati rimanenti:</block>
+  <block id="b77fc9ce12284fe9cb0ed31c9a1f86d5" category="list-text">Modifica il nodo principale dei LIF di dati rimanenti su un altro nodo:</block>
+  <block id="c9b5aae4621661ad2ffccfee6c9b3874" category="paragraph">Lascia i LIF del cluster e i LIF di gestione dei nodi sul nodo in uscita.</block>
+  <block id="f73e9b92493b90c37101390646ee7ff4" category="list-text">Disabilita il takeover del nodo da rimuovere:</block>
+  <block id="2f6504307623c74dfa94926c73a36268" category="list-text">Verifica che il takeover sia disabilitato per il nodo da rimuovere:</block>
+  <block id="398e3c6027c9ad5a579ba201dbdf1422" category="paragraph">Il takeover non è possibile sulla coppia HA quando il failover è disabilitato.</block>
+  <block id="e66ad8765eff08cc92ad6062c3b5484e" category="list-text">Su un nodo funzionante e integro, imposta il livello di privilegio su avanzato:</block>
+  <block id="8e9c4f7e32d6d0c0b5026f9b1bd4cb0e" category="list-text">Scollega il nodo dal cluster:</block>
+  <block id="248d96fc2d0062d179e38ec920bbc9a6" category="paragraph">Conferma gli avvisi. L'operazione dovrebbe terminare con *Node remove succeeded*.</block>
+  <block id="fd7d664fcabce9a7163ddf544905c254" category="paragraph">Ripeti i passaggi precedenti per rimuovere il partner HA dal cluster. Non puoi rimuovere altri nodi finché non rimuovi il partner HA del nodo disconnesso.</block>
+  <block id="ebe7c0cf5ca9d4767514a83c4598b75c" category="section-title">Passaggio 3: Facoltativamente, pulisci l'hardware rimosso</block>
+  <block id="3212383e8d23d729b6cb21418a172111" category="paragraph">Se vuoi riutilizzare un nodo che hai rimosso da un cluster, devi cancellare la configurazione del nodo e inizializzare tutti i dischi prima che possa essere reinserito in un cluster.</block>
+  <block id="9e870c65221f5c544b31efc1da95daeb" category="list-text">Durante il processo di avvio, quando richiesto, premi Ctrl-C per visualizzare il menu di boot.</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">Selezionare l'opzione del menu di boot *(4) Pulisci la configurazione e inizializza tutti i dischi*.</block>
+  <block id="e482842fa3fe9110a14b09a7990fc7e3" category="paragraph">Puoi usare il comando <block ref="5fc60967dddffb3c388156e897d54aad" prefix=" " category="inline-code"></block> per riutilizzare la coppia HA nello stesso cluster.</block>
+  <block id="92157b9dae17603751a4d60f0f94bf8c" category="sidebar">Rimuovi i nodi dal cluster</block>
 </blocks>
