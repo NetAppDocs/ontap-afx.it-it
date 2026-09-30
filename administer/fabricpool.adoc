@@ -39,7 +39,7 @@ Sebbene il comportamento di FabricPool sia molto simile tra le diverse personali
 | Ambito dell'archivio di oggetti | Configurato per ogni aggregato in due fasi: creazione della configurazione e successivo collegamento | Configurato a livello di cluster con un singolo comando; un bucket definito per cluster 
 
 
-| Policy di tiering predefinita | Il criterio predefinito è `none`; devi impostare esplicitamente un criterio del volume per iniziare il tiering | Il criterio predefinito è `none`; devi impostare esplicitamente un criterio del volume per iniziare il tiering 
+| Policy di tiering predefinita | La politica predefinita è `none` tranne per gli aggregati abilitati per FabricPool, dove il valore predefinito è `snapshot` | La policy predefinita è `none` 
 
 
 | Monitoraggio della temperatura | Granularità per volume | Granularità per volume 

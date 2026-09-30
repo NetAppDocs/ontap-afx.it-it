@@ -4,7 +4,7 @@ permalink: manage-data/prepare-manage-data.html
 keywords: afx, afx system, prepare, prepare manage, prepare manage data 
 summary: Prima di gestire i dati AFX, è necessario acquisire familiarità con i concetti e le funzionalità di base. 
 ---
-= Preparati a gestire i dati del tuo sistema di archiviazione AFX
+= Scopri come gestire i dati del sistema storage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
