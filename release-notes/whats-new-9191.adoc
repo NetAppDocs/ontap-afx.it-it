@@ -155,6 +155,11 @@ A partire da ONTAP 9.19.1, ONTAP aggiunge il supporto on-premises per NFS su TLS
 | link:../administer/additional-ontap-cluster.html["Supporto per la modifica delle impostazioni predefinite che controllano gli aumenti automatici del limite massimo di throughput QoS"]  a| 
 È possibile modificare le impostazioni predefinite che controllano il modo in cui i gruppi di criteri QoS aumentano automaticamente il limite massimo di throughput QoS in risposta a esigenze a breve termine di prestazioni superiori. Queste impostazioni non possono essere modificate in ONTAP 9.18.1 e versioni precedenti.
 
+
+
+| link:../administer/fabricpool.html["Struttura a FabricPool"]  a| 
+FabricPool è una funzionalità di ONTAP che sposta i dati tra un tier locale dalle performance elevate e un tier cloud remoto o di capacità a costo inferiore in base all'attività dei dati. A partire da ONTAP 9.19.1 P3, FabricPool è stato esteso al sistema storage AFX. Consente una scalabilità dei dati molto maggiore per supportare carichi di lavoro a elevato uso di dati. Sebbene l'implementazione di AFX introduca diverse modifiche architetturali, le caratteristiche principali della funzionalità ONTAP rimangono invariate.
+
 |===
 
 

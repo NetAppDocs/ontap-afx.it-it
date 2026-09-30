@@ -1,0 +1,41 @@
+---
+permalink: administer/fabricpool-manage.html 
+sidebar: sidebar 
+keywords: afx, oam, fabricpool, manage, monitor, space, tiering policy, zcvm, volume move, node join, node unjoin, flexaggr 
+summary: 'La gestione continua di FabricPool sui sistemi AFX è simile a quella sui sistemi AFF e FAS. Devi monitorare l"utilizzo dello spazio, gestire i volumi e regolare le politiche di tiering. Ci sono alcune aggiunte degne di nota per l"ambiente AFX, incluso il comportamento quando i nodi entrano o escono dal cluster AFX.' 
+---
+= Gestisci FabricPool per i sistemi storage AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La gestione continua di FabricPool sui sistemi AFX è simile a quella sui sistemi AFF e FAS. Devi monitorare l'utilizzo dello spazio, gestire i volumi e regolare le politiche di tiering. Ci sono alcune aggiunte degne di nota per l'ambiente AFX, incluso il comportamento quando i nodi entrano o escono dal cluster AFX.
+
+
+
+[[monitor-space-and-manage-volumes]]
+== Monitora lo spazio e gestisci i volumi
+
+Le procedure utilizzate con AFX per monitorare l'utilizzo dei livelli di capacità e di prestazioni, nonché la gestione ordinaria dei volumi, sono generalmente le stesse utilizzate con ONTAP. Tieni presente che in AFX la reportistica sullo spazio tiene conto dell'architettura disaggregata. Le informazioni sullo spazio del livello di capacità sono disponibili tramite report a livello di cluster e di zona di disponibilità, anziché tramite un aggregato visibile all'amministratore.
+
+
+
+[[node-join-and-node-unjoin]]
+== Unione e rimozione dei nodi
+
+Le operazioni sui nodi sono compatibili con FabricPool sui sistemi AFX, il che rappresenta una differenza significativa rispetto a ONTAP. Nota i seguenti comportamenti:
+
+* *Aggiunta del nodo.* Quando un nodo si unisce al cluster AFX e esiste già una configurazione dell'archivio di oggetti del cluster, il collegamento dell'archivio di oggetti viene attivato automaticamente. Se il collegamento non riesce, anche l'operazione di aggiunta del nodo non riesce.
+* *Disconnessione del nodo.* Quando un nodo viene disconnesso o rimosso dal cluster, i dati vengono etichettati come "defunct". I volumi associati vengono riallocati utilizzando ZCVM. I metafile degli oggetti defunct vengono conservati in modo che i relativi oggetti cloud rimangano accessibili e possano essere eliminati tramite garbage collection.
+
+
+
+
+[[related-information]]
+== Informazioni correlate
+
+* https://docs.netapp.com/us-en/ontap/fabricpool/determine-data-inactive-reporting-task.html["Gestisci FabricPool"^]
+* link:../administer/expand-cluster.html["Espandi un cluster di sistemi di archiviazione AFX"]
+
