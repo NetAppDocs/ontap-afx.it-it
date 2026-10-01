@@ -4,7 +4,7 @@ permalink: protect-data/snapshot-replication.html
 keywords: afx, afx system, manage replication, manage snapshot replication 
 summary: La replica snapshot è un processo in cui i gruppi di coerenza sul sistema AFX vengono copiati in una posizione geograficamente remota.  Dopo la replica iniziale, le modifiche ai gruppi di coerenza vengono copiate nella posizione remota in base a una policy di replica.  I gruppi di coerenza replicati possono essere utilizzati per il ripristino di emergenza o la migrazione dei dati. 
 ---
-= Gestire la replica degli snapshot su un sistema di archiviazione AFX
+= Flusso di lavoro della replica Snapshot per i sistemi di storage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
