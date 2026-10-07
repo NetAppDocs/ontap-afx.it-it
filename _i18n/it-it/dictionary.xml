@@ -2332,4 +2332,5 @@
   <block id="5933d9a0441d1f9543a9286674ef11b5" category="doc">Opzioni di gestione dei bucket AFX S3</block>
   <block id="b8efc14136159d215438d8120125f40e" category="doc">Scopri come gestire i dati del sistema storage AFX</block>
   <block id="f71f016f7ff1ffe09fcc0bb6c3f2c337" category="doc">Flusso di lavoro della replica Snapshot per i sistemi di storage AFX</block>
+  <block id="320808ffdec6f54122d23d5939b758f2" category="admonition">AFX non supporta unità di dimensioni diverse all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono essere della stessa dimensione. Per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX, vedi<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
 </blocks>
