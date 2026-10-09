@@ -2333,4 +2333,6 @@
   <block id="b8efc14136159d215438d8120125f40e" category="doc">Scopri come gestire i dati del sistema storage AFX</block>
   <block id="f71f016f7ff1ffe09fcc0bb6c3f2c337" category="doc">Flusso di lavoro della replica Snapshot per i sistemi di storage AFX</block>
   <block id="320808ffdec6f54122d23d5939b758f2" category="admonition">AFX non supporta unità di dimensioni diverse all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono essere della stessa dimensione. Per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX, vedi<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
+  <block id="df0a5fa7367c040e26263e7f6bd5d3bb" category="paragraph-title">Posso utilizzare unità di diverse dimensioni nei miei shelf di storage AFX?</block>
+  <block id="a5ca85d705ee24e667c1206bd5c112b4" category="paragraph">No. AFX non supporta unità di dimensioni miste all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono avere la stessa dimensione. Vedi<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX.</block>
 </blocks>

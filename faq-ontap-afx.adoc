@@ -117,3 +117,6 @@ Nella versione iniziale 9.17.1 di AFX, i volumi verranno spostati solo negli sce
 
 .AFX supporta FabricPool?
 Sì. A partire da ONTAP 9.19.1 P3, i sistemi storage AFX supportano FabricPool per suddividere in livelli i dati nello storage a oggetti di capacità. L'implementazione AFX presenta diverse differenze architetturali rispetto a ONTAP. Ad esempio, il livello cloud è collegato all'intero cluster (o SAZ) anziché ai singoli aggregati; inoltre, è possibile utilizzare solo bucket ONTAP S3 o StorageGRID. Per ulteriori informazioni, vedi link:./administer/fabricpool.html["Scopri di più su FabricPool per i sistemi storage AFX"].
+
+.Posso utilizzare unità di diverse dimensioni nei miei shelf di storage AFX?
+No. AFX non supporta unità di dimensioni miste all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono avere la stessa dimensione. Vedi https://hwu.netapp.com/["Hardware Universe NetApp"^] per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX.
