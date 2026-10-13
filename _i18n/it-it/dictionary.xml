@@ -1392,7 +1392,6 @@
   <block id="51048cf34d4c82d7ae92b4e8b33ccc35" category="inline-link">Punti salienti della versione ONTAP 9</block>
   <block id="858426bc9cba92152de24f66ed20c19b" category="list-text"><block ref="858426bc9cba92152de24f66ed20c19b" category="inline-link-rx"></block></block>
   <block id="a94bc3cecb41ed2607e30e4137f48423" category="summary">Il riferimento API REST AFX contiene dettagli su tutte le chiamate API.  Questa documentazione è utile per lo sviluppo di applicazioni di automazione.</block>
-  <block id="9d9d25e0255ab68716120450f05905de" category="doc">Riferimento API REST per il sistema di archiviazione AFX</block>
   <block id="21ffe7e5e1175fdf48a61fcd9c71ff47" category="list-text">Indirizzo IP o FQDN del LIF di gestione del cluster AFX</block>
   <block id="33eb1e63e3f6eb080297d3d1813fb0fc" category="list-text">Credenziali per un account amministratore del cluster</block>
   <block id="1aaa22d05f688af827774a38c8cc4a4f" category="list-text">Collega il tuo browser web all'indirizzo IP o al nome di dominio di gestione del cluster:</block>
@@ -1403,7 +1402,6 @@
   <block id="8162203e3ec38c896e5f6d688115d731" category="inline-link">Riferimento API REST ONTAP</block>
   <block id="99ec9f1726a6519eae656fd574344d13" category="list-text"><block ref="99ec9f1726a6519eae656fd574344d13" category="inline-link-rx"></block></block>
   <block id="1b145f28c9e1e4044efc92e3e1567780" category="summary">È possibile inviare un semplice comando curl per iniziare a utilizzare l'API REST AFX e verificarne la disponibilità.</block>
-  <block id="82c5461d1a57f884eb846ca365801e17" category="doc">La tua prima chiamata API REST del sistema di archiviazione AFX</block>
   <block id="7013ac323311e3dab810263b1d637a84" category="paragraph">Oltre ad avere l'utilità curl disponibile sulla workstation locale, avrai bisogno di quanto segue:</block>
   <block id="e57ddd021ae925c610e301862e495d93" category="list-text">Indirizzo IP o FQDN del LIF di gestione del cluster del sistema AFX</block>
   <block id="6c62a36f8e262347f2ba79452265a020" category="list-text">Credenziali ONTAP per un account con autorizzazione ad accedere all'API REST ONTAP</block>
@@ -2335,4 +2333,6 @@
   <block id="320808ffdec6f54122d23d5939b758f2" category="admonition">AFX non supporta unità di dimensioni diverse all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono essere della stessa dimensione. Per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX, vedi<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>.</block>
   <block id="df0a5fa7367c040e26263e7f6bd5d3bb" category="paragraph-title">Posso utilizzare unità di diverse dimensioni nei miei shelf di storage AFX?</block>
   <block id="a5ca85d705ee24e667c1206bd5c112b4" category="paragraph">No. AFX non supporta unità di dimensioni miste all'interno di un singolo shelf di storage. Tutte le unità all'interno di uno shelf devono avere la stessa dimensione. Vedi<block ref="bb9c67b5a4c15a85b5e6aa6c9afd0285" category="inline-link-rx"></block> per informazioni complete sulla compatibilità delle configurazioni del sistema storage AFX.</block>
+  <block id="147085887c747ae25d5c898682fdb3b2" category="doc">Accedi alla documentazione dell'API REST per i sistemi storage AFX</block>
+  <block id="e0bb0202db2abc666440192da58b5166" category="doc">Effettua la tua prima chiamata all'API REST del sistema storage AFX</block>
 </blocks>

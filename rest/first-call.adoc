@@ -4,7 +4,7 @@ permalink: rest/first-call.html
 keywords: afx, afx system, rest api, first call, curl 
 summary: 'È possibile inviare un semplice comando curl per iniziare a utilizzare l"API REST AFX e verificarne la disponibilità.' 
 ---
-= La tua prima chiamata API REST del sistema di archiviazione AFX
+= Effettua la tua prima chiamata all'API REST del sistema storage AFX
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

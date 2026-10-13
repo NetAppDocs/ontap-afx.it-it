@@ -4,7 +4,7 @@ permalink: rest/api-reference.html
 keywords: afx, afx system, rest api, rest api reference, swagger 
 summary: Il riferimento API REST AFX contiene dettagli su tutte le chiamate API.  Questa documentazione è utile per lo sviluppo di applicazioni di automazione. 
 ---
-= Riferimento API REST per il sistema di archiviazione AFX
+= Accedi alla documentazione dell'API REST per i sistemi storage AFX
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
