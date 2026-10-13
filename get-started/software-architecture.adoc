@@ -4,7 +4,7 @@ permalink: get-started/software-architecture.html
 keywords: afx, afx system, cluster, architecture, components, physical, logical 
 summary: 'L"architettura AFX è composta da diversi componenti hardware e software.  Questi componenti del sistema sono organizzati in diverse categorie.' 
 ---
-= Dettagli dell'architettura del sistema di archiviazione AFX
+= Architettura del sistema storage AFX
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
