@@ -63,7 +63,7 @@ Sì. I sistemi di storage AFX supportano FlexCache sia verso che da un AFF o sis
 .Se voglio utilizzare un sistema AFF o FAS (che esegue la personalità Unified ONTAP ) con un sistema AFX per SnapMirror o FlexCache, quale versione ONTAP mi serve?
 Le regole della versione SnapMirror per AFX sono identiche a quelle di Unified ONTAP.  Ciò significa che per replicare da Unified ONTAP, il sistema di origine deve essere compreso nell'intervallo di versioni supportato.  Per replicare da AFX, il sistema Unified ONTAP deve essere ONTAP 9.16.1 o versione successiva (la prima versione supportata dalla funzionalità Advanced Capacity Balancing).  Per FlexCache, le stesse regole si applicano ai sistemi di origine e di destinazione come descritto in https://www.netapp.com/pdf.html?item=/media/7336-tr4743.pdf["TR-4743"^] .
 
-Esistono alcune differenze nel supporto per i volumi FlexGroup .  Un volume FlexGroup su AFX non può essere un volume di origine per un volume FlexCache che utilizza la modalità Writeback.
+Esistono alcune differenze nel supporto dei volumi FlexGroup. Un volume FlexGroup su AFX non può essere un volume di origine per un volume FlexCache che utilizza la modalità write-back.
 
 .Posso effettuare chiamate API ONTAPI (ZAPI) a un cluster AFX?
 No. AFX supporta solo l'API REST ONTAP .  Qualsiasi codice di automazione che utilizza ZAPI deve essere convertito in REST API per essere utilizzato con AFX.

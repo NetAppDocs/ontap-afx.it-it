@@ -29,6 +29,23 @@ TIP: Per determinare le capacità del tuo cluster AFX, dovresti consultare i det
 | Caratteristica | Modifica limite | Modificato nella versione 
 
 
+| SnapMirror active sync per NAS  a| 
+SnapMirror active sync per NAS aumenta il numero di volumi supportati a 600 per le piattaforme AFX (4 x 4).
+| ONTAP 9.20.1 
+
+
+| SnapMirror sincrono  a| 
+SnapMirror synchronous aumenta il numero di volumi supportati da 400 a 600 per le piattaforme AFX.
+| ONTAP 9.20.1 
+
+
+| volumi FlexCache  a| 
+Il numero di volumi FlexCache supportati aumenta a 2500 per nodo e 5000 per coppia HA quando si utilizza un costituente per volume.
+
+Il numero di volumi FlexCache che puoi creare da un volume di origine aumenta a 200 e il numero di cache writeback per origine aumenta a 50.
+| ONTAP 9.20.1 
+
+
 | Nodi per cluster  a| 
 Puoi espandere il tuo cluster AFX fino a un massimo di 32 nodi. Questo ti permette di scalare il tuo sistema storage AFX per soddisfare le crescenti esigenze dei tuoi carichi di lavoro e delle tue applicazioni. Nota che il supporto per 32 nodi è disponibile con un set di funzionalità limitato; consulta il tuo team account NetApp per i dettagli.
 | ONTAP 9.19.1 
